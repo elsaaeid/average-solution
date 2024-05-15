@@ -14,6 +14,7 @@ import LanguageMenu from '../../../translation/LanguageMenu';
 import { ThemeModeIcon } from '../../dashboard-components/ThemeModeIcon';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { ShowOnLogin } from "../protect/HiddenLink";
 
 
 export const Bar = ({profile})=>{
@@ -33,10 +34,12 @@ export const Bar = ({profile})=>{
                 <IconComponent        
                 icon={<ThemeModeIcon className="icon-q" zIndex="30" fontSize="small" />} />
             </Tooltip>
-            <Tooltip title="Notification">
-                <IconComponent        
-                icon={<NotificationMenu profile={profile} />} />
-            </Tooltip>
+            <ShowOnLogin>
+                <Tooltip title="Notification">
+                    <IconComponent        
+                    icon={<NotificationMenu profile={profile} />} />
+                </Tooltip>
+            </ShowOnLogin>
         </div>
     )
 }
