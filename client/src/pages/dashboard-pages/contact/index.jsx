@@ -3,8 +3,7 @@ import "./Contact.scss";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import {BACKEND_URL} from "../../../redux/helper";
-const API_URL = `${BACKEND_URL}/api/contactus`;
+const API_URL = `${process.env.BACKEND_URL}/api/contactus`;
 
 
 const Contact = () => {

@@ -8,7 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
 
-
+const cloud_name = process.env.REACT_APP_CLOUD_NAME;
+const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
 const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setImagePreview}) => {
        // Translation
        const { t } = useTranslation();
@@ -43,12 +44,12 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
       ) {
         const image = new FormData();
         image.append("file", profileImage);
-        image.append("cloud_name", "dzbi59kmu");
-        image.append("upload_preset", "jwukjk1g");
+        image.append("cloud_name", cloud_name);
+        image.append("upload_preset", upload_preset);
 
         // Save image to Cloudinary
         const response = await fetch(
-          "https://api.cloudinary.com/v1_1/dzbi59kmu/image/upload",
+          `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
           { method: "post", body: image }
         );
         const imgData = await response.json();
