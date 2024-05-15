@@ -1,0 +1,99 @@
+footer {
+ background: var(--color-bg-variant);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+footer a {
+  font-size: 20px;
+}
+footer a h1:hover {
+  color: var(--color-link);
+}
+.footer__logo {
+  background-color: none;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.permalinks {
+  gap: 2rem;
+  margin: 0 auto 3rem;
+}
+.permalinks div {
+  display: flex;
+  flex-direction: row;
+}
+.permalinks div a {
+  margin-right: 10px;
+  color: var(--color-white);
+}
+.permalinks div a:hover{
+  text-decoration: underline !important ;
+  color: var(--color-link);
+}
+.footer__socials {
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.footer__socials div a {
+  background: var(--color-bg-variant-hover);
+  border: 1px solid transparent;
+  padding: 0.8rem;
+  border-radius: 0.7rem;
+  display: flex;
+  margin-right: 10px;
+}
+.footer__socials div a:hover {
+  color: var(--color-white);
+  background: transparent;
+  border: 1px solid var(--color-white);
+}
+.footer__copyright {
+  margin-bottom: 4rem;
+  color: var(--color-bg);
+  font-size: 22px;
+}
+.footer__socials_icons a {
+  color: var(--color-white);
+}
+/* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
+
+@media screen and (max-width: 1024px) {
+
+}
+/* ===================MEDIA QUERIES (SMALL DEVICES) =============================*/
+
+@media screen and (max-width: 600px) {
+.permalinks {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer__socials {
+  margin-bottom: 2.6rem;
+}
+}
+
+@media screen and (max-width: 375px) {
+  input, textarea {
+    font-size: 15px;
+}
+  .footer__copyright {
+    font-size: 19px;
+}
+  }
+
+  @media screen and (max-width: 280px) {
+  footer {
+    margin-bottom: 0rem;
+}
+  }
+
+
+
+
+

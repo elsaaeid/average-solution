@@ -1,0 +1,97 @@
+.landing-container {
+    position: fixed;
+    top: 3rem;
+    z-index: 2300;
+    background-color: var(--color-primary) !important;
+    padding: 20px;
+    overflow-y: scroll;
+    box-shadow: var(--shadow-color);
+}
+.landing {
+    margin-top: 23px;
+}
+.landing {flex-direction: row;}
+.landing-close-icon {
+    color:  var(--color-primary);
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+}
+.landing-close-icon:hover {
+    color:  var(--color-bg);
+    border: 1px solid var(--color-bg);
+    background-color: transparent;
+}
+.right-content, .left-content {
+    padding: 0px;
+    line-height: 28px;
+}
+
+.right-content {
+    padding: 10px;
+    line-height: 28px;
+}
+.right-content h2, .right-content p {
+    color: var(--color-bg);
+    font-weight: bold;
+}
+.right-content h2{
+    border-bottom: 1px dashed var(--color-bg);
+}
+.landingClosed {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+.landingOpened {
+    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+}
+/* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
+      @media screen and (max-width: 820px) {
+        .landing {
+            flex-direction: column;
+        }
+        .left-content h2 {
+            font-size: 12px;
+        }
+        .left-content p {
+            font-size: 12px;
+        }
+      }
+      
+      /* ===================MEDIA QUERIES (SMALL DEVICES) =============================*/
+      @media screen and (max-width: 540px) {
+        .landing-container {
+            top: 0rem;
+        }
+        .landing {
+            flex-direction: column;
+        }
+        .left-content h2 {
+            font-size: 12px;
+        }
+        .left-content p {
+            font-size: 12px;
+        }
+      }
+      @media screen and (max-width:280px) {
+        .landing-container {
+            padding: 5px;
+            width: 18rem;
+        }
+        .right-content, .left-content {
+            width: 100%;
+        }
+        .left-content h2 {
+            font-size: 8px;
+        }
+        .left-content p {
+            font-size: 8px;
+        }
+      }
+      

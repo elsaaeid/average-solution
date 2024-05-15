@@ -1,0 +1,21 @@
+.content-main {
+    margin-top: 190px;
+}
+@media screen and (max-width: 414px)
+{
+    .basic-content {
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width: 412px) {
+    .content-main {
+        margin-top: 181px;
+    }
+  }
+
+@media screen and (max-width: 280px)
+{
+    .basic-content {
+    margin-top: 25px;
+}
+}

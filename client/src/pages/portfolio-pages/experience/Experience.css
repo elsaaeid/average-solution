@@ -1,0 +1,192 @@
+.experience__container > div {
+  background: var(--color-bg-variant);
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  margin-top: 16px;
+  width: 90%;
+}
+.experience__container > div:hover {
+  background: var(--color-white);
+  border: 1px solid var(--color-primary);
+  cursor: default;
+}
+.experience__container > div:hover h3 {
+  color: var(--color-primary);
+}
+.experience__container > div:hover .experience__details-icon {
+  color: var(--color-primary);
+}
+.experience__container > div:hover h4 {
+  color: var(--color-primary);
+}
+.experience__container > div:hover .text-average {
+  color: var(--color-primary);
+}
+
+.experience__container > div h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+.experience__content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.experience__details {
+  display: flex;
+  gap: 1rem;
+}
+.experience__details-icon {
+  margin-right: 6px;
+  color: var(--color-white);
+  font-size: 24px;
+}
+article.experience__details h4 {
+  font-size: 29px;
+  font-weight: bold;
+}
+.servicess {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+/* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
+
+@media screen and (max-width: 1024px) {
+.experience__container > div {
+  width: 100%;
+  padding: 2rem;
+}
+
+.experience__content {
+  padding: 1rem;
+}
+}
+
+/* ===================MEDIA QUERIES (SMALL DEVICES) =============================*/
+@media screen and (max-width: 820px) {
+  .experience__container > div {
+    padding: 2rem 1rem;
+    width: 20rem;
+}
+.container.experience__container {
+  margin: auto;
+}
+}
+@media screen and (max-width: 768px) {
+.container.experience__container {
+  width: 100%;
+}
+}
+@media screen and (max-width: 600px) {
+ .experience__container {
+  gap: 1rem;
+}
+.experience__container > div {
+  width: 90%;
+  padding: 2rem 1rem;
+}
+}
+@media screen and (max-width: 540px) {
+  .container.experience__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  .experience__container > div h3 {
+    font-size: 18px;
+}
+.experience__details-icon {
+  font-size: 26px;
+}
+article.experience__details h4 {
+  font-size: 20px;
+}
+}
+
+ @media screen and (max-width: 414px) {
+  .experience__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.experience__container > div h3 {
+  font-size: 20px;
+}
+.experience__details-icon {
+  font-size: 27px;
+}
+article.experience__details h4 {
+  font-size: 20px;
+}
+ }
+ @media screen and (max-width: 412px) {
+  .experience__container > div {
+    width: 100%;
+  }
+}
+ @media screen and (max-width: 393px) {
+ .experience__content {
+  padding: 0px;
+}
+.experience__container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+}
+@media screen and (max-width: 375px) {
+  .experience__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.experience__container > div {
+  padding: 2rem 1rem;
+}
+  .experience__container > div h3 {
+    font-size: 17px;
+    font-weight: bold;
+}
+.experience__details-icon {
+  font-size: 20px;
+}
+.experience__content {
+  padding: 0;
+}
+article.experience__details h4 {
+  font-size: 15px;
+}
+ }
+ @media screen and (max-width: 280px){
+  .container.experience__container {
+    width: 15rem;
+}
+.experience__container > div {
+  padding: 2rem 1rem;
+  width: 13rem;
+}
+.experience__container > div h3 {
+  font-size: 14px;
+}
+article.experience__details h4 {
+  font-size: 12px;
+}
+.text-light {
+  font-size: 12px;
+}
+ }
+
+
+
+

@@ -1,0 +1,8 @@
+.intro-welcome.mb-3 {
+    background-color: var(--color-gray);
+}
+.registeration-content {
+    background-color: var(--color-input);
+    margin-bottom: auto;
+    height: 100px;
+    }

@@ -1,0 +1,121 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img {
+    animation: slide-down 0.5s ease;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: slide-up 0.5s ease;
+    background-image: url('../../assets/auth_img.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+      color: var(--color-white);
+      text-align: center;
+    }
+    form {
+      input[type="text"],
+      input[type="email"] {
+        display: block;
+          font-size: 1.6rem;
+          font-weight: 300;
+          margin: 1rem auto;
+          width: 100%;
+          background-color: var(--color-input);
+          border: 1px solid var(--color-bg);
+          border-bottom: 3px solid var(--color-bg);
+          border-radius: 3px;
+          outline: none;
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #55c57a;
+          }
+  
+          &:focus:invalid {
+            border-bottom: 3px solid #ff7730;
+          } 
+          }
+          .group {
+            ul{
+              li{
+                .indicator {
+                  display: flex;
+                  color: black;
+                }
+              }
+            }
+        }
+    }
+    .forget {
+      color: var(--color-danger);
+      display: flex;
+      justify-content: space-between;
+      margin-right: 34px;
+    }
+     .links {
+      color: var(--color-white);
+    }
+    .links_clChange{
+      color: var(--color-gray);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(-5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+@media screen and (max-width: 1024px){
+  .nav-top {
+    height: 10rem;
+  }
+  }
+  
+@media screen and (max-width: 820px){
+.nav-top {
+  height: 4rem;
+}
+.auth {
+  .form{
+    form input[type=text], form input[type=email], form input[type=password], form input[type=name] {
+      font-size: 14px;
+    }
+  }
+}
+}
+@media screen and (max-width: 280px){
+  .nav-top {
+    height: 4rem;
+  }
+  .auth {
+    .form{
+      padding: 0;
+      form input[type=text], form input[type=email], form input[type=password], form input[type=name] {
+        font-size: 11px;
+      }
+    }
+  }
+  }
+  
