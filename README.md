@@ -1,7 +1,6 @@
 <h1>average solution</h1>
 
 <p>it's a website for digital solutions</p>
-<img src="./average-solution.gif" alt="average-solution" />
 <details>
 	<summary>
     <b>
