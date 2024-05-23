@@ -32,15 +32,15 @@ export const ChatBotContainer = ()=> {
             >
               <IconComponent        
               icon={
-              <span className="chatClose-icon"
-                style={{
-                  color: "#3f76b7",
-                  border: "1px dashed #3f76b7",
-                  backgroundColor: "white",
-                  padding: "9px",
-                  borderRadius: "50%",
-                }}
-                  ><IoClose /></span>
+                <IoClose
+                  className="chatClose-icon"
+                  style={{
+                    color: "var(--color-bg-variant)",
+                    border: "1px dashed var(--color-bg-variant)",
+                    backgroundColor: "white",
+                    padding: "9px",
+                    borderRadius: "50%",
+                  }} />
                   } />
             </span>
             </Tooltip>
@@ -50,16 +50,16 @@ export const ChatBotContainer = ()=> {
                 className="cursor-pointer"
               >
                 <IconComponent        
-                    icon={
-                        <SiChatbot className="chat-icon"
-                          style={{
-                            color: "#3f76b7",
-                            border: "1px dashed #3f76b7",
-                            backgroundColor: "white",
-                            padding: "9px",
-                            borderRadius: "50%",
-                          }} />
-                        } />
+                  icon={
+                    <SiChatbot className="chat-icon"
+                      style={{
+                        color: "var(--color-bg-variant)",
+                        border: "1px dashed var(--color-bg-variant)",
+                        backgroundColor: "white",
+                        padding: "9px",
+                        borderRadius: "50%",
+                      }} />
+                    } />
               </span>
             </Tooltip>
           }

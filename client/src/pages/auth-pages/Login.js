@@ -23,9 +23,8 @@ const initialState = {
   password: "",
 };
 
-const Login = ({setJoinState}) => {
+const Login = () => {
   const [formData, setFormData] = useState(initialState);
-  const [loading, setLoading] = useState(false);
   const { email, password } = formData;
        // Translation
        const { t } = useTranslation();
@@ -36,8 +35,9 @@ const Login = ({setJoinState}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isLoggedIn, isSuccess, isError, twoFactor } =
+  const { isLoading, isLoggedIn, isSuccess, isError, twoFactor } =
     useSelector((state) => state.auth);
+    
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -49,7 +49,6 @@ const Login = ({setJoinState}) => {
     if (!validateEmail(email)) {
       return toast.error("Please enter a valid email");
     }
-    setLoading(true);
     const userData = {
       email,
       password,
@@ -57,16 +56,11 @@ const Login = ({setJoinState}) => {
    
     // console.log(userData);
     await dispatch(login(userData));
-    setLoading(false);
-      // join-title state
-      setJoinState(false);
   };
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
       navigate("/");
-       // join-title state
-    setJoinState(false);
     }
 
     if (isError && twoFactor) {
@@ -75,13 +69,14 @@ const Login = ({setJoinState}) => {
     }
 
     dispatch(RESET());
-  }, [setJoinState, isLoggedIn, isSuccess, dispatch, navigate, isError, twoFactor, email]);
+  }, [isLoggedIn, isSuccess, dispatch, navigate, isError, twoFactor, email]);
 
   const googleLogin = async (credentialResponse) => {
     // console.log(credentialResponse);
     await dispatch(
       loginWithGoogle({ userToken: credentialResponse.credential })
     );
+    navigate("/");
   };
 
 
@@ -102,7 +97,7 @@ const Login = ({setJoinState}) => {
               }}
             />
             <br />
-            <p className="text-center font-bold text-gray-500">Or</p>
+            <p className="text-center font-bold text-white">Or</p>
           </Box>
           <form onSubmit={loginUser}>
             <input
@@ -120,9 +115,9 @@ const Login = ({setJoinState}) => {
                 handleInputChange={handleInputChange} 
               />
             <Box className="flex justify-center items-center">
-            <button type="submit" className="btnX flex justify-center items-center w-full">
+            <button type="submit" className="tabs flex justify-center items-center w-full">
               {
-                loading ? <Spinner />
+                isLoading ? <Spinner />
                 :
                   <span>{t("profile.Login")}</span>
                 }

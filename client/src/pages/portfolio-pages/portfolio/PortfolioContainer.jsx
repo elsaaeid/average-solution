@@ -121,7 +121,7 @@ useEffect(() => {
     <div className="drop-down-menu">
       <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
     </div>
-    <div className="table">
+    <div className="table flex justify-center items-center">
       {products.length === 0 ? (
         <p style={{
           color: colors.grey[100],
@@ -136,65 +136,63 @@ useEffect(() => {
             {currentItems.map((product) => {
               const { _id, name, category, liveDemo } = product;
               return (
-                <Box>
                   <Box key={_id} className={"orderState" ? "content active-content" : "content"}>
-                  <article className='portfolio__item'>
-                  <Box className="portfolio__item-image">
-                  {product ? (product?.image ? (
-                    <img
-                      src={product.image.filePath}
-                      alt={product.image.fileName}
-                    />
-                  ) : (
-                    <p style={{
-                      color: colors.grey[100],
-                    }}>No image set for this product</p>
-                  ) ) : null}
-                  </Box>
-                  <Box className="portfolio__item-details ">
-                      <Typography variant='h6'>{shortenText(name, 16)}</Typography>
-                      <NavLink
-                      className='view-btn btn' 
-                      underline="none"
-                      onClick={handleClick}
-                      aria-controls={opened ? 'account-menu' : undefined}
-                      aria-haspopup="true"
-                      aria-expanded={opened ? 'true' : undefined}
-                      >{t("portfolio.viewDetails")}
-                      </NavLink>
-                  </Box>
-                  {
-                      anchorEl &&
-                  <Box className={anchorEl ? 'details_Active details flex flex-col justify-center items-center' : 'details flex flex-col justify-center items-center'}
-                      anchorEl={anchorEl}
-                      open={opened}
-                      onClose={handleClose}
-                      onClick={handleClose}
-                  >
-                      <Box className="portfolio__item-icon" onClick={handleClose}>
-                          <IconButton><RiCloseFill /></IconButton>
+                    <article className='portfolio__item'>
+                    <Box className="portfolio__item-image">
+                    {product ? (product?.image ? (
+                      <img
+                        src={product.image.filePath}
+                        alt={product.image.fileName}
+                      />
+                    ) : (
+                      <p style={{
+                        color: colors.grey[100],
+                      }}>No image set for this product</p>
+                    ) ) : null}
+                    </Box>
+                    <Box className="portfolio__item-details ">
+                        <Typography variant='h6'>{shortenText(name, 16)}</Typography>
+                        <NavLink
+                        className='view-btn btn' 
+                        underline="none"
+                        onClick={handleClick}
+                        aria-controls={opened ? 'account-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={opened ? 'true' : undefined}
+                        >{t("portfolio.viewDetails")}
+                        </NavLink>
+                    </Box>
+                    {
+                        anchorEl &&
+                      <Box className={anchorEl ? 'details_Active details flex flex-col justify-center items-center' : 'details flex flex-col justify-center items-center'}
+                          anchorEl={anchorEl}
+                          open={opened}
+                          onClose={handleClose}
+                          onClick={handleClose}
+                      >
+                          <Box className="portfolio__item-icon" onClick={handleClose}>
+                              <IconButton><RiCloseFill /></IconButton>
+                          </Box>
+                          <Box className="portfolio__item-details ">
+                              <div
+                              dangerouslySetInnerHTML={{
+                              __html: DOMPurify.sanitize(product.description),
+                              }}
+                              ></div>
+                          </Box>
+                          <Box>{t("portfolio.foundIn")}<p>{category}</p></Box>
+                          <Box className="portfolio__item-cta ">
+                              <NavLink to={liveDemo} 
+                              underline="none"
+                              className="btn btn-primary"
+                              >{t("portfolio.demoLive")}
+                              </NavLink>
+                          </Box>
+                          <IconButton><HeartRating /></IconButton>
                       </Box>
-                      <Box className="portfolio__item-details ">
-                          <div
-                          dangerouslySetInnerHTML={{
-                          __html: DOMPurify.sanitize(product.description),
-                          }}
-                          ></div>
-                      </Box>
-                      <Box>{t("portfolio.foundIn")}<p>{category}</p></Box>
-                      <Box className="portfolio__item-cta ">
-                          <NavLink to={liveDemo} 
-                          underline="none"
-                          className="btn btn-primary"
-                          >{t("portfolio.demoLive")}
-                          </NavLink>
-                      </Box>
-                      <IconButton><HeartRating /></IconButton>
+                      }
+                    </article>
                   </Box>
-                  }
-                  </article>
-                  </Box>
-                </Box>
               );
             })}
           </Box>

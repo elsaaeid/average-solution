@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ChatBot from "react-simple-chatbot";
 import { Segment } from "semantic-ui-react";
 import { ThemeProvider } from 'styled-components';
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import "./chatBot.css";
-import { useRef, useEffect } from "react";
 import { usePresence } from "framer-motion";
 import { gsap } from "gsap";
 
@@ -22,6 +21,7 @@ const Chat = () => {
         });
       }
     }, [isPresent, safeToRemove]);
+
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const steps = [
@@ -63,36 +63,36 @@ const Chat = () => {
                 {value: 'Photography for products', label: "High quality for your brand product", trigger: 'contacts'},
             ],
         },
-            {
-                id: 'contacts',
-                message: 'You can contact us via whatsApp on +20 01028496209',
-                trigger: 'thankYou'
-            },
-            {
-                id: 'thankYou',
-                message: 'Thank you for your trust',
-                end: true
-            },                                                
+        {
+            id: 'contacts',
+            message: 'You can contact us via whatsApp on +20 01028496209',
+            trigger: 'thankYou'
+        },
+        {
+            id: 'thankYou',
+            message: 'Thank you for your trust',
+            end: true
+        },                                                
     ]
     const themes = {
         background: colors.grey[900],
         width: "100%",
         fontFamily: 'Helvetica Neue',
         fontWeight: "bold",
-        headerBgColor: '#3f76b7',
+        headerBgColor: "var(--color-bg-variant)",
         headerFontColor: '#fff',
         headerFontSize: '12px',
-        botBubbleColor: '#3f76b7',
+        botBubbleColor: 'var(--color-gray)',
         botFontColor: '#fff',
         userBubbleColor: '#fff',
-        userFontColor: '#4a4a4a',
+        userFontColor: 'var(--color-gray)',
       };
   return (
     <div className="chat-container" ref={ref}>
       <ThemeProvider theme={themes}>
         <Segment floated="left">
           <ChatBot
-            headerTitle="Average Solution chatBot"
+            headerTitle="Alsaaeid Ellithy chatBot"
             speechSynthesis={{ enable: true, lang: 'en' }}
             steps={steps}
           />

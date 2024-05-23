@@ -10,13 +10,12 @@ import About from '../pages/portfolio-pages/about/About.jsx';
 import Experience from '../pages/portfolio-pages/experience/Experience.jsx';
 import Services from '../pages/portfolio-pages/services/Services.jsx';
 import Portfolio from '../pages/portfolio-pages/portfolio/Portfolio.jsx';
-import ContactPortfolio from '../pages/portfolio-pages/contact/ContactPortfolio.jsx';
+import Contact from '../pages/portfolio-pages/contact/Contact.jsx';
 import Error from '../pages/portfolio-pages/Error.jsx';
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../pages/dashboard-pages/dashboard/index.jsx";
 import UserList from "../pages/dashboard-pages/user-list/UserList.jsx";
 import Products from "../pages/dashboard-pages/products/index.jsx";
-import Contact from "../pages/dashboard-pages/contact/index.jsx";
 import AddProduct from "../pages/dashboard-pages/addProduct/AddProduct.jsx";
 import EditProduct from "../pages/dashboard-pages/editProduct/EditProduct.jsx";
 import LayoutPortfolio from "../components/portfolio-components/layoutPortfolio/LayoutPortfolio.jsx"
@@ -148,7 +147,7 @@ const index = ({
           <Portfolio />
         </LayoutPortfolio>
       } />
-      <Route path='/contactPortfolio' element={
+      <Route path='/contact' element={
         <LayoutPortfolio 
         setJoinState={setJoinState}
         joinState={joinState}
@@ -158,7 +157,7 @@ const index = ({
         toggleTab={toggleTab}
         profile={profile} 
         imagePreview={imagePreview}>
-          <ContactPortfolio />
+          <Contact />
         </LayoutPortfolio>
       } />
       {/*Services*/}
@@ -217,6 +216,8 @@ const index = ({
         toggleTab={toggleTab}
         setJoinState={setJoinState}
         joinState={joinState}
+        activeNav={activeNav}
+        setActiveNav={setActiveNav}
         t={t}
         profile={profile} 
         imagePreview={imagePreview} 
@@ -230,6 +231,8 @@ const index = ({
           toggleTab={toggleTab}
           setJoinState={setJoinState}
           joinState={joinState}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
           t={t}
           profile={profile} 
           imagePreview={imagePreview} 
@@ -242,6 +245,8 @@ const index = ({
             toggleTab={toggleTab}
             joinState={joinState}
             setJoinState={setJoinState}
+            activeNav={activeNav}
+            setActiveNav={setActiveNav}
             t={t}
             profile={profile} 
             imagePreview={imagePreview} 
@@ -257,6 +262,8 @@ const index = ({
             toggleTab={toggleTab}
             joinState={joinState}
             setJoinState={setJoinState}
+            activeNav={activeNav}
+            setActiveNav={setActiveNav}
             t={t}
             profile={profile} 
             imagePreview={imagePreview} 
@@ -272,6 +279,8 @@ const index = ({
           toggleTab={toggleTab}
           joinState={joinState}
           setJoinState={setJoinState}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
           t={t}
           profile={profile} 
           imagePreview={imagePreview} 
@@ -280,19 +289,6 @@ const index = ({
           setIsSidebar={setIsSidebar}>
             <EditProduct />
           </LayoutDashboard>} />
-          <Route path='/contact-us' element={
-            <LayoutDashboard 
-            toggleTab={toggleTab}
-            joinState={joinState}
-            setJoinState={setJoinState}
-            t={t}
-            profile={profile} 
-            imagePreview={imagePreview} 
-            selection={selection} 
-            isSidebar={isSidebar} 
-            setIsSidebar={setIsSidebar}>
-              <Contact />
-            </LayoutDashboard>} />
     
       <Route path='*' element={<Error />} />
     </Routes>

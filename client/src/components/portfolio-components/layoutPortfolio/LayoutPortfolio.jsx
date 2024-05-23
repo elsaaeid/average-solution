@@ -16,8 +16,8 @@ const LayoutPortfolio = ({
   profile, 
   imagePreview, 
   children, 
-  activeNav,
   joinState,
+  activeNav,
   setActiveNav,
   setJoinState,
  }) => {
@@ -72,6 +72,8 @@ const LayoutPortfolio = ({
         imagePreview={imagePreview} 
         joinState={joinState}
         setJoinState={setJoinState}
+        activeNav={activeNav}
+        setActiveNav={setActiveNav}
         />
         <Nav
           activeNav={activeNav}
@@ -86,7 +88,10 @@ const LayoutPortfolio = ({
             {alretState ? (<TransitionAlerts setOpen={setOpen} open={open} t={t} setAlretState={setAlretState} className="alret" />) : null}
           </div>
         </Collapse>     
-        <Footer />
+        <Footer 
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
+          />
       </Box>
       )
     }

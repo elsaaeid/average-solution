@@ -1,6 +1,3 @@
-.intro-home {
-  margin-bottom: 37px;
-}
 .item-property {
   box-shadow: inset 0px 0px 5px black;
   width: 90%;
@@ -12,11 +9,8 @@
 .design {
     width: 25rem;
     background-image: url("../../../assets/intro-home-bg.gif");
-    background-attachment: scroll|fixed|local|initial|inherit;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: border-box|padding-box|content-box|initial|inherit;
-    background-size: auto|length|cover|contain|initial|inherit;
   }
   .Design-box-content:hover {
     border: 1px solid var(--color-primary-variant);
@@ -37,7 +31,7 @@
   .show-service-icons {
     border-radius: 5px;
     box-shadow: inset 0px 0px 5px black;
-    main: auto;
+    margin: auto;
     height: 8rem;
     width: 90%;
   }
@@ -63,19 +57,11 @@
   height: 400px;
 }
 .service-home {
-  margin-top: 10rem;
+  margin-top: 15%;
 }
 @media screen and (max-width: 1280px) {
   .text-role {
     font-size: 20px;
-}
-.service-home {
-  margin-top: 12rem;
-}
-}
-@media screen and (max-width: 768px) {
-  .service-home {
-    margin-top: 140px;
 }
 }
 @media screen and (max-width: 540px) {
@@ -94,15 +80,7 @@
   flex-direction: column;
 }
 }
-@media screen and (max-width: 430px) {
-  .service-home {
-    margin-top: 110px;
-}
-}
 @media screen and (max-width: 414px) {
-  .service-home {
-    margin-top: 110px;
-}
 .text-role {
   font-size: 13px;
 }
@@ -110,9 +88,6 @@
   @media screen and (max-width: 375px) {
     .intro-home {
       margin-top: -25px;
-  }
-    .service-home {
-      margin-top: 110px;
   }
   }
   @media screen and (max-width: 280px) {

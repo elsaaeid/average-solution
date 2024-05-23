@@ -11,7 +11,7 @@ import Contact from "../../dashboard-pages/contact/index"
 
 
 
-const ContactPortfolio = ()=> {
+const Contact = ()=> {
 		// Translation
 		const { t } = useTranslation();
         return (
@@ -48,4 +48,4 @@ const ContactPortfolio = ()=> {
             </section> 
         )
 }
-export default ContactPortfolio;
+export default Contact;

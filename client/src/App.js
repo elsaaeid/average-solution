@@ -9,12 +9,12 @@ import axios from "axios";
 import {
   getLoginStatus,
   getUser,
-  selectIsLoggedIn,
   selectUser,
 } from "./redux/features/auth/authSlice";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Cursor from "./components/global-components/Cursor";
 import { useTranslation } from "react-i18next";
+
 
 axios.defaults.withCredentials = true;
 
@@ -30,8 +30,11 @@ export const App = ()=> {
 
 //Login Status
 const dispatch = useDispatch();
-const isLoggedIn = useSelector(selectIsLoggedIn);
 const user = useSelector(selectUser);
+
+
+const { isLoggedIn, isSuccess } =
+    useSelector((state) => state.auth);
 
 useEffect(() => {
   dispatch(getLoginStatus());
@@ -40,7 +43,15 @@ useEffect(() => {
   }
 }, [dispatch, isLoggedIn, user]);
 
-
+useEffect(() => {
+  if (isSuccess && isLoggedIn) {
+    // join-title state
+    setJoinState(false);
+  }
+  else {
+    setJoinState(true);
+  }
+}, [isLoggedIn, isSuccess, setJoinState]);
 
 // Translation
 const { t } = useTranslation();
@@ -59,11 +70,6 @@ const { t } = useTranslation();
   const [imagePreview, setImagePreview] = useState(null);
   const [activeNav, setActiveNav] = useState('/');
 
-  useEffect(() => {
-    dispatch(getUser());
-  }, [dispatch]);
-
-
 
   useLayoutEffect(() => {
     if (user) {
@@ -80,34 +86,35 @@ const { t } = useTranslation();
     }
   }, [user]);
 
+
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-            <div className="app">
-              <ToastContainer />
-              <Cursor />
-                <Routes 
-                  t={t} 
-                  activeNav={activeNav}
-                  setActiveNav={setActiveNav}
-                  orderState={orderState} 
-                  toggleTab={toggleTab} 
-                  profile={profile} 
-                  setProfile={setProfile} 
-                  profileImage={profileImage} 
-                  setProfileImage={setProfileImage} 
-                  imagePreview={imagePreview} 
-                  setImagePreview={setImagePreview} 
-                  isSidebar={isSidebar} 
-                  setIsSidebar={setIsSidebar} 
-                  joinState={joinState} 
-                  setJoinState={setJoinState}
-                />
-            </div>
-        </ThemeProvider>
-      </ColorModeContext.Provider>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+              <div className="app">
+                <ToastContainer />
+                <Cursor />
+                  <Routes 
+                    t={t} 
+                    activeNav={activeNav}
+                    setActiveNav={setActiveNav}
+                    orderState={orderState} 
+                    toggleTab={toggleTab} 
+                    profile={profile} 
+                    setProfile={setProfile} 
+                    profileImage={profileImage} 
+                    setProfileImage={setProfileImage} 
+                    imagePreview={imagePreview} 
+                    setImagePreview={setImagePreview} 
+                    isSidebar={isSidebar} 
+                    setIsSidebar={setIsSidebar} 
+                    joinState={joinState} 
+                    setJoinState={setJoinState}
+                  />
+              </div>
+          </ThemeProvider>
+        </ColorModeContext.Provider>
     </GoogleOAuthProvider>
   );
 }

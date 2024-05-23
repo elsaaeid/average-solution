@@ -21,7 +21,7 @@ const About = ()=> {
 					</div>
 					<div className="about__content flex flex-col justify-center items-center">
 						<CarouselContainer />
-						<a href="#contact" className="aboutA btn btn-primary">{t("letTalk")}</a>
+						<a href="/contact" className="aboutA btn btn-primary">{t("letTalk")}</a>
 					</div>
 					</div>
             </section> 

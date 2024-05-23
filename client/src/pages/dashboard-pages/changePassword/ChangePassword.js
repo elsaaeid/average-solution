@@ -60,9 +60,9 @@ const ChangePassword = () => {
     };
 
     const emailData = {
-      subject: "Password Changed - AUTH:Z",
+      subject: "Password Changed - AUTH:Average solution",
       send_to: user.email,
-      reply_to: "noreply@zino",
+      reply_to: "saidsadaoy@gmail.com",
       template: "changePassword",
       url: "/forgot",
     };
@@ -80,7 +80,7 @@ const ChangePassword = () => {
         <div className="container">
           <PageMenu />
           <h2>{t("chPassword.changePassword")}</h2>
-          <div className="--flex-start change-password">
+          <div className="change-password">
             <Card cardClass={"card"}>
               <>
                 <form onSubmit={updatePassword}>
@@ -116,7 +116,7 @@ const ChangePassword = () => {
                   ) : (
                     <button
                       type="submit"
-                      className="--btn --btn-danger --btn-block"
+                      className="btn"
                     >
                       {t("chPassword.changePassword")}
                     </button>

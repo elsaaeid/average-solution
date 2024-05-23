@@ -30,7 +30,7 @@ export const shortenText = (text, n) => {
 const Profile = () => {
   useRedirectLoggedOutUser("/login");
   const dispatch = useDispatch();
-  const { isLoading, isLoggedIn, isSuccess, message, user } = useSelector(
+  const { isLoading, user } = useSelector(
     (state) => state.auth
   );
   const initialState = {
@@ -125,7 +125,7 @@ const Profile = () => {
         <div className="container">
           <PageMenu />
           <h2>{t("Profile.name")}</h2>
-          <div className="--flex-start profile">
+          <div className="profile">
             <Card cardClass={"card"}>
               {!isLoading && user && (
                 <>
@@ -186,7 +186,7 @@ const Profile = () => {
                         rows="10"
                       ></textarea>
                     </p>
-                    <button className="--btn --btn-primary --btn-block">
+                    <button className="btn">
                     {t("profile.updateProfile")}
                     </button>
                   </form>

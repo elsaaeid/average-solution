@@ -1,9 +1,10 @@
 footer {
- background: var(--color-bg-variant);
   padding: 3rem 0;
   text-align: center;
   font-size: 0.9rem;
   margin-top: auto;
+  box-shadow: var(--shadow-dark-color);
+  border: 1px solid var(--color-primary-variant)
 }
 
 footer a {
@@ -22,19 +23,7 @@ footer a h1:hover {
 
 .permalinks {
   gap: 2rem;
-  margin: 0 auto 3rem;
-}
-.permalinks div {
-  display: flex;
-  flex-direction: row;
-}
-.permalinks div a {
-  margin-right: 10px;
-  color: var(--color-white);
-}
-.permalinks div a:hover{
-  text-decoration: underline !important ;
-  color: var(--color-link);
+  margin: 0 auto 1rem;
 }
 .footer__socials {
   gap: 1rem;

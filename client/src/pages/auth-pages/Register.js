@@ -16,7 +16,6 @@ import {
   RESET,
   sendVerificationEmail,
 } from "../../redux/features/auth/authSlice";
-import Loader from "../../components/global-components/Loader";
 import { useTranslation } from "react-i18next";
 
 
@@ -29,7 +28,7 @@ const initialState = {
 };
 
 
-const Register = ({setJoinState}) => {
+const Register = () => {
   const [formData, setFormData] = useState(initialState);
   const { name, email, password, password2 } = formData;
 // Translation
@@ -45,7 +44,6 @@ const Register = ({setJoinState}) => {
   const [num, setNum] = useState(false);
   const [sChar, setSChar] = useState(false);
   const [passLength, setPassLength] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const timesIcon = <FaTimes color="red" size={15} />;
   const checkIcon = <BsCheck2All color="green" size={15} />;
@@ -104,7 +102,6 @@ const Register = ({setJoinState}) => {
     if (password !== password2) {
       return toast.error("Passwords do not match");
     }
-    setLoading(true);
     const userData = {
       name,
       email,
@@ -113,25 +110,17 @@ const Register = ({setJoinState}) => {
     // console.log(userData);
     await dispatch(register(userData));
     await dispatch(sendVerificationEmail());
-    setLoading(false);
-       // join-title state
-    setJoinState(false);
   };
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/profile");
+      navigate("/login");
     }
 
     dispatch(RESET());
   }, [isLoggedIn, isSuccess, dispatch, navigate]);
   return (
     <div className={`${styles.auth} p-3`}>
-    {isLoading ? (
-      <Loader />
-    ) 
-    : 
-    (
         <div className={styles.form}>
           <div className="flex justify-center items-center">
             <TiUserAddOutline size={35} color="#ffff" />
@@ -177,7 +166,7 @@ const Register = ({setJoinState}) => {
                 <li>
                   <span className={styles.indicator}>
                     {switchIcon(uCase)}
-                    &nbsp; {t("profile.lUCase")}
+                    &nbsp; Uppercase
                   </span>
                 </li>
                 <li>
@@ -201,9 +190,9 @@ const Register = ({setJoinState}) => {
               </ul>
             </Card>
             <Box className="flex justify-center items-center mt-5">
-            <button type="submit" className="btnX flex justify-center items-center w-full">
+            <button type="submit" className="tabs flex justify-center items-center w-full">
               {
-                loading ? <Spinner />
+                isLoading ? <Spinner />
                 :
                 <span>{t("profile.signUp")}</span>
               }
@@ -216,8 +205,6 @@ const Register = ({setJoinState}) => {
             </span>
           </div>
         </div>
-      )
-    }
     </div>
   );
 };

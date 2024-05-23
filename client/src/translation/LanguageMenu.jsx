@@ -15,12 +15,14 @@ import { useTranslation } from "react-i18next";
 
 const languages = [
   {
+    id: 1,
     code: 'en',
     name: 'English',
     dir: 'ltr',
     icon: unitedStates,
   },
   {
+    id: 2,
     code: 'ar',
     name: 'العربية',
     dir: 'rtl',

@@ -1,5 +1,4 @@
 .nav-container {
-  background: var(--color-gray);
   width: 100%;
   padding: 0.7rem 1.7rem;
   z-index: 30;
@@ -11,9 +10,10 @@
   align-items: center;
   backdrop-filter: blur(15px);
   border: 1px solid transparent;
+  box-shadow: var(--shadow-dark-color);
 }
 .navLink {
-  color: var(--color-white);
+  color: var(--color-gray);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,13 +58,13 @@
 .icon-item:hover {
   color: var(--color-white);
   background: transparent;
-  border: 1px solid var(--color-white);
+  border: 1px solid ;
   outline-offset: 4px;
 }
 .icon-item.active {
   color: var(--color-white);
   background: transparent;
-  border: 1px solid var(--color-white);
+  border: 1px solid;
   outline-offset: 4px;
   animation: shake 0.25s;
 }

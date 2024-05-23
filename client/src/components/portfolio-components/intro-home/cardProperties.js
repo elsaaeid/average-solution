@@ -82,8 +82,8 @@ const items = [
     "id": "SEOoptimization",
     "name": "SEO optimization",
     "name_ar": "تحسين نتائج البحث",
-    "paragraph": "The average Solution develops a comprehensive SEO strategy tailored to your business goals and target audience.",
-    "paragraph_ar": "يقوم الحل المتوسط ​​بتطوير إستراتيجية شاملة لتحسين محركات البحث مصممة خصيصًا لأهداف عملك والجمهور المستهدف.",
+    "paragraph": "I develop a comprehensive SEO strategy tailored to your business goals and target audience.",
+    "paragraph_ar": "بقوم ​​بتطوير إستراتيجية شاملة لتحسين محركات البحث مصممة خصيصًا لأهداف عملك والجمهور المستهدف.",
     design: <Lottie
       options={DesignSeo}
       className="lottie"
@@ -99,8 +99,8 @@ const items = [
     "id": "productsPhotography",
     "name": "products photography",
     "name_ar": "تصوير المنتجات",
-    "paragraph": "The average solution depicts high-quality products as a window into your store, improving speed, trust, quality and value. When customers see clear, attractive images of your products, they're more likely to trust your brand and make a purchase. ",
-    "paragraph_ar": "يعمل الحل المعدل على تصوير المنتجات عالية الجودة كنافذة على متجرك، مما يؤدي إلى تحسين السرعة والثقة والجودة والقيمة. عندما يرى العملاء صورًا واضحة وجذابة لمنتجاتك، فمن المرجح أن يثقوا بعلامتك التجارية ويقوموا بالشراء.",
+    "paragraph": "I depict high-quality products as a window into your store, improving speed, trust, quality and value. When customers see clear, attractive images of your products, they're more likely to trust your brand and make a purchase. ",
+    "paragraph_ar": "بعمل على تصوير المنتجات عالية الجودة كنافذة على متجرك، مما يؤدي إلى تحسين السرعة والثقة والجودة والقيمة. عندما يرى العملاء صورًا واضحة وجذابة لمنتجاتك، فمن المرجح أن يثقوا بعلامتك التجارية ويقوموا بالشراء.",
     design: <Lottie 
     options={DesignCamera}
     className="lottie"
@@ -116,8 +116,8 @@ const items = [
     id: "graphicDesigning",
     "name": "graphic designing",
     "name_ar": "تصميم الجرافيك",
-    "paragraph": "The average solution creates unique and visually attractive designs by creating and expressing your ideas and imagination.",
-    "paragraph_ar": "يقوم الحل المعدل بتصميمات فريدة وجذابة بصريًا عن طريق الابداع و التعبير عن أفكارك وخيالك.",
+    "paragraph": "I create unique and visually attractive designs by creating and expressing your ideas and imagination.",
+    "paragraph_ar": "بقوم بتصميمات فريدة وجذابة بصريًا عن طريق الابداع و التعبير عن أفكارك وخيالك.",
       design: <Lottie 
       options={DesignGraphic}
       className="lottie"
@@ -133,8 +133,8 @@ const items = [
     id: "contentCreating",
     "name": "content creating",
     "name_ar": "صناعة المحتوة",
-    "paragraph": "The average solution produces various forms of media, such as written articles, videos, infographics, social media posts, and more, and plans, creates, and distributes content that resonates with the audience and supports business goals.",
-    "paragraph_ar": "يقوم الحل المعدل بإنتاج أشكال مختلفة من الوسائط، مثل المقالات المكتوبة ومقاطع الفيديو والرسوم البيانية ومنشورات وسائل التواصل الاجتماعي والمزيد و تخطيط وإنشاء وتوزيع المحتوى الذي يلقى صدى لدى الجمهور ويدعم أهداف العمل.",
+    "paragraph": "I produces various forms of media, such as written articles, videos, infographics, social media posts, and more, and plans, creates, and distributes content that resonates with the audience and supports business goals.",
+    "paragraph_ar": "بقوم بإنتاج أشكال مختلفة من الوسائط، مثل المقالات المكتوبة ومقاطع الفيديو والرسوم البيانية ومنشورات وسائل التواصل الاجتماعي والمزيد و تخطيط وإنشاء وتوزيع المحتوى الذي يلقى صدى لدى الجمهور ويدعم أهداف العمل.",
     design: <Lottie 
       options={DesignContent}
       className="lottie"
@@ -150,8 +150,8 @@ const items = [
     id: "SponsoredAds",
     "name": "Sponsored ads",
     "name_ar": "الاعلانات الممولة",
-    "paragraph": "The average solution determines the specific goals and target audience of each company and the effectiveness and relevance of sponsored advertising to its marketing strategies.",
-    "paragraph_ar": "يقوم الحل المعدل بتحديد الأهداف المحددة والجمهور المستهدف لكل شركة مدى فعالية وملاءمة الإعلانات الراعية لاستراتيجياتها التسويقية.",
+    "paragraph": "I determines the specific goals and target audience of each company and the effectiveness and relevance of sponsored advertising to its marketing strategies.",
+    "paragraph_ar": "بقوم بتحديد الأهداف المحددة والجمهور المستهدف لكل شركة مدى فعالية وملاءمة الإعلانات الراعية لاستراتيجياتها التسويقية.",
       design: <Lottie 
       options={DesignSponsor}
       className="lottie"

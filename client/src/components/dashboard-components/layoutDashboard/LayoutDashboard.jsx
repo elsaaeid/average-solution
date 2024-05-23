@@ -15,7 +15,10 @@ const LayoutDashboard = ({
   toggleTab, 
   colors, 
   joinState, 
-  setJoinState}) => {
+  setJoinState,
+  activeNav,
+  setActiveNav,
+}) => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -39,6 +42,8 @@ const LayoutDashboard = ({
           imagePreview={imagePreview} 
           joinState={joinState}
           setJoinState={setJoinState}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
           />
         <Box className="content-main flex flex-row">
           <Sidebar t={t} colors={colors} isSidebar={isSidebar} />

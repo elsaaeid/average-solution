@@ -12,7 +12,7 @@ const CTA = ({ t, btnState, btnHandling })=>{
                     <p>{t("homeContainer.introDesc2")}</p>
                 </div>
             </article>
-            <NavLink to="/ContactPortfolio" 
+            <NavLink to="/contact" 
                 underline="none"
                 className={btnState === "thertlyActive" ? "btn btn-active" : "btn"}
                 onClick={() =>btnHandling("thertlyActive")}
