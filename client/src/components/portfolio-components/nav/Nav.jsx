@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Box from '@mui/material/Box';
 import "./Nav.css"
 import { useTranslation } from "react-i18next";
@@ -6,6 +6,7 @@ import items from "../sectionsItems/items";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material"; 
 import NavIcon from './NavIcon';
+import { useLocation } from 'react-router-dom';
 
 const Nav = (
     {activeNav,
@@ -28,6 +29,12 @@ const navItem = items.map(item => {
   return item;
 });
 
+const location = useLocation();
+
+  useEffect(() => {
+    setActiveNav(location.pathname);
+  }, [location, setActiveNav]);
+
   return (
       <Box className="nav-container">
       {navItem
@@ -47,4 +54,4 @@ const navItem = items.map(item => {
   )
 }
 
-export default Nav
+export default Navs

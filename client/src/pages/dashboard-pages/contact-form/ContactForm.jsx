@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const API_URL = `${process.env.BACKEND_URL}/api/contactus`;
 
 
-const Contact = () => {
+const ContactForm = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const data = {
@@ -53,4 +53,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;
