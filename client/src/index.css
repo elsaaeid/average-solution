@@ -25,6 +25,7 @@ body {
 :root {
   --color-bg: #fff !important;
   --color-bg-variant: #0d6efd;
+  --color-gray: #999;
   --color-bg-variant-hover: #0d6efd;
   --color-primary: #004bad !important;
   --color-primary-variant: #0d6efd !important;
