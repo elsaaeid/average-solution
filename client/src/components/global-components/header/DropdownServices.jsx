@@ -9,7 +9,7 @@ import Select from '@mui/material/Select';
 import { useTranslation } from "react-i18next";
 import shortenText from "../shortenText";
 import ActiveLink from "../active-link/ActiveLink";
-import {useParams} from "react-router-dom"
+import {useLocation} from "react-router-dom"
 
 const DropdownServices = ({
   activeNav,
@@ -19,7 +19,7 @@ const DropdownServices = ({
   const colors = tokens(theme.palette.mode);
        // Translation
         const { t, i18n } = useTranslation();
-        const {id} = useParams();
+        const location = useLocation();
         const [selected, setSelected] = useState();
 
       const handleChange = (e) => {
@@ -32,37 +32,37 @@ const DropdownServices = ({
         id: 1,
         "name": "Software Engineering",
         "name_ar": "هندسة البرمجيات",
-        "link": "#SoftwareEngineering",
+        "link": location.pathname == "/" ? "#SoftwareEngineering" : "/#SoftwareEngineering",
       },
       {
         id: 2,
         "name": "SEO optimization",
         "name_ar": "تحسين نتائج البحث",
-        "link": "#SEOoptimization",
+        "link": location.pathname == "/" ? "#SEOoptimization" : "/#SEOoptimization",
       },
       {
         id: 3,
         "name": "products Photography",
         "name_ar": "تصوير المنتجات",
-        "link": "#productsPhotography",
+        "link": location.pathname == "/" ? "#productsPhotography" : "/#productsPhotography",
       },
       {
         id: 4,
         "name": "Graphic Designing",
         "name_ar": "تصميم الجرافيك",
-        "link": "#graphicDesigning",
+        "link": location.pathname == "/" ? "#graphicDesigning" : "/#graphicDesigning",
       },
       {
         id: 5,
         "name": "Content Creating",
         "name_ar": "صناعة المحتوة",
-        "link": "#contentCreating",
+        "link": location.pathname == "/" ? "#contentCreating" : "/#contentCreating",
       },
       {
         id: 6,
         "name": "Sponsored Ads",
-        "name_ar": "الاعلانات الممولة",
-        "link": "#SponsoredAds",
+        "name_ar" : "الاعلانات الممولة",
+        "link": location.pathname == "/" ? "#SponsoredAds" : "/#SponsoredAds",
       }
     ];
 
