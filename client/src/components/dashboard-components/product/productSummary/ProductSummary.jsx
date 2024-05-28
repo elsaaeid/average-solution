@@ -32,9 +32,9 @@ const ProductSummary = ({ products }) => {
   return (
     <div className="product-summary">
       <h3 style={{
-        color: colors.grey[100],
+        color: colors.grey[500],
       }}>Inventory Stats</h3>
-      <div className="info-summary flex justify-around items-center">
+      <div className="info-summary flex flex-row justify-around items-center">
         <InfoBox
           icon={productIcon}
           title={"Total Items"}

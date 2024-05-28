@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -44,7 +44,7 @@ const Sidebar = ({t}) => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `${colors.grey[900]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -95,7 +95,7 @@ const Sidebar = ({t}) => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={colors.grey[100]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Data

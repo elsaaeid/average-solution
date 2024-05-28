@@ -1,15 +1,18 @@
 import React from "react";
-import { useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
-import {AiOutlineCloseCircle} from "react-icons/ai"
 import SearchComponent from './SearchComponent';
 import { useTranslation } from "react-i18next";
 
 
 
-const SearchContent = ({closeSearch, searchOpen}) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+const SearchContent = ({
+  searchVal,
+  searchOpen,
+  setSearchVal,
+  openHeaderSearch,
+  setOpenHeaderSearch,
+  closeSearch,
+}) => {
+  
   const items = [
     {
     id: 1,
@@ -67,7 +70,7 @@ const SearchContent = ({closeSearch, searchOpen}) => {
   },
 ];
      // Translation
-     const { t, i18n } = useTranslation();
+     const { i18n } = useTranslation();
 
      const searchItems = items.map(item => {
       if(i18n.language === 'ar') {
@@ -81,23 +84,15 @@ const SearchContent = ({closeSearch, searchOpen}) => {
       })
     
   return (
-    <div className="product-list w-full">
-      <div className="flex w-full flex-row justify-content-center items-center">
-      <div><h3
-      style={{
-        color: colors.grey[600],
-      }}
-      >{t("search")}</h3></div>
-      <SearchComponent closeSearch={closeSearch} searchItems={searchItems} />
-      <span className={searchOpen ? "closeBtn closeBtn-active" : "closeBtn"} onClick={closeSearch} id="iconClose" title="close search">
-          <AiOutlineCloseCircle
-          style={{
-            color: colors.grey[600],
-          }}
-          />
-      </span>
-      </div>
-    </div>
+        <SearchComponent
+          searchOpen={searchOpen}
+          searchVal={searchVal} 
+          setSearchVal={setSearchVal}
+          searchItems={searchItems} 
+          openHeaderSearch={openHeaderSearch}
+          setOpenHeaderSearch={setOpenHeaderSearch}
+          closeSearch={closeSearch}
+        />
   );
 };
 

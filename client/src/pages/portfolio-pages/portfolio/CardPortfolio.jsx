@@ -1,70 +1,81 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HeartRating from './HeartRating';
-import {RiCloseFill} from "react-icons/ri";
-import {Box, Typography, IconButton} from '@mui/material';
+import { IoIosArrowUp } from "react-icons/io";
+import {Box, Typography, IconButton, useTheme} from '@mui/material';
 import {NavLink} from "react-router-dom";
 import DOMPurify from "dompurify";
 import { useTranslation } from "react-i18next";
+import { tokens } from "../../../theme";
 
 
-
-export const CardPortfolio = ( { product, portfolioView, name, category, liveDemo, firstBtn, shortenText } )=>{
-    const [anchorEl, setAnchorEl] = useState(null);
-    
+export const CardPortfolio = ( { 
+    id,
+    key,
+    rotate,
+    product, 
+    handleViewDetails, 
+    selectedProduct,
+    name, 
+    category, 
+    liveDemo, 
+    shortenText
+} )=>{
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
 	// Translation
 	const { t } = useTranslation();
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
     return (
-        <article className='portfolio__item'>
-            <Box className="portfolio__item-image">
-                {portfolioView}
-            </Box>
-            <Box className="portfolio__item-details ">
-                <Typography variant='h6'>{shortenText(name, 16)}</Typography>
-                <NavLink
-                className='view-btn btn' 
-                underline="none"
-                onClick={handleClick}
-                aria-controls={open ? 'account-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                >{t("Portfolio.viewDetails")}
-                </NavLink>
-            </Box>
-            {
-                anchorEl &&
-            <Box className={anchorEl ? 'details_Active details flex flex-col justify-center items-center' : 'details flex flex-col justify-center items-center'}
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                onClick={handleClose}
+        <article key={key} className='portfolio__item'>
+        <Box className="portfolio__item-image">
+            {product ? (product?.image ? (
+            <img
+                src={product.image.filePath}
+                alt={product.image.fileName}
+            />
+            ) : (
+            <p style={{
+                color: colors.grey[100],
+                textAlign: "center",
+            }}>No image set for this product</p>
+            ) ) : null}
+        </Box>
+        <Box className="portfolio__item-details ">
+            <Typography variant='h6'>{shortenText(name, 16)}</Typography>
+            <NavLink
+            className='view-btn btn flex justify-center items-center' 
+            underline="none"
+            onClick={handleViewDetails}
             >
-                <Box className="portfolio__item-icon" onClick={handleClose}>
-                    <IconButton><RiCloseFill /></IconButton>
-                </Box>
-                <Box className="portfolio__item-details ">
+                <span>{t("portfolio.viewDetails")}</span>
+                <IoIosArrowUp 
+                     style={{
+                        color: colors.grey[500],
+                    }}
+                    className= {rotate === id ? "arrowExplore" : "arrowExplore toggled"} />
+            </NavLink>
+        </Box>
+            {
+            selectedProduct === id &&
+            (<Box className={selectedProduct === id ?
+                'details_Active details flex flex-col justify-center items-center' 
+                : 'details flex flex-col justify-center items-center'}>
+                <Box className="portfolio__item-details">
                     <div
                     dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(product.description),
                     }}
                     ></div>
                 </Box>
-                <Box>{t("Portfolio.foundIn")}<p>{category}</p></Box>
+                <Box className="mt-3 category-content flex"><span className="found">{t("portfolio.foundIn")}</span><p className="category">{category}</p></Box>
                 <Box className="portfolio__item-cta ">
                     <NavLink to={liveDemo} 
                     underline="none"
                     className="btn btn-primary"
-                    >{firstBtn}
+                    >{t("portfolio.demoLive")}
                     </NavLink>
                 </Box>
                 <IconButton><HeartRating /></IconButton>
-            </Box>
+            </Box>)
             }
         </article>
     )

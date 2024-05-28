@@ -1,4 +1,5 @@
 .pro-sidebar {
+    border: 1px solid var(--color-bg-variant);
     z-index: 10;
 }
 

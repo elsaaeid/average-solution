@@ -32,7 +32,7 @@ const items = [
         id: 4,
         title: "Services",
         title_ar: "خدمات",
-        href: "/service",
+        href: "/services",
         icon: <RiServiceLine className='icon' />,
     },
     {

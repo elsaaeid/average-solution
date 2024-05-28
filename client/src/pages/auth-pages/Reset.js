@@ -64,7 +64,7 @@ const Reset = () => {
   }, [dispatch, navigate, message, isSuccess]);
 
   return (
-    <div className={`container ${styles.auth} p-3`}>
+    <div className={`${styles.auth} p-3`}>
       {isLoading && <Loader />}
       <div className={styles.form}>
         <div className="flex justify-center items-center">
@@ -87,7 +87,7 @@ const Reset = () => {
             />
 
             <Box className="flex justify-center items-center">
-              <button type="submit" className="btnX flex justify-center items-center w-full">
+              <button type="submit" className="tabs flex justify-center items-center w-full">
                 {
                   loading ? <Spinner />
                   :

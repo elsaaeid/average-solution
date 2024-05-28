@@ -31,7 +31,8 @@ const UserStates = () => {
   return (
     <div className="user-summary">
       <Header title="User Stats" />
-      <div className="info-summary">
+      <div className="info-summary flex">
+      <div className="info-users-summary flex">
         <InfoBox
           icon={icon1}
           title={"Total Users"}
@@ -44,6 +45,8 @@ const UserStates = () => {
           count={verifiedUsers}
           bgColor="card2"
         />
+        </div>
+        <div className="info-users-summary flex">
         <InfoBox
           icon={icon3}
           title={"Unverified Users"}
@@ -56,7 +59,8 @@ const UserStates = () => {
           count={suspendedUsers}
           bgColor="card4"
         />
-      </div>
+        </div>
+        </div>
     </div>
   );
 };

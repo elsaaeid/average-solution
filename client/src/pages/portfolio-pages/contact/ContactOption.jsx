@@ -1,5 +1,5 @@
 import React from 'react';
-import contactItens from "./contactItems";
+import contactItems from "./contactItems";
 import { Box, Link } from '@mui/material';
 import { useTranslation } from "react-i18next";
 
@@ -7,7 +7,7 @@ const ContactOption = (
 ) => {
     // Translation
     const { t, i18n } = useTranslation();
-    const Items = contactItens.map(item => {
+    const Items = contactItems.map(item => {
         if(i18n.language === 'ar') {
         return({
           id: item.id,

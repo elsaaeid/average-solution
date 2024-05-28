@@ -32,7 +32,7 @@ const Verify = () => {
         <p>{t("profile.verBelow")}</p>
         <br />
         <div className="flex justify-center items-center">
-          <button onClick={verifyAccount} className="btnX flex justify-center items-center w-full">
+          <button onClick={verifyAccount} className="tabs flex justify-center items-center w-full">
             {
               loading ? <Spinner />
               :

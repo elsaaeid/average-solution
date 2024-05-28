@@ -36,10 +36,14 @@ export const NotificationMenu = ({profile})=> {
             aria-expanded={open ? 'true' : undefined}
           >
             <IconComponent        
-                icon={<Badge onClick={()=>setCountNotice(false)} badgeContent={countNotice ? 1 : 0} color="primary">
+                icon={<Badge 
+                      style={{
+                        color: colors.grey[100],
+                      }}
+                      onClick={()=>setCountNotice(false)} badgeContent={countNotice ? 1 : 0}>
                         <NotificationsNoneIcon
                         style={{
-                          color: colors.grey[900],
+                          color: colors.grey[100],
                         }}
                          className="icon" fontSize="small" />
                       </Badge>
@@ -54,7 +58,12 @@ export const NotificationMenu = ({profile})=> {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-      <Box className="flex flex-col p-2">
+      <Box
+      style={{
+        background: colors.grey[900],
+        color: colors.grey[100]
+      }}
+      className="flex flex-col p-2">
         <CloseIcon className="m-5 cursor-pointer" onClick={handleClose} />
         <MenuItem
           PaperProps={{
@@ -68,7 +77,6 @@ export const NotificationMenu = ({profile})=> {
                 position: 'absolute',
                 width: 10,
                 height: 10,
-                bgcolor: 'background.paper',
                 transform: 'translateY(-50%) rotate(45deg)',
                 zIndex: 0,
               },

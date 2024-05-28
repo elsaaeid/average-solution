@@ -7,14 +7,15 @@ import {Box} from '@mui/material';
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
+import { tokens } from "../../../theme";
+import { useTheme } from "@mui/material";
 
-const cloud_name = process.env.REACT_APP_CLOUD_NAME;
-const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
 const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setImagePreview}) => {
        // Translation
        const { t } = useTranslation();
        const navigate = useNavigate()
-
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
      
  const { isLoading } = useSelector(
     (state) => state.auth
@@ -44,12 +45,12 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
       ) {
         const image = new FormData();
         image.append("file", profileImage);
-        image.append("cloud_name", cloud_name);
-        image.append("upload_preset", upload_preset);
+        image.append("cloud_name", "dzbi59kmu");
+        image.append("upload_preset", "jwukjk1g");
 
         // Save image to Cloudinary
         const response = await fetch(
-          `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
+          "https://api.cloudinary.com/v1_1/dzbi59kmu/image/upload",
           { method: "post", body: image }
         );
         const imgData = await response.json();
@@ -76,10 +77,14 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
     <section>
       <Box className="profile flex flex-col justify-center items-center w-full">
         <h2>{t("profile.editProfile")}</h2>
-        <Card cardClass={"card"}>
+        <Card>
           <form className="w-full profile-form-control" onSubmit={saveProfile}>
           <div className="flex flex-col justify-center align-content-center">
-            <label>{t("profile.changePhoto")}:</label>
+            <label 
+              style={{
+                color: colors.grey[500],
+              }}
+              >{t("profile.changePhoto")}:</label>
             <input
               type="file"
               accept="image/*"
@@ -88,7 +93,11 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
             />
           </div>
           <div className="flex flex-col justify-center align-content-center">
-            <label>{t("profile.Name")}:</label>
+            <label
+              style={{
+                color: colors.grey[500],
+              }}
+            >{t("profile.nameValue")}:</label>
             <input
               type="text"
               name="name"
@@ -97,7 +106,11 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
             />
           </div>
           <div className="flex flex-col justify-center align-content-center">
-            <label>{t("profile.Email")}:</label>
+            <label
+              style={{
+                color: colors.grey[500],
+              }}
+            >{t("profile.emailValue")}:</label>
             <input
               type="email"
               name="email"
@@ -107,7 +120,11 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
             />
           </div>
           <div className="flex flex-col justify-center align-content-center">
-            <label>{t("profile.Phone")}:</label>
+            <label
+              style={{
+                color: colors.grey[500],
+              }}
+            >{t("profile.phone")}:</label>
             <input
               type="text"
               name="phone"
@@ -116,7 +133,11 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
             />
           </div>
           <div className="flex flex-col justify-center align-content-center">
-            <label>{t("profile.Bio")}:</label>
+            <label
+              style={{
+                color: colors.grey[500],
+              }}
+            >{t("profile.bio")}:</label>
             <textarea
               name="bio"
               value={profile?.bio}
@@ -126,7 +147,7 @@ const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setIma
             ></textarea>
           </div>
           <Box className="flex justify-center items-center">
-            <button type="submit" className="btn --btn-primary">
+            <button type="submit" className="btn mt-2">
               {
                 isLoading ? <Spinner />
                 :

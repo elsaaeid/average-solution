@@ -6,11 +6,10 @@ const CTA = ({ t, btnState, btnHandling })=>{
     return (
         <Box className='cta flex flex-col items-center'>
             <article className="introduction w-full flex flex-col justify-center items-center">
-                <p>{t("homeContainer.introDesc")}</p>
                 <div className="flex flex-col justify-center items-center">
-                    <span className="mb-3 mt-3">{t("logoTitle")}</span>
-                    <p>{t("homeContainer.introDesc2")}</p>
+                    <span className="mt-5">{t("homeContainer.background")}</span>
                 </div>
+                <p>{t("homeContainer.introDesc")}</p>
             </article>
             <NavLink to="/contact" 
                 underline="none"

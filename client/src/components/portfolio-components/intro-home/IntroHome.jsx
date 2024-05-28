@@ -34,10 +34,10 @@ const servicesItem = items.map(item => {
       {
         servicesItem.map(
           (item, id) => 
-        <Box item={item} id={item.id} key={id} className="Design-box-container w-full flex flex-col justify-center items-center">
+        <Box key={id} className="Design-box-container w-full flex flex-col justify-center items-center">
       {
         (
-          <Box className="Design-box-content front-card w-full item-property flex flex-col about__cards justify-center items-center">
+          <Box id={item.id} className="Design-box-content front-card w-full item-property flex flex-col about__cards justify-center items-center">
             <Box class="overlay p-5 flex flex-col items-center width-full">
                 <h4 
                 style={{

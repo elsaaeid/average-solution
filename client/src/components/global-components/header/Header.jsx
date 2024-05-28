@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './header.css';
 import {HeaderIcons} from './HeaderIcons';
 import LogoContent from "../../global-components/LogoContent";
-import DropdownServices from "./DropdownServices";
+// import DropdownServices from "./DropdownServices";
 import {Box, Tooltip} from '@mui/material';
 import {NotificationMenu} from "./NotificationMenu";
 import LanguageMenu from '../../../translation/LanguageMenu';
@@ -12,7 +12,7 @@ import {motion} from "framer-motion";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { ShowOnLogin } from "../protect/HiddenLink";
-
+import { useLocation } from "react-router-dom";
 
 
 const Header= ({
@@ -34,6 +34,7 @@ const Header= ({
       setOpen(!open);
       setToggleVariants(!toggleVariants);
     };
+    const location = useLocation();
     const linksVariants = {
       true :{
         display: 'flex',
@@ -83,14 +84,20 @@ const Header= ({
                                 <LanguageMenu />
                             </div>
                         </Tooltip>
-                        <Tooltip className="link" title="Services">
-                            <div className="drop-down-menu">
-                                <DropdownServices
+                         {/* {
+                          location.pathname == "/"   
+                          ?
+                          <Tooltip title="Services">
+                              <div className="drop-down-menu">
+                                  <DropdownServices
                                   activeNav={activeNav}
                                   setActiveNav={setActiveNav}
-                                />
-                            </div>
-                        </Tooltip>
+                                  />
+                              </div>
+                          </Tooltip>
+                          : 
+                          null
+                          } */}
                         <Box className="flex flex-row justify-content-center items-center">
                           <Tooltip className="link" title="Mode">
                               <IconComponent        

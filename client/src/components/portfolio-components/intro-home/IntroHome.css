@@ -57,12 +57,23 @@
   height: 400px;
 }
 .service-home {
-  margin-top: 15%;
+  margin-top: 20%;
+}
+.service-item-box {
+  border: 1px solid;
+}
+.service-item-box:hover {
+  border-color: var(--color-bg-variant);
+}
+.service-item-box:hover .service-item-text {
+  color: var(--color-bg-variant);
 }
 @media screen and (max-width: 1280px) {
   .text-role {
     font-size: 20px;
 }
+}
+@media screen and (max-width: 768px) {
 }
 @media screen and (max-width: 540px) {
   .text-role {

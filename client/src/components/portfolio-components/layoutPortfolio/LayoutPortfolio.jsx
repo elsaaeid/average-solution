@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from "../../global-components/header/Header";
 import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+import Nav from "../nav/Nav";
 import BackToTopButton from "../goToTopButton/BackToTopButton";
 import {Box} from '@mui/material';
 import Loader from "../../global-components/Loader";
@@ -75,7 +75,7 @@ const LayoutPortfolio = ({
         activeNav={activeNav}
         setActiveNav={setActiveNav}
         />
-        <Navbar
+        <Nav
           activeNav={activeNav}
           setActiveNav={setActiveNav}
           />

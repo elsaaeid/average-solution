@@ -3,12 +3,8 @@
     top: 3rem;
     z-index: 2300;
     background-color: var(--color-primary) !important;
-    padding: 20px;
     overflow-y: scroll;
     box-shadow: var(--shadow-color);
-}
-.landing {
-    margin-top: 23px;
 }
 .landing {flex-direction: row;}
 .landing-close-icon {
@@ -17,22 +13,12 @@
     background-color: var(--color-bg);
     border-radius: 50%;
     position: absolute;
-    top: -40px;
-    left: -40px;
+    top: -14px;
 }
 .landing-close-icon:hover {
     color:  var(--color-bg);
     border: 1px solid var(--color-bg);
     background-color: transparent;
-}
-.right-content, .left-content {
-    padding: 0px;
-    line-height: 28px;
-}
-
-.right-content {
-    padding: 10px;
-    line-height: 28px;
 }
 .right-content h2, .right-content p {
     color: var(--color-bg);

@@ -17,15 +17,16 @@ import { selectIsLoggedIn } from "../../../../redux/features/auth/authSlice";
 import { getProduct } from "../../../../redux/features/product/productSlice";
 import DropdownTabs from "../../../global-components/DropdownTabs";
 import TableItemsContainer from "./TableItemsContainer";
-import {Box} from '@mui/material';
-import { useTheme } from "@mui/material";
+import {IconComponent} from '../../../global-components/header/IconComponent';
+import { Box, useTheme, Tooltip } from "@mui/material";
 import { tokens } from "../../../../theme";
 import ProductSummary from "../productSummary/ProductSummary";
 import useRedirectLoggedOutUser from "../../../../customHook/useRedirectLoggedOutUser";
 import {
   CALC_CATEGORY,
 } from "../../../../redux/features/product/productSlice";
-
+import {RiSearchEyeLine} from "react-icons/ri";
+import {VscSearch} from "react-icons/vsc";
 
 
 const ProductList = () => {
@@ -36,7 +37,14 @@ const ProductList = () => {
   //Dropdown
   const [categoryState, setCategoryState] = useState("All");
   const [orderState, setOrderState] = useState("All");
+    // open Portfolio Search
+    const [openPortfolioSearch, setOpenPortfolioSearch] = useState(true);
+
+    // direction of web page
+    const [searchIconDir, setSearchIconDir] = useState(true);
   
+    // open search
+    const [searchOpen, setSearchOpen] = useState(true);
 
   const filteredProducts = useSelector(selectFilteredPoducts);
   const theme = useTheme();
@@ -135,6 +143,49 @@ useEffect(() => {
 
 
 
+// search change 
+const SearchChange = (e)=> {
+  setSearch(e.target.value);
+ };
+
+
+useEffect(()=>{
+  if(search == "") {
+    setOpenPortfolioSearch(true);
+  }
+  else {
+    setOpenPortfolioSearch(false);
+  }
+}, [search]);
+
+
+// direction of web page
+useEffect(() => {
+        if(document.body.dir === "ltr") {
+            setSearchIconDir(true);
+        }
+        else if(document.body.dir === "rtl") {
+            setSearchIconDir(false);
+        }
+    }, [])
+
+// Handel Close Search
+const searchCloseHandle = ()=> {
+    setSearch("");
+    setOpenPortfolioSearch(true);
+  };
+
+const openSearch = ()=> {
+    setSearchOpen(false)
+    }
+    const closeSearch = ()=> {
+        setSearchOpen(true);
+        setSearch("");
+        setOpenPortfolioSearch(true);
+    }
+
+
+
   return (
     <div className="product-list">
       <ProductSummary products={products} />
@@ -143,18 +194,50 @@ useEffect(() => {
         <div className="flex flex-col justify-between">
           <span>
             <h3 style={{
-              color: colors.grey[100],
+              color: colors.grey[500],
             }}>{t("dashboard.productList.inventoryItems")}</h3>
           </span>
-          <span className="mt-3">
-            <SearchContainer
-              SearchChange={(e) => setSearch(e.target.value)}
-              SearchValue={search}
-            />
-          </span>
         </div>
-        <div>
-            <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
+        <div className="products-filter relative flex flex-row items-center justify-center">
+          <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
+          <div className="search-portfolio-container absolute flex flex-row items-center justify-center">
+            <div className={searchOpen ? "search-portfolio" : "search-portfolio active"}>
+              <SearchContainer
+                SearchChange={SearchChange}
+                SearchValue={search}
+                searchCloseHandle={searchCloseHandle}
+                openSearch={openPortfolioSearch}
+                />
+            </div>
+            <div className="search-icons-container cursor-pointer">
+              { 
+              searchOpen
+              ?
+              <Tooltip title="search-icon">
+                  <IconComponent        
+                  icon={searchIconDir
+                    ?
+                    <RiSearchEyeLine 
+                      style={{
+                          color: colors.grey[100],
+                          }}
+                      id="iconSearch" 
+                      onClick={openSearch} 
+                      className="searchBtn cursor-pointer icon-q" 
+                      fontSize="small" />
+                    : 
+                  <VscSearch 
+                  style={{
+                      color: colors.grey[100],
+                      }}
+                  id="iconSearch" onClick={openSearch} className="searchBtn cursor-pointer icon-q" fontSize="small" />
+              } />
+              </Tooltip>
+              :
+              <span onClick={closeSearch}>x</span>
+              }
+            </div>
+          </div>
         </div>
         <Box className="projects-number flex flex-row justify-between items-center">
             <span>{categoryState}</span>

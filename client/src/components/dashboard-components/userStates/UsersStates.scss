@@ -1,10 +1,14 @@
 .user-summary {
     width: 100%;
     .info-summary {
-      flex-wrap: wrap;
-    }
-  }
-  
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      .info-users-summary {
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   .card1 {
     background-color: #b624ff;
   }
@@ -17,3 +21,17 @@
   .card4 {
     background-color: #c41849;
   }
+}
+}
+}
+
+
+@media screen and (max-width: 820px) {
+  .user-summary {
+  .info-summary {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 78%;
+}
+  }
+}

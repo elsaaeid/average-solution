@@ -1,6 +1,6 @@
 .chat-icon-container {
     position: fixed;
-    top: 30rem;
+    top: 26rem;
     z-index: 2300;
     right: 1rem;
 }
@@ -46,6 +46,7 @@
     }
     .chat-container {
         top: 28rem;
+        width: 64%;
     }
     }
 @media screen and (max-width: 540px){

@@ -1,5 +1,5 @@
 import React from 'react';
-import MatrixParallax from "react-matrix-parallax";
+import {MatrixParallax} from "react-matrix-parallax";
 import { useTranslation } from "react-i18next";
 
 

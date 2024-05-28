@@ -9,7 +9,6 @@ import { Button } from '@material-ui/core';
 import CircularIndeterminate from "../../global-components/Spinner"
 import { useCookies } from 'react-cookie';
 import "./TransitionAlerts.css"
-import { LuCookie } from "react-icons/lu";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,8 +53,7 @@ export default function TransitionAlerts({t, setAlretState, open, setOpen}) {
           }
         >
         <Box className="flex flex-col cookie">
-          <Box className="flex flex-row">
-            <LuCookie />
+          <Box className="flex flex-col justify-center items-center mb-1">
             <h2 className='cookie-title'>{t("homeContainer.cookieTitle")}</h2>
           </Box>
           <p>{t("homeContainer.cookieDesc")}</p>

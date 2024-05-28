@@ -62,7 +62,7 @@ const LanguageMenu = () => {
       <Box sx={{width: 100}} className="langs-select flex flex-row">
       <FormControl fullWidth>
         <InputLabel style={{
-            color: colors.grey[900],
+            color: colors.grey[100],
             border: "none",
           }} id="demo-simple-select-label">{t("language")}</InputLabel>
         <Select
@@ -73,8 +73,8 @@ const LanguageMenu = () => {
           onChange={chooseLanguage} 
           className="langs-select"
           style={{
-            color: colors.grey[900],
-            border: colors.grey[900],
+            color: colors.grey[100],
+            border: colors.grey[100],
           }}
         >
         {languages.map((language)=>{

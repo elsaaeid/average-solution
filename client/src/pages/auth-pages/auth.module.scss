@@ -2,23 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   .img {
     animation: slide-down 0.5s ease;
   }
 
   .form {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     animation: slide-up 0.5s ease;
-    background-image: url('../../assets/auth_img.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 7px;
+    border: 1px solid var(--color-primary-variant);
+    box-shadow: var(--shadow-color);
+    border-radius: 5px;
     h1 {
-      color: var(--color-white);
       text-align: center;
     }
     form {
@@ -29,7 +30,6 @@
           font-weight: 300;
           margin: 1rem auto;
           width: 100%;
-          background-color: var(--color-input);
           border: 1px solid var(--color-bg);
           border-bottom: 3px solid var(--color-bg);
           border-radius: 3px;
@@ -50,23 +50,16 @@
               li{
                 .indicator {
                   display: flex;
-                  color: black;
                 }
               }
             }
         }
     }
     .forget {
-      color: var(--color-danger);
       display: flex;
       justify-content: space-between;
       margin-right: 34px;
-    }
-     .links {
-      color: var(--color-white);
-    }
-    .links_clChange{
-      color: var(--color-gray);
+      color: red;
     }
   }
 

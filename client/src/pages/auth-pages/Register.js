@@ -17,6 +17,8 @@ import {
   sendVerificationEmail,
 } from "../../redux/features/auth/authSlice";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
 
 
 
@@ -35,6 +37,8 @@ const Register = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
   const { isLoading, isLoggedIn, isSuccess } = useSelector(
     (state) => state.auth
@@ -121,11 +125,23 @@ const Register = () => {
   }, [isLoggedIn, isSuccess, dispatch, navigate]);
   return (
     <div className={`${styles.auth} p-3`}>
-        <div className={styles.form}>
-          <div className="flex justify-center items-center">
-            <TiUserAddOutline size={35} color="#ffff" />
+        <div className={styles.form}
+          style={{
+            backgroundColor: colors.grey[900],
+          }}
+        >
+          <div className="flex flex-col justify-center items-center mb-2">
+            <TiUserAddOutline size={35} 
+            style={{
+              color: colors.grey[500],
+            }}
+            />
+            <h1
+            style={{
+              color: colors.grey[500],
+            }}
+            >{t("profile.signUp")}</h1>
           </div>
-          <h1>{t("profile.signUp")}</h1>
           <form onSubmit={registerUser}>
             <input
               type="text"
@@ -194,14 +210,19 @@ const Register = () => {
               {
                 isLoading ? <Spinner />
                 :
-                <span>{t("profile.signUp")}</span>
+                <span
+                >{t("profile.signUp")}</span>
               }
             </button>
             </Box>
           </form>
           <div className="flex flex-row justify-center items-center mt-5">
             <span className={styles.links}>
-              <Link to="/">{t("profile.home")}</Link>
+              <Link to="/"
+               style={{
+                color: colors.grey[500],
+              }}
+              >{t("profile.home")}</Link>
             </span>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .profile {
-width: 200px;
+width: 100%;
 .content-profile{
     .profile-photo {
       width: 7rem;
@@ -28,16 +28,10 @@ width: 200px;
   span.profile-photo {
     margin: auto;
   }
-  .profile {
-    width: 400px;
-}
 }
 
 @media screen and (max-width: 600px) {
   span.profile-photo {
     margin: auto;
   }
-  .profile {
-    width: 323px;
-}
 }

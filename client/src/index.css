@@ -25,11 +25,11 @@ body {
 :root {
   --color-bg: #fff !important;
   --color-bg-variant: #0d6efd;
-  --color-gray: #999;
   --color-bg-variant-hover: #0d6efd;
   --color-primary: #004bad !important;
   --color-primary-variant: #0d6efd !important;
   --color-white: #e5e5e5;
+  --color-gray: #989898;
   --color-opacity-white: #e5e5e5a6;
   --color-light: hsla(0,0%,100%,.88);
   --color-text: black;
@@ -37,7 +37,7 @@ body {
   --color-danger: red;
   --color-input: #0d6efd;
   --color-link: #0d6efd !important;
-  --shadow-color: 0 0 15px 15px rgb(13 110 253 / 50%);
+  --shadow-color: 0 0 15px 15px rgba(13, 109, 253, 0.048);
   --shadow-dark-color: 0 0 15px 15px rgba(3, 3, 3, 0.274);
   --color-overlay: #0d6efd80;
   --transition: 0.5s all ease-in-out;
@@ -131,7 +131,7 @@ img {
   flex-direction: column;
 }
 section {
-  margin-top: 13%;
+  margin-top: 190px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -164,38 +164,34 @@ section div h2, section div h5 {
 }
 .loader-container {
   width: 100%;
-  height: 100%;
-}
-.loader-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-white);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
 }
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 3px solid var(--color-bg-variant-hover);
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+width: 48px;
+height: 48px;
+border: 3px solid var(--color-gray);
+border-radius: 50%;
+display: inline-block;
+position: relative;
+box-sizing: border-box;
+animation: rotation 1s linear infinite;
 } 
 .loader::after {
-  content: '';  
-  box-sizing: border-box;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-bottom-color: var(--color-primary-variant);
+content: '';  
+box-sizing: border-box;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+width: 56px;
+height: 56px;
+border-radius: 50%;
+border: 3px solid transparent;
+border-bottom-color: var(--color-bg-variant-hover);
 }
 
 @keyframes rotation {
@@ -339,7 +335,6 @@ svg#search-icon {
   .app-container {
     width: 375px;
 }
-
 .lists {
   flex-direction: column;
 }
@@ -352,7 +347,6 @@ svg#search-icon {
   .app-container {
     width: 360px;
 }
-
 .lists {
   flex-direction: column;
 }

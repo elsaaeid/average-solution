@@ -7,10 +7,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useTranslation } from "react-i18next";
-import shortenText from "../../global-components/shortenText";
+import shortenText from "../shortenText";
 import ActiveLink from "../active-link/ActiveLink";
-import { useLocation } from "react-router-dom";
-
+import {useParams} from "react-router-dom"
 
 const DropdownServices = ({
   activeNav,
@@ -19,9 +18,9 @@ const DropdownServices = ({
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
        // Translation
-       const { t, i18n } = useTranslation();
-       const location = useLocation();
-       const [selected, setSelected] = useState();
+        const { t, i18n } = useTranslation();
+        const {id} = useParams();
+        const [selected, setSelected] = useState();
 
       const handleChange = (e) => {
           e.preventDefault();
@@ -33,37 +32,37 @@ const DropdownServices = ({
         id: 1,
         "name": "Software Engineering",
         "name_ar": "هندسة البرمجيات",
-        "link": location === "/" ? "#SoftwareEngineering" : "/#SoftwareEngineering"
+        "link": "#SoftwareEngineering",
       },
       {
         id: 2,
         "name": "SEO optimization",
         "name_ar": "تحسين نتائج البحث",
-        "link": location === "/" ? "#SEOoptimization" : "/#SEOoptimization"
+        "link": "#SEOoptimization",
       },
       {
         id: 3,
         "name": "products Photography",
         "name_ar": "تصوير المنتجات",
-        "link": location === "/" ? "#productsPhotography" : "/#productsPhotography"
+        "link": "#productsPhotography",
       },
       {
         id: 4,
         "name": "Graphic Designing",
         "name_ar": "تصميم الجرافيك",
-        "link": location === "/" ? "#graphicDesigning" : "/#graphicDesigning"
+        "link": "#graphicDesigning",
       },
       {
         id: 5,
         "name": "Content Creating",
         "name_ar": "صناعة المحتوة",
-        "link": location === "/" ? "#contentCreating" : "/#contentCreating"
+        "link": "#contentCreating",
       },
       {
         id: 6,
         "name": "Sponsored Ads",
         "name_ar": "الاعلانات الممولة",
-        "link": location === "/" ? "#SponsoredAds" : "/#SponsoredAds"
+        "link": "#SponsoredAds",
       }
     ];
 
@@ -117,7 +116,7 @@ const DropdownServices = ({
                   setActiveNav(item.id)
                 }}
                 classN={activeNav === item.id ? 'active global-Link' : 'global-Link'}
-                href={item.link} 
+                href={`/service/${id}`}
                 obj={shortenText(item.name, 16)} />
             </MenuItem>
               )

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import HeartRating from './HeartRating';
-import {RiCloseFill} from "react-icons/ri";
-import {Typography, IconButton} from '@mui/material';
-import {NavLink} from "react-router-dom";
-import DOMPurify from "dompurify";
+import {Tooltip} from '@mui/material';
+import {IconComponent} from '../../../components/global-components/header/IconComponent';
 import { useDispatch, useSelector } from "react-redux";
 import {
   FILTER_PRODUCTS,
@@ -20,7 +17,9 @@ import {
   CALC_CATEGORY,
 } from "../../../redux/features/product/productSlice";
 import { useTranslation } from "react-i18next";
-
+import {RiSearchEyeLine} from "react-icons/ri";
+import {VscSearch} from "react-icons/vsc";
+import { CardPortfolio } from "./CardPortfolio";
 
 
 
@@ -28,20 +27,26 @@ const PortfolioContainer = () => {
   	// Translation
 	const { t } = useTranslation();
   const [search, setSearch] = useState("");
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   //Dropdown
   const [categoryState, setCategoryState] = useState("All");
   const [orderState, setOrderState] = useState("All");
   
+  // open Portfolio Search
+  const [openPortfolioSearch, setOpenPortfolioSearch] = useState(true);
 
-  const opened = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // direction of web page
+  const [searchIconDir, setSearchIconDir] = useState(true);
 
+  // open search
+  const [searchOpen, setSearchOpen] = useState(true);
+  // rotate icon of view details
+  const [rotate, setRotate] = useState(null);
+
+  const handleViewDetails = (productId) => {
+    setSelectedProduct((prevId) => (prevId === productId ? null : productId));
+    setRotate((prevId) => (prevId === productId ? null : productId))
+  };
   const filteredProducts = useSelector(selectFilteredPoducts);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -110,25 +115,100 @@ useEffect(() => {
   //End Dropdown
 
 
+// search change 
+const SearchChange = (e)=> {
+  setSearch(e.target.value);
+ };
+
+useEffect(()=>{
+  if(search == "") {
+    setOpenPortfolioSearch(true);
+  }
+  else {
+    setOpenPortfolioSearch(false);
+  }
+}, [search]);
+
+
+// direction of web page
+useEffect(() => {
+        if(document.body.dir === "ltr") {
+            setSearchIconDir(true);
+        }
+        else if(document.body.dir === "rtl") {
+            setSearchIconDir(false);
+        }
+    }, [])
+
+// Handel Close Search
+const searchCloseHandle = ()=> {
+    setSearch("");
+    setOpenPortfolioSearch(true);
+  };
+
+const openSearch = ()=> {
+    setSearchOpen(false)
+    }
+    const closeSearch = ()=> {
+        setSearchOpen(true);
+        setSearch("");
+        setOpenPortfolioSearch(true);
+    };
   return (
-    <div className="product-list">
-    <div className="flex justify-between flex-col">
-        <SearchContainer
-         SearchChange={(e) => setSearch(e.target.value)}
-         SearchValue={search}
-        />
-    </div>
-    <div className="drop-down-menu">
+    <div className="product-list w-full">
+    <div className="products-filter relative flex flex-row items-center justify-center">
       <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
+      <div className="search-portfolio-container absolute flex flex-row items-center justify-center">
+        <div className={searchOpen ? "search-portfolio" : "search-portfolio active"}>
+          <SearchContainer
+            SearchChange={SearchChange}
+            SearchValue={search}
+            searchCloseHandle={searchCloseHandle}
+            openSearch={openPortfolioSearch}
+            />
+        </div>
+        <div className="search-icons-container cursor-pointer">
+          { 
+          searchOpen
+          ?
+          <Tooltip title="search-icon">
+              <IconComponent        
+              icon={searchIconDir
+                ?
+                <RiSearchEyeLine 
+                  style={{
+                      color: colors.grey[100],
+                      }}
+                  id="iconSearch" 
+                  onClick={openSearch} 
+                  className="searchBtn cursor-pointer icon-q" 
+                  fontSize="small" />
+                : 
+              <VscSearch 
+              style={{
+                  color: colors.grey[100],
+                  }}
+              id="iconSearch" onClick={openSearch} className="searchBtn cursor-pointer icon-q" fontSize="small" />
+          } />
+          </Tooltip>
+          :
+          <span style={{
+          color: colors.grey[100],
+          }}
+          onClick={closeSearch}>x</span>
+          }
+        </div>
+      </div>
     </div>
-    <div className="table flex justify-center items-center">
+    <div className="port-container flex justify-center items-center">
       {products.length === 0 ? (
         <p style={{
-          color: colors.grey[100],
-        }}>-- {t("portfolio.noProduct")}...</p>
+          color: colors.grey[500],
+        }}
+        >-- {t("portfolio.noProduct")}...</p>
       ) : (
         <Box>
-        <Box className="projects-number flex flex-row justify-between items-center">
+        <Box className="projects-number flex flex-row justify-around items-center">
           <span>{categoryState}</span>
           <p><span>{t("portfolio.projectsNumber")}</span> <span>{numState}</span></p>
         </Box>
@@ -136,63 +216,20 @@ useEffect(() => {
             {currentItems.map((product) => {
               const { _id, name, category, liveDemo } = product;
               return (
-                  <Box key={_id} className={"orderState" ? "content active-content" : "content"}>
-                    <article className='portfolio__item'>
-                    <Box className="portfolio__item-image">
-                    {product ? (product?.image ? (
-                      <img
-                        src={product.image.filePath}
-                        alt={product.image.fileName}
-                      />
-                    ) : (
-                      <p style={{
-                        color: colors.grey[100],
-                      }}>No image set for this product</p>
-                    ) ) : null}
-                    </Box>
-                    <Box className="portfolio__item-details ">
-                        <Typography variant='h6'>{shortenText(name, 16)}</Typography>
-                        <NavLink
-                        className='view-btn btn' 
-                        underline="none"
-                        onClick={handleClick}
-                        aria-controls={opened ? 'account-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={opened ? 'true' : undefined}
-                        >{t("portfolio.viewDetails")}
-                        </NavLink>
-                    </Box>
-                    {
-                        anchorEl &&
-                      <Box className={anchorEl ? 'details_Active details flex flex-col justify-center items-center' : 'details flex flex-col justify-center items-center'}
-                          anchorEl={anchorEl}
-                          open={opened}
-                          onClose={handleClose}
-                          onClick={handleClose}
-                      >
-                          <Box className="portfolio__item-icon" onClick={handleClose}>
-                              <IconButton><RiCloseFill /></IconButton>
-                          </Box>
-                          <Box className="portfolio__item-details ">
-                              <div
-                              dangerouslySetInnerHTML={{
-                              __html: DOMPurify.sanitize(product.description),
-                              }}
-                              ></div>
-                          </Box>
-                          <Box>{t("portfolio.foundIn")}<p>{category}</p></Box>
-                          <Box className="portfolio__item-cta ">
-                              <NavLink to={liveDemo} 
-                              underline="none"
-                              className="btn btn-primary"
-                              >{t("portfolio.demoLive")}
-                              </NavLink>
-                          </Box>
-                          <IconButton><HeartRating /></IconButton>
-                      </Box>
-                      }
-                    </article>
-                  </Box>
+                <Box className={orderState ? "content-portfolio active-content" : "content-portfolio"}>
+                  <CardPortfolio
+                    id={product._id}
+                    key={_id}
+                    product={product}
+                    rotate={rotate}
+                    handleViewDetails={() => handleViewDetails(product._id)}
+                    selectedProduct={selectedProduct}
+                    name={name}
+                    category={category}
+                    liveDemo={liveDemo}
+                    shortenText={shortenText}
+                    />
+                </Box>
               );
             })}
           </Box>
@@ -214,6 +251,11 @@ useEffect(() => {
           previousLinkClassName="page-num"
           nextLinkClassName="page-num"
           activeLinkClassName="activePage"
+          style={{
+            color: colors.grey[500],
+            backgroundColor: colors.grey[500],
+            borderColor: colors.grey[500],
+          }}
         />
 </div>
   );

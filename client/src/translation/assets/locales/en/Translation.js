@@ -1,14 +1,18 @@
 
 const items = {
+  "landingContainer": {
+    "title": "Today's offers for digital solutions",
+    "btn": "Contact us now",
+    "article": "In today's rapidly evolving digital landscape, staying ahead of the competition requires innovative solutions that can transform the way you work. That's where we come in.",
+  },
     "language": "Language",
-    "search": "Search",
     "Home": "Home",
     "About": "About",
     "Services": "Services",
     "Experience": "Career",
     "Portfolio": "Works",
     "Contact": "Contact",
-    "logoTitle" : "Average Solution",
+    "logoTitle" : "my portfolio",
     "noImg": "No image set for this product",
     "letTalk": "Let's Talk",
     "dropdownServices": {
@@ -18,8 +22,8 @@ const items = {
       "cookieTitle" : "About Cookies",
       "cookieDesc": "We use cookies to ensure that we give you the best experience on our website. This includes cookies from third party social media websites and advertising cookies that may analyze your use of this site. Click Got it to agree.",
       "GotIt": "Got It",
-      "introDesc": "It's worth noting that while an average solution may be sufficient in some cases, striving for excellence and continuous improvement is often desired in the programming industry",
-      "introDesc2": "company want to stand out and deliver exceptional software solutions often go beyond average and aim for innovative and creative approaches",
+      "introDesc": "It's worth noting that while an average solution may be sufficient in some cases, striving for excellence and continuous improvement is often desired in the programming industry.",
+      "background": "About Us",
       "EnDesc": "Enable simple description",
     },
     "profile" : {
@@ -29,10 +33,10 @@ const items = {
       "adminPanel": "Admin panel",
       "home": "Home",
       "Logout": "Logout",
-      "Role": "Role",
+      "role": "Role",
       "profileName": "Your name",
       "profileEmail": "Your email",
-      "phoneNumber": "Your number",
+      "phone": "Your number",
       "bio": "Your bio",
       "editProfile": "Edit profile",
       "changePhoto": "Change your photo",
@@ -73,11 +77,11 @@ const items = {
 
   },
     "service": {
-    "offer": "What I Offer",
+    "offer": "What We Offer",
     "Services": "Services",
 },
 "experience": {
-  "experienceHave": "What Experience I Have",
+  "experienceHave": "What Experience We Have",
   "ourExperience": "Our Experience",
 },
   "contact": {
@@ -113,7 +117,7 @@ const items = {
     "footerSec4": "Services",
     "footerSec5": "Portfolio",
     "footerSec6": "Contact",
-    "footerCpyRight": "Average Solution. All rights reserved.",
+    "footerCpyRight": "All rights reserved by Alsaaeid Ellithy",
   },
   "error":{
     "pageNotFound": "Page Not Found",
@@ -140,10 +144,5 @@ const items = {
     "subject": "subject",
     "changePhoto": "Change Photo",
   },
-  "landingContainer": {
-    "title": "Ramadan offers for digital solutions",
-    "btn": "Contact us now",
-    "article": "Work with influencers or community leaders to create Ramadan-themed content that resonates with your target audience. This can include social media posts, blog articles, or videos. Sponsored posts by influencers can help amplify your Ramadan marketing campaigns.",
-  }
 }
 export default items

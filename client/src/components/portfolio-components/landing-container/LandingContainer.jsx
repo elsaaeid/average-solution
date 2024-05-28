@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Box} from "@mui/material";
-import landingImg from "../../../assets/landing-img.gif";
+import landingImg from "../../../assets/landing.gif";
 import "./LandingContainer.css";
 import { useTranslation } from "react-i18next";
 import {NavLink} from "react-router-dom"
@@ -37,7 +37,8 @@ export default function LandingContainer() {
                     underline="none"
                     className="btn mt-3"
                     onClick={handleClose}
-                    >{t("landingContainer.btn")}</NavLink>
+                    >{t("landingContainer.btn")}
+                </NavLink>
             </div>
         </Box>
     </Box>

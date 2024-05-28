@@ -1,8 +1,8 @@
-.intro-welcome.mb-3 {
-    background-color: var(--color-gray);
+.auth-content {
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-attachment: local;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
-.registeration-content {
-    background-color: var(--color-input);
-    margin-bottom: auto;
-    height: 100px;
-    }

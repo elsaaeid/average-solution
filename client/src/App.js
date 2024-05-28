@@ -88,7 +88,7 @@ const { t } = useTranslation();
 
 
   return (
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId="229485364448-1q5ujcvs6gt8e0erl7vc4rt5u4lb0g7f.apps.googleusercontent.com">
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

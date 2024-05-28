@@ -11,13 +11,12 @@ import {
   selectUsers
 } from "../../../redux/features/auth/filterSlice";
 import ReactPaginate from "react-paginate";
-import  Loader from "../../global-components/Loader";
 import Header from "../Header";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
-
+import "./UserSearch.css"
 
 const columns = [
   { id: 's/n', label: 's/n' },
@@ -47,7 +46,7 @@ const UsersList = () => {
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState("");
-
+  const [openUserSearch, setOpenUserSearch] = useState(true);
   const { users, isLoading } = useSelector(
     (state) => state.auth
   );
@@ -98,19 +97,44 @@ const UsersList = () => {
   };
 
   // End Pagination
+
+ 
+ 
+ useEffect(()=>{
+   if(search == "") {
+     setOpenUserSearch(true);
+   }
+   else {
+     setOpenUserSearch(false);
+   }
+ }, [search]);
+ 
+   const searchCloseHandle = ()=> {
+     setSearch("");
+     setOpenUserSearch(true);
+   };
+ 
   return (
-    <div className="user-list w-full">
-    {isLoading && <Loader />}
-    <Header title="All Users" />
+    <div className="flex flex-col justify-center items-center user-list w-full">
+    <div className="flex flex-col users-search">
+      <Header title="All Users" />
+        <SearchContainer
+          style={{
+              color: colors.grey[900],
+          }}
+          SearchChange={(e)=> setSearch(e.target.value)}
+          SearchValue={search}
+          searchCloseHandle={searchCloseHandle}
+          openSearch={openUserSearch}
+      />
+    </div>
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer>
-        <div className="table w-full">
-          <div className="flex flex-col">
-              <SearchContainer
-                SearchChange={(e) => setSearch(e.target.value)}
-                SearchValue={search}
-              />
-          </div>
+        <div 
+        style={{
+          backgroundColor: colors.grey[100],
+        }}
+        className="p-5 w-full">
           {/* Table */}
           {!isLoading && users.length === 0 ? (
             <p>No user found...</p>
@@ -121,7 +145,7 @@ const UsersList = () => {
                   {columns.map((column) => (
                     <th
                       style={{
-                        color: colors.grey[100],
+                        color: colors.grey[900],
                       }}
                       key={column.id}
                     >
@@ -138,39 +162,39 @@ const UsersList = () => {
                   return (
                     <tr
                     style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }}
                     key={_id}>
                       <td
                       style={{
-                        color: colors.grey[100],
+                        color: colors.grey[900],
                       }}
                       >{index + 1}</td>
                       <td
                       style={{
-                        color: colors.grey[100],
+                        color: colors.grey[900],
                       }}
                       >{name}</td>
                       <td
                       style={{
-                        color: colors.grey[100],
+                        color: colors.grey[900],
                       }}
                       >{email}</td>
                       <td
                       style={{
-                          color: colors.grey[100],
+                          color: colors.grey[900],
                         }}
                       >{role}</td>
                       <td
                       style={{
-                          color: colors.grey[100],
+                          color: colors.grey[900],
                         }}
                       >
                         <ChangeRole _id={_id} email={email} />
                       </td>
                       <td 
                       style={{
-                        color: colors.grey[100],
+                        color: colors.grey[900],
                       }}
                       className="flex justify-center items-center">
                         <span>

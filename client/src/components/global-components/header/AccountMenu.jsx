@@ -86,7 +86,11 @@ const theme = useTheme();
 const colors = tokens(theme.palette.mode);
   return (
     <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+      <Box 
+      style={{
+        color: colors.grey[100],
+      }}
+      sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip title="Account">
           <IconButton
             onClick={handleClick}
@@ -98,7 +102,7 @@ const colors = tokens(theme.palette.mode);
             <IconComponent        
                 icon={<PeopleIcon
                   style={{
-                    color: colors.grey[900],
+                    color: colors.grey[100],
                   }}
                    className="icon" fontSize="small" />} />
           </IconButton>
@@ -124,7 +128,6 @@ const colors = tokens(theme.palette.mode);
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: 'background.paper',
               transform: 'translateY(-50%) rotate(45deg)',
               zIndex: 0,
             },
@@ -133,28 +136,47 @@ const colors = tokens(theme.palette.mode);
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-      <Box className="flex flex-col">
-      <Tooltip title="Close">
+      <Box 
+        style={{
+          background: colors.grey[900],
+          color: colors.grey[100],
+        }}
+      className="flex flex-col">
+        <Tooltip title="Close">
             <CloseIcon className="ml-10 cursor-pointer" onClick={handleClose} />
         </Tooltip>
-        <Divider />
+        <Divider
+        style={{
+          color: colors.grey[100],
+        }}
+        />
         {
           joinState ?
-          (<div className="register-title p-3">
-          <h3>{t("profile.registerTitle")}</h3>
-          </div>
+          (<Box
+            className="register-title w-full flex justify-center items-center p-3">
+            <h3
+            style={{
+              color: colors.grey[100],
+            }}
+          >{t("profile.registerTitle")}</h3>
+          </Box>
           )
         : null
           }
       </Box>
-        
-        <div>
+        <div
+          className='flex flex-col justify-center items-center w-full'
+          style={{
+            background: colors.grey[900],
+            color: colors.grey[100],
+          }}
+          >
           <ShowOnLogin>
-                <UserName onClick={handleClose} />
+            <UserName onClick={handleClose} />
             <Divider />
             <MenuItem className="w-full h-full">
               {profileShowTitle && 
-                <NavLink className="flex flex-row items-center w-full" onClick={profileHandling}>
+                <NavLink className="flex flex-row justify-center items-center w-full" onClick={profileHandling}>
                   <ListItemIcon>
                     <AccountCircleIcon />
                   </ListItemIcon>
@@ -169,7 +191,7 @@ const colors = tokens(theme.palette.mode);
           <ShowOnLogout>
             <MenuItem onClick={goToRegister} className="w-full h-full">
               <NavLink
-                className="flex flex-row items-center w-full"
+                className="flex flex-row justify-center items-center w-full"
                 >
                   <ListItemIcon>
                     <ExitToAppIcon fontSize="small" />
@@ -183,7 +205,7 @@ const colors = tokens(theme.palette.mode);
             <MenuItem onClick={goToLogin} className="w-full h-full">
               <NavLink
                   to='/login'
-                  className="flex flex-row items-center w-full"
+                  className="flex flex-row justify-center items-center w-full"
                 >
                   <ListItemIcon>
                     <RiLoginCircleLine fontSize="small" />
@@ -199,7 +221,7 @@ const colors = tokens(theme.palette.mode);
                 <MenuItem onClick={handleClose} className="w-full h-full">
                   <NavLink
                       to='/dashboard'
-                      className="flex flex-row items-center w-full"
+                      className="flex flex-row justify-center items-center w-full"
                     >
                       <ListItemIcon>
                         <AdminPanelSettingsIcon fontSize="small" />
@@ -214,7 +236,7 @@ const colors = tokens(theme.palette.mode);
                 <MenuItem onClick={handleClose} className="w-full h-full">
                   <NavLink
                       to='/'
-                      className="flex flex-row items-center w-full"
+                      className="flex flex-row justify-center items-center w-full"
                     >
                       <ListItemIcon>
                         <AiOutlineHome fontSize="small" />
@@ -224,17 +246,17 @@ const colors = tokens(theme.palette.mode);
                 </MenuItem>
               )
           }
-            <ShowOnLogin>
-            <Divider />
-              <MenuItem onClick={logoutUser} className="w-full h-full">
-                <NavLink className="flex flex-row items-center w-full">
-                  <ListItemIcon>
-                    <RiLogoutCircleLine />
-                  </ListItemIcon>
-                      {t("profile.Logout")}
-                </NavLink>
-              </MenuItem>
-            </ShowOnLogin>
+          <ShowOnLogin>
+          <Divider />
+            <MenuItem onClick={logoutUser} className="w-full h-full">
+              <NavLink className="flex flex-row justify-center items-center w-full">
+                <ListItemIcon>
+                  <RiLogoutCircleLine />
+                </ListItemIcon>
+                    {t("profile.Logout")}
+              </NavLink>
+            </MenuItem>
+          </ShowOnLogin>
         </div>
       </Menu>
     </React.Fragment>

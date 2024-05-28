@@ -80,12 +80,12 @@ const Chat = () => {
         fontFamily: 'Helvetica Neue',
         fontWeight: "bold",
         headerBgColor: "var(--color-bg-variant)",
-        headerFontColor: '#fff',
+        headerFontColor: colors.grey[500],
         headerFontSize: '12px',
-        botBubbleColor: 'var(--color-gray)',
-        botFontColor: '#fff',
-        userBubbleColor: '#fff',
-        userFontColor: 'var(--color-gray)',
+        botBubbleColor: "var(--color-bg-variant)",
+        botFontColor: colors.grey[500],
+        userBubbleColor: colors.grey[500],
+        userFontColor: colors.grey[900],
       };
   return (
     <div className="chat-container" ref={ref}>

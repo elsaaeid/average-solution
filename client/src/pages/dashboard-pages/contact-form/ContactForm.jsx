@@ -3,7 +3,8 @@ import "./Contact.scss";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-const API_URL = `${process.env.BACKEND_URL}/api/contactus`;
+import {BACKEND_URL} from "../../../redux/helper";
+const API_URL = `${BACKEND_URL}/api/contactus`;
 
 
 const ContactForm = () => {
@@ -48,7 +49,7 @@ const ContactForm = () => {
       value={message}
       onChange={(e) => setMessage(e.target.value)}
     ></textarea>
-    <button type="submit" className="btn">{t("contact.sendMessage")}</button>
+    <button type="submit" className="btn mt-3">{t("contact.sendMessage")}</button>
 </form>
   );
 };

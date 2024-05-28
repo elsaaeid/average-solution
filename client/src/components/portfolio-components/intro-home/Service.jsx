@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CheckBoxItem from './CheckBoxItem';
@@ -64,8 +64,7 @@ const servicesItem = items.map(item => {
             className='w-full mb-5 flex flex-col justify-center items-center'>
               <Box 
                 className= 'w-full desc-content item-property'
-                sx={{ padding: 5, overflow: "hidden" }}
-                >
+                sx={{ padding: 5, overflow: "hidden" }}>
                 <Typography 
                 style={{
                   color: colors.grey[100],

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Card from "../../components/card/Card";
-import profileImg from "../../assets/avatarr.png";
 import "./ChangePassword.scss";
 import PageMenu from "../../components/pageMenu/PageMenu";
 import PasswordInput from "../../components/passwordInput/PasswordInput";
@@ -60,7 +59,7 @@ const ChangePassword = () => {
     };
 
     const emailData = {
-      subject: "Password Changed - AUTH:Average solution",
+      subject: "Password Changed - AUTH:Alsaaeid ellithy",
       send_to: user.email,
       reply_to: "saidsadaoy@gmail.com",
       template: "changePassword",

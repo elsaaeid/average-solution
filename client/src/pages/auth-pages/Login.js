@@ -16,6 +16,8 @@ import {Box} from '@mui/material';
 import PasswordInput from "../../components/global-components/auth/password-input/PasswordInput";
 import { GoogleLogin } from "@react-oauth/google";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
 
 
 const initialState = {
@@ -37,7 +39,8 @@ const Login = () => {
 
   const { isLoading, isLoggedIn, isSuccess, isError, twoFactor } =
     useSelector((state) => state.auth);
-    
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -82,11 +85,24 @@ const Login = () => {
 
   return (
     <div className={`${styles.auth} p-3`}>
-        <div className={styles.form}>
-          <div className="flex justify-center items-center">
-            <BiLogIn size={35} color="#ffff" />
+        <div 
+          className={styles.form}
+          style={{
+            backgroundColor: colors.grey[900],
+          }}
+          >
+          <div className="flex flex-col justify-center items-center">
+            <BiLogIn size={35} 
+               style={{
+                color: colors.grey[500],
+              }}
+            />
+          <h1
+            style={{
+              color: colors.grey[500],
+            }}
+            >{t("profile.Login")}</h1>
           </div>
-          <h1>{t("profile.Login")}</h1>
           <br />
           <Box className="flex flex-col justify-center items-center">
             <GoogleLogin

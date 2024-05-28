@@ -47,17 +47,21 @@ export default function TableItemsContainer({products, pageCount, handlePageClic
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer>
-        <div className="table w-full">
+        <div 
+        style={{
+          backgroundColor: colors.grey[100],
+        }}
+        className="table w-full">
         {products.length === 0 ? (
           <p>-- No product found, please add a product...</p>
         ) : (
-          <table>
+          <table className='w-full overflow-x-scroll'>
             <thead>
               <tr>
               {columns.map((column) => (
                 <th
                   style={{
-                    color: colors.grey[100],
+                    color: colors.grey[900],
                   }}
                   key={column.id}
                 >
@@ -73,13 +77,13 @@ export default function TableItemsContainer({products, pageCount, handlePageClic
                 return (
                   <tr key={_id}>
                     <td style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }}>{index + 1}</td>
                     <td style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }}>{shortenText(name, 16)}</td>
                     <td  style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }}>
                       {product ? (product?.image ? (
                         <img
@@ -88,12 +92,12 @@ export default function TableItemsContainer({products, pageCount, handlePageClic
                         />
                       ) : (
                         <p style={{
-                          color: colors.grey[100],
+                          color: colors.grey[900],
                         }}>No image set for this product</p>
                       ) ) : null}
                     </td>
                     <td style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }}>{category}</td>
                     <td align="right"><Link to={liveDemo}>{liveDemo}</Link></td>
                     <td align="right">
@@ -103,7 +107,7 @@ export default function TableItemsContainer({products, pageCount, handlePageClic
                       ></div>
                     </td>
                     <td style={{
-                      color: colors.grey[100],
+                      color: colors.grey[900],
                     }} className="icons">
                       <span>
                         <Link to={`/edit-product/${_id}`}>

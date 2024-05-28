@@ -1,63 +1,52 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
-import {Box, IconButton, Tooltip} from '@mui/material';
-import {IconComponent} from '../header/IconComponent';
+import {Box} from '@mui/material';
+import { IoCloseSharp } from "react-icons/io5";
+import { GoSearch } from "react-icons/go";
 
 
-
-
-
-
-export const SearchContainer = ({SearchChange, SearchValue}) => {
-  const theme = useTheme();
+export const SearchContainer = ({
+  SearchChange, 
+  SearchValue, 
+  searchCloseHandle,
+  openSearch
+}) => {
+  const theme = useTheme()
   const colors = tokens(theme.palette.mode);
+
 
   const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: colors.grey[300],
+  borderRadius: "0.5rem",
   color: colors.grey[800],
-  '&:hover': {
-    backgroundColor: colors.grey[500],
-  },
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: 600,
   },
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-  },
-}));
 
   return (
     <Box className='flex width-full justify-center search-input'>
         <Search className='search-content'>
-          <Tooltip title="search">
-            <IconButton>
-              <IconComponent        
-                icon={
-                    <SearchIcon />
-                      } />
-            </IconButton>
-          </Tooltip>
-            <StyledInputBase
-              style={{
-                color: colors.grey[900],
-              }}
-                onChange={SearchChange}
-                value={SearchValue}
-                inputProps={{ 'aria-label': 'search' }}
-            />
+          <input
+            style={{
+              position: 'absolute',
+              color: colors.grey[900],
+              width: "100%",
+              height: "100%",
+            }}
+            id="search-input"
+            placeholder=''
+            onChange={SearchChange}
+            value={SearchValue}
+            type="search" />
+            {
+              openSearch ? <GoSearch id='search-icon' />
+               : 
+              <IoCloseSharp id='search-icon' onClick={searchCloseHandle} />
+            }
         </Search>
     </Box>
   )

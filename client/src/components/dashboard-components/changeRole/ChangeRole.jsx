@@ -36,7 +36,7 @@ const ChangeRole = ({ _id, email }) => {
     };
 
     const emailData = {
-      subject: "Account Role Changed - Average",
+      subject: "Account Role Changed",
       send_to: email,
       reply_to: "saidsadaoy@gmail.com",
       template: "changeRole",
@@ -56,10 +56,10 @@ const ChangeRole = ({ _id, email }) => {
         onSubmit={(e) => changeRole(e, _id, userRole)}
       >
         <select
-        style={{
-          color: colors.grey[500],
-        }} 
-        value={userRole} onChange={(e) => setUserRole(e.target.value)}>
+          style={{
+            color: colors.grey[900],
+          }} 
+          value={userRole} onChange={(e) => setUserRole(e.target.value)}>
           <option value="">-- {t("dashboard.changeRole.select")} --</option>
           <option value="subscriber">{t("dashboard.changeRole.Subscriber")}</option>
           <option value="author">{t("dashboard.changeRole.Author")}</option>
@@ -67,7 +67,7 @@ const ChangeRole = ({ _id, email }) => {
           <option value="suspended">{t("dashboard.changeRole.Suspended")}</option>
         </select>
         <button className="btn">
-          <FaCheck size={15} />
+          <FaCheck size={10} />
         </button>
       </form>
     </div>

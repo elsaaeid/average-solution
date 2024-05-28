@@ -42,12 +42,12 @@ const ServiceButton = ({btnState, setActiveNav, btnHandling, item}) => {
           (<ArrowForwardIcon className="cursor-pointer" />)
           }
         </Link>
-        <Link to="/ContactPortfolio" 
+        <Link to="/contact" 
         underline="none"
         className={btnState === "acceptActive" ? "btn btn-active flex items-center flex-row" : "btn flex items-center flex-row"}
         onClick={() =>
           {
-            setActiveNav('/contactPortfolio');
+            setActiveNav('/contact');
             btnHandling("acceptActive");
           }
         }

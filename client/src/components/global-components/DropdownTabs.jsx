@@ -1,5 +1,5 @@
-import {BsArrowUpRightSquareFill} from "react-icons/bs";
-import { useEffect, useRef, useState } from "react";
+import { IoIosArrowUp } from "react-icons/io";
+import React, { useEffect, useRef, useState } from "react";
 import autoAnimate from "@formkit/auto-animate";
 import {Box} from '@mui/material';
 import {ItemTabs} from "./ItemTabs";
@@ -56,9 +56,9 @@ import { useTranslation } from "react-i18next";
       
               
     return (
-        <Box ref={parentRef} className='block-tabs'>
+        <Box ref={parentRef} className='block-tabs absolute flex flex-col justify-evenly items-center'>
             <Box className="flex justify-evenly items-center"  variant="success" id="dropdown-basic" onClick={showMore}>
-                {t("dropdown.Explore")} <BsArrowUpRightSquareFill className= {rotate ? "arrowExplore" : "arrowExplore toggled"} />
+                {t("dropdown.Explore")} <IoIosArrowUp className= {rotate ? "arrowExplore" : "arrowExplore toggled"} />
             </Box>         
             <ul className= {open ? "dropdown-menus flex flex-col justify-center items-center" : "dropdown-menus flex flex-col justify-center items-center dropdown-toggled"}>       
             <ItemTabs 

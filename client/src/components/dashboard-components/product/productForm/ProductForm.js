@@ -1,6 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import 'react-quill/dist/quill.snow.css';
 import Card from "../../../global-components/card/Card";
 import "./ProductForm.scss";
 import { useTranslation } from "react-i18next";

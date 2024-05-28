@@ -1,8 +1,6 @@
 main {
   overflow: hidden;
-  background: transparent;
   border: none;
-  margin-top: -20px;
 }
 .main__container {
     height: 100%;
@@ -11,11 +9,10 @@ main {
     z-index: 10;
   }
 .intro {
-  border-radius: 0px 0px 0px 244px;
-  background: var(--color-primary);
-  height: 30rem;
+  box-shadow: var(--shadow-color);
+  border-radius: 0px 0px 150px 150px;
+  height: 100%;
   width: 100%;
-  margin-top: 28px;
 }
 .intro-para {
   z-index: 28;
@@ -30,25 +27,26 @@ p.design-para {
   font-size: 18px;
 }
 .greay-box-content {
-  border-radius: 0px 0px 0px 244px;
-  background-image: url("../../../assets/readme.gif");
+  box-shadow: var(--shadow-color);
+  border-radius: 0px 0px 150px 150px;
+  background-image: url("../../../assets/intro.gif");
   background-repeat: no-repeat;
   background-origin: border-box;
   background-attachment: local;
   background-size: cover;
-  box-shadow: inset 0px 0px 20px black;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.308);
   width: 50%;
-  height: 30rem;
+  height: 100%;
 }
 .greay-box-content:hover {
   border: 1px solid var(--color-primary-variant);
 }
 .greay-box-content .overlay {
-    border-radius: 0px 0px 0px 244px;
-    height: 30rem;
+    box-shadow: var(--shadow-color);
+    border-radius: 0px 0px 150px 150px;
+    height: 100%;
     width: 100%;
     z-index: 9;
-    box-shadow: 0px 0px 10px var(--color-primary), inset 0px 0px 10px var(--color-primary), inset 0px 2px 0px 0px var(--color-primary), inset 0px -1px 0px 0px #888888;
     transition: background 0.2s;
     background: var(--color-overlay);
   }
@@ -58,7 +56,7 @@ p.design-para {
   margin: auto;
   margin-bottom: 7rem;
   font-weight: 500;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px var(--shadow-color), 0 6px 6px var(--shadow-color);
   animation: shadow-pulse 1s infinite;
   font-size: 18px;
 }
@@ -77,7 +75,7 @@ p.design-para {
 }
 .cta .introduction p, .cta div p {
   color: var(--color-white);
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
   padding: 18px;
 }
@@ -103,11 +101,6 @@ p.design-para {
   color: var(--color-white);
 }
 /* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
-@media screen and (max-width: 1280px) {
-main {
-  margin-top: -38px;
-}
-}
 @media screen and (max-width: 1024px) {
 .intro {
   position: relative;
@@ -133,12 +126,9 @@ main {
 }
 }
 @media screen and (max-width: 912px) {
-  main {
-    margin-top: -43px;
-}
 .links {
   gap: 70px;
-  height: 31rem;
+  height: 18rem;
 }
 }
   @media screen and (max-width: 820px) {
@@ -168,9 +158,6 @@ main {
 }
   }
   @media screen and (max-width: 430px) {
-    main {
-      margin-top: -37px;
-  }
   .cta .introduction p, .cta div p {
     font-size: 9px;
 }

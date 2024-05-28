@@ -1,3 +1,4 @@
+import React from "react";
 import "./Profile.scss";
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
 import { useSelector } from "react-redux";
@@ -34,32 +35,34 @@ const Profile = ({toggleTab, setProfileShowTitle, setProfileShowContent, profile
   return (
       <>
         {isLoading && <Loader />}
-          <div className="flex flex-col profile">
-            <ArrowForwardIcon onClick={profileHandling} />
-              {!isLoading && user && (
-                <div className="content-profile flex flex-col justify-center items-center">
-                  <div className="profile-photo rounded-full">
-                    <img
-                      src={imagePreview === null ? user?.photo : imagePreview}
-                      alt="ProfileImg"
-                      />
-                  </div>
-                  <div className="profile-details">
-                    <div className="m-5 flex justify-center items-center">
-                      <h3
-                      style={{
-                        color: colors.grey[100],
-                      }}
-                      >{t("profile.Role")}: {profile.role}</h3>
-                    </div>
-                      <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.profileName")}: {profile.name}</p>
-                      <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.profileEmail")}: {profile.email}</p>
-                      <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.phoneNumber")}: {profile.phone}</p>
-                      <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.bio")}: {profile.bio}</p>
-                    </div>
-                  <Link className="btn" onClick={goToEditProfile} to="/edit-profile">{t("profile.editProfile")}</Link>
+          <div className="flex flex-col justify-center items-center profile">
+            <span className="flex flex-col justify-center items-start w-full ml-5">
+              <ArrowForwardIcon onClick={profileHandling} />
+            </span>
+            {!isLoading && user && (
+              <div className="content-profile flex flex-col justify-center items-center">
+                <div className="profile-photo rounded-full">
+                  <img
+                    src={imagePreview === null ? user?.photo : imagePreview}
+                    alt="ProfileImg"
+                    />
                 </div>
-              )}
+                <div className="profile-details">
+                  <div className="m-5 flex justify-center items-center">
+                    <h3
+                    style={{
+                      color: colors.grey[500],
+                    }}
+                    >{t("profile.role")}: {profile.role}</h3>
+                  </div>
+                    <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.profileName")}: {profile.name}</p>
+                    <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.profileEmail")}: {profile.email}</p>
+                    <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.phoneNumber")}: {profile.phone}</p>
+                    <p className="mb-3 flex flex-col justify-center align-content-center">{t("profile.bio")}: {profile.bio}</p>
+                  </div>
+                <Link className="btn mb-3" onClick={goToEditProfile} to="/edit-profile">{t("profile.editProfile")}</Link>
+              </div>
+            )}
           </div>
       </>
   );

@@ -13,9 +13,9 @@ import {
   sendLoginCode,
 } from "../../redux/features/auth/authSlice";
 import styles from "./auth.module.scss";
-
 import { useTranslation } from "react-i18next";
-
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
 
 const LoginWithCode = () => {
          // Translation
@@ -25,7 +25,8 @@ const LoginWithCode = () => {
   const { email } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+ const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   const { isLoading, isLoggedIn, isSuccess } = useSelector(
     (state) => state.auth
   );
@@ -63,16 +64,20 @@ const LoginWithCode = () => {
 
 
   return (
-    <div className={`container ${styles.auth} p-3`}>
+    <div className={`${styles.auth} p-3`}>
       {isLoading ? (<Loader />)
       :
       (
       <Card>
         <div className={styles.form}>
-          <div className="flex justify-center items-center">
-            <GrInsecure size={35} color="#ffff" />
+          <div className="flex flex-col justify-center items-center">
+            <GrInsecure size={35} 
+             style={{
+              color: colors.grey[500],
+            }}
+             />
+            <h1>{t("profile.enterCode")}</h1>
           </div>
-          <h1>{t("profile.enterCode")}</h1>
           <form onSubmit={loginUserWithCode}>
             <input
               type="text"
@@ -83,7 +88,7 @@ const LoginWithCode = () => {
               onChange={(e) => setLoginCode(e.target.value)}
             />
             <Box className="flex justify-center items-center">
-            <button type="submit" className="btnX flex justify-center items-center w-full">
+            <button type="submit" className="tabs flex justify-center items-center w-full">
               {
                 loading ? <Spinner />
                 :

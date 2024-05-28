@@ -57,104 +57,104 @@ const CheckBoxItem = (
           <Grid className="w-full">
               <List className="m-auto w-full flex flex-col">
                 <Box className="box-items w-full flex justify-center items-center">
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                       {itemIcon1}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className="w-full p-3 flex flex-col justify-center items-center"
+                      className="service-item-text w-full p-3 flex flex-col justify-center items-center"
                       primary={primaryItem}
                       secondary={secondary ? secondaryItem : null}
                     />
                   </ListItem>
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon2}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem2}
                       secondary={secondary ? secondaryItem2 : null}
                     />
                   </ListItem>
                 </Box>
                 <Box className="box-items w-full flex justify-center items-center">
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon3}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem3}
                       secondary={secondary ? secondaryItem3 : null}
                     />
                   </ListItem>
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon4}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem4}
                       secondary={secondary ? secondaryItem4 : null}
                     />
                   </ListItem>
                 </Box>
                 <Box className="box-items w-full flex justify-center items-center">
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon5}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem5}
                       secondary={secondary ? secondaryItem5 : null}
                     />
                   </ListItem>
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon6}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem6}
                       secondary={secondary ? secondaryItem6 : null}
                     />
                   </ListItem>
                 </Box>
                 <Box className="box-items w-full flex justify-center items-center">
-                  <ListItem className="m-3 w-full flex flex-col justify-center items- divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items- divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     <ListItemIcon className="w-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon7}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem7}
                       secondary={secondary ? secondaryItem7 : null}
                     />
                   </ListItem>
-                  <ListItem className="m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                  <ListItem className="service-item-box m-3 w-full flex flex-col justify-center items-center divide-solid border-slate-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                   <ListItemIcon className="width-full flex flex-col justify-center items-center">
                     <span className="flex justify-content-center items-center w-40 h-40">
                     {itemIcon8}
                     </span>
                     </ListItemIcon>
                     <ListItemText
-                      className='w-full p-3 flex flex-col justify-center items-center'
+                      className='service-item-text w-full p-3 flex flex-col justify-center items-center'
                       primary={primaryItem8}
                       secondary={secondary ? secondaryItem8 : null}
                     />

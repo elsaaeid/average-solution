@@ -59,7 +59,7 @@ function Item(props)
    
     return (
         <Box className="wow fadeInLeft width-full" data-wow-iteration="1" data-wow-offset="80" data-wow-delay=".5s">
-            <h2 className='font-bold'>{props.item.title}</h2>
+            <h2 className='font-bold mt-3'>{props.item.title}</h2>
             {props.item.component}
         </Box>
     )
