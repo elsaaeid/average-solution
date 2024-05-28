@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './header.css';
 import {HeaderIcons} from './HeaderIcons';
 import LogoContent from "../../global-components/LogoContent";
-// import DropdownServices from "./DropdownServices";
+import DropdownServices from "./DropdownServices";
 import {Box, Tooltip} from '@mui/material';
 import {NotificationMenu} from "./NotificationMenu";
 import LanguageMenu from '../../../translation/LanguageMenu';
@@ -84,7 +84,7 @@ const Header= ({
                                 <LanguageMenu />
                             </div>
                         </Tooltip>
-                         {/* {
+                         {
                           location.pathname == "/"   
                           ?
                           <Tooltip title="Services">
@@ -97,7 +97,7 @@ const Header= ({
                           </Tooltip>
                           : 
                           null
-                          } */}
+                          }
                         <Box className="flex flex-row justify-content-center items-center">
                           <Tooltip className="link" title="Mode">
                               <IconComponent        

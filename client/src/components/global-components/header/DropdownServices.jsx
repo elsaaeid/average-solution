@@ -116,7 +116,7 @@ const DropdownServices = ({
                   setActiveNav(item.id)
                 }}
                 classN={activeNav === item.id ? 'active global-Link' : 'global-Link'}
-                href={`/service/${id}`}
+                href={item.link}
                 obj={shortenText(item.name, 16)} />
             </MenuItem>
               )

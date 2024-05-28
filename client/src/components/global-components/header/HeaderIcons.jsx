@@ -8,7 +8,7 @@ import "./header.css"
 import SearchContent from "./SearchContent";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
-// import DropdownServices from "./DropdownServices";
+import DropdownServices from "./DropdownServices";
 import {NotificationMenu} from "./NotificationMenu";
 import LanguageMenu from '../../../translation/LanguageMenu';      
 import { ThemeModeIcon } from '../ThemeModeIcon';
@@ -32,7 +32,7 @@ export const Bar = ({
                     <LanguageMenu />
                 </div>
             </Tooltip>
-            {/* {
+            {
              location.pathname == "/"   
              ?
             <Tooltip title="Services">
@@ -45,7 +45,7 @@ export const Bar = ({
             </Tooltip>
             : 
             null
-            } */}
+            }
             <Tooltip title="Mode">
                 <IconComponent        
                 icon={<ThemeModeIcon className="icon-q" zIndex="30" fontSize="small" />} />
