@@ -1,5 +1,4 @@
-import React from 'react';
-import { styled } from '@mui/material/styles';
+import React, {  useRef, useEffect } from 'react';
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import {Box} from '@mui/material';
@@ -15,21 +14,15 @@ export const SearchContainer = ({
 }) => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode);
-
-
-  const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: "0.5rem",
-  color: colors.grey[800],
-  [theme.breakpoints.up('sm')]: {
-    width: 600,
-  },
-}));
-
+  const inputRef = useRef(null);
+ 
+useEffect(() => {
+  inputRef.current.focus();
+}, []);
 
   return (
     <Box className='flex width-full justify-center search-input'>
-        <Search className='search-content'>
+        <Box className='search-content'>
           <input
             style={{
               position: 'absolute',
@@ -41,13 +34,15 @@ export const SearchContainer = ({
             placeholder=''
             onChange={SearchChange}
             value={SearchValue}
-            type="search" />
+            type="search" 
+            ref={inputRef}
+            />
             {
               openSearch ? <GoSearch id='search-icon' />
                : 
               <IoCloseSharp id='search-icon' onClick={searchCloseHandle} />
             }
-        </Search>
+        </Box>
     </Box>
   )
 }

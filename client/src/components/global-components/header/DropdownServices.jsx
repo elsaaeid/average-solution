@@ -9,7 +9,6 @@ import Select from '@mui/material/Select';
 import { useTranslation } from "react-i18next";
 import shortenText from "../shortenText";
 import ActiveLink from "../active-link/ActiveLink";
-import {useLocation} from "react-router-dom"
 
 const DropdownServices = ({
   activeNav,
@@ -19,7 +18,6 @@ const DropdownServices = ({
   const colors = tokens(theme.palette.mode);
        // Translation
         const { t, i18n } = useTranslation();
-        const location = useLocation();
         const [selected, setSelected] = useState();
 
       const handleChange = (e) => {
@@ -32,37 +30,37 @@ const DropdownServices = ({
         id: 1,
         "name": "Software Engineering",
         "name_ar": "هندسة البرمجيات",
-        "link": location.pathname == "/" ? "#SoftwareEngineering" : "/#SoftwareEngineering",
+        "link": "/service/SoftwareEngineering",
       },
       {
         id: 2,
         "name": "SEO optimization",
         "name_ar": "تحسين نتائج البحث",
-        "link": location.pathname == "/" ? "#SEOoptimization" : "/#SEOoptimization",
+        "link": "/service/SEOoptimization",
       },
       {
         id: 3,
         "name": "products Photography",
         "name_ar": "تصوير المنتجات",
-        "link": location.pathname == "/" ? "#productsPhotography" : "/#productsPhotography",
+        "link": "/service/productsPhotography",
       },
       {
         id: 4,
         "name": "Graphic Designing",
         "name_ar": "تصميم الجرافيك",
-        "link": location.pathname == "/" ? "#graphicDesigning" : "/#graphicDesigning",
+        "link": "/service/graphicDesigning",
       },
       {
         id: 5,
         "name": "Content Creating",
         "name_ar": "صناعة المحتوة",
-        "link": location.pathname == "/" ? "#contentCreating" : "/#contentCreating",
+        "link": "/service/contentCreating",
       },
       {
         id: 6,
         "name": "Sponsored Ads",
         "name_ar" : "الاعلانات الممولة",
-        "link": location.pathname == "/" ? "#SponsoredAds" : "/#SponsoredAds",
+        "link": "/service/SponsoredAds",
       }
     ];
 

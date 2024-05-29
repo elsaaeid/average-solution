@@ -92,7 +92,7 @@ const Chat = () => {
       <ThemeProvider theme={themes}>
         <Segment floated="left">
           <ChatBot
-            headerTitle="Alsaaeid Ellithy chatBot"
+            headerTitle="Average Solution chatBot"
             speechSynthesis={{ enable: true, lang: 'en' }}
             steps={steps}
           />

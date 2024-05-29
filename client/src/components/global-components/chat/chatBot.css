@@ -2,19 +2,16 @@
     position: fixed;
     top: 26rem;
     z-index: 2300;
-    right: 1rem;
+    left: 1rem;
 }
  .chat-container {
     position: fixed;
     top: 5rem;
     z-index: 200;
-    left: 1rem;
+    right: 1rem;
 }
 .chat-icon {
-    font-size: 71px;
-}
-.chatClose-icon {
-    font-size: 48px;
+    font-size: 60px;
 }
 @media screen and (max-width: 1024px){
     .chat-icon-container {
@@ -71,10 +68,7 @@
     .chat-container {
         top: 12rem;
     }
-    .chatClose-icon {
-        font-size: 34px;
-    }
     .chat-icon {
-        font-size: 60px;
+        font-size: 40px;
     }
     }

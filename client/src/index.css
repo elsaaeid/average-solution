@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ body {
   --shadow-dark-color: 0 0 15px 15px rgba(3, 3, 3, 0.274);
   --color-overlay: #0d6efd80;
   --transition: 0.5s all ease-in-out;
-  --color-cursor: 220, 90, 90;
+  --color-cursor: #27ff0a;
   --cursor-outline-shade: 0.3;
   --cursor-size: 10px;
   --cursor-outline-size: 12px;
@@ -113,7 +113,7 @@ img {
 #cursor-dot {
   width: var(--cursor-size);
   height: var(--cursor-size);
-  background-color: rgba(var(--color-cursor), 1);
+  background-color: var(--color-cursor);
 }
 
 #cursor-dot-outline {
@@ -251,6 +251,10 @@ border-bottom-color: var(--color-bg-variant-hover);
 .pagination .page-num:focus {
   color: var(--color-white);
   background-color: var(--color-link);
+}
+.search-content {
+  position: relative;
+  width: 35rem;
 }
 /*-------------------------Dashboard-style---------------------------------*/
 

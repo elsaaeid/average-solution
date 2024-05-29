@@ -4,21 +4,22 @@ import Grid from '@mui/material/Grid';
 import CheckBoxItem from './CheckBoxItem';
 import Typography from '@mui/material/Typography';
 import "./IntroHome.css"
-import {useParams} from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import items from "./cardServices";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material"; 
 import ServiceButton from './ServiceButton';
+import {useParams} from "react-router-dom";
+
 
 const Services = ({btnHandling, btnState, setActiveNav, item}) => {
-  const {id} = useParams();
+
      // Translation
 const { i18n } = useTranslation();
 const theme = useTheme();
 const colors = tokens(theme.palette.mode);
 const [secondary, setSecondaryState] = useState(false);
-
+const {id} = useParams();
 const servicesItem = items.map(item => {
   if(i18n.language == 'ar') {
     return({

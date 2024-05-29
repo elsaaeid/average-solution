@@ -13,6 +13,8 @@ const IntroHome = ({btnHandling, btnState, setActiveNav}) => {
 const { i18n } = useTranslation();
 const theme = useTheme();
 const colors = tokens(theme.palette.mode);
+  
+
 const servicesItem = items.map(item => {
   if(i18n.language == 'ar') {
     return({
@@ -32,7 +34,8 @@ const servicesItem = items.map(item => {
   return (
     <Box className="intro-home w-full flex flex-col justify-center items-center">
       {
-        servicesItem.map(
+        servicesItem
+        .map(
           (item, id) => 
         <Box key={id} className="Design-box-container w-full flex flex-col justify-center items-center">
       {

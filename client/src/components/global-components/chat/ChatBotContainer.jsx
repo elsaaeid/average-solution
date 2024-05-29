@@ -33,7 +33,7 @@ export const ChatBotContainer = ()=> {
               <IconComponent        
               icon={
                 <IoClose
-                  className="chatClose-icon"
+                  className="chat-icon"
                   style={{
                     color: "var(--color-bg-variant)",
                     border: "1px dashed var(--color-bg-variant)",

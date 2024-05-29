@@ -163,14 +163,14 @@ const index = ({
       {/*Services*/}
       <Route path="/service/:id" exact element={
          <LayoutPortfolio 
-          setJoinState={setJoinState}
-          joinState={joinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          t={t}
-          toggleTab={toggleTab}
-          profile={profile} 
-          imagePreview={imagePreview}> 
+            setJoinState={setJoinState}
+            joinState={joinState}
+            activeNav={activeNav}
+            setActiveNav={setActiveNav}
+            t={t}
+            toggleTab={toggleTab}
+            profile={profile} 
+            imagePreview={imagePreview}> 
           <Service />
         </LayoutPortfolio>
       } />

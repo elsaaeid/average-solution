@@ -15,7 +15,7 @@ import { ThemeModeIcon } from '../ThemeModeIcon';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { ShowOnLogin } from "../protect/HiddenLink";
-import { useLocation } from "react-router-dom";
+
 
 
 
@@ -24,7 +24,6 @@ export const Bar = ({
     activeNav,
     setActiveNav,
 })=>{
-     const location = useLocation();
     return(
         <div className="flex basic-menu flex-row justify-center items-center">
             <Tooltip>
@@ -32,9 +31,6 @@ export const Bar = ({
                     <LanguageMenu />
                 </div>
             </Tooltip>
-            {
-             location.pathname == "/"   
-             ?
             <Tooltip title="Services">
                 <div className="drop-down-menu">
                     <DropdownServices
@@ -43,9 +39,6 @@ export const Bar = ({
                     />
                 </div>
             </Tooltip>
-            : 
-            null
-            }
             <Tooltip title="Mode">
                 <IconComponent        
                 icon={<ThemeModeIcon className="icon-q" zIndex="30" fontSize="small" />} />

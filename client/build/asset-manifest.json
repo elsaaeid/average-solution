@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.398183b4.css",
+    "main.js": "/static/js/main.f9087f4b.js",
+    "static/media/intro.gif": "/static/media/intro.5f33325dec68476e64b0.gif",
+    "static/media/landing.gif": "/static/media/landing.7b7af1f0806e273d576e.gif",
+    "static/media/average.gif": "/static/media/average.513d3f6971bf3b8aa4c1.gif",
+    "static/media/arrow_to_top.png": "/static/media/arrow_to_top.5f5e0f0be16844609640.png",
+    "static/media/egyptStates.png": "/static/media/egyptStates.b5dd53e445e61b315ea1.png",
+    "static/media/unitedStates.png": "/static/media/unitedStates.4d9d990626a3df96a265.png",
+    "static/media/longSuccess.png": "/static/media/longSuccess.2644f3be458291c2416e.png",
+    "static/media/Strategy.png": "/static/media/Strategy.141bd91f341b37675038.png",
+    "index.html": "/index.html",
+    "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.398183b4.css.map": "/static/css/main.398183b4.css.map",
+    "main.f9087f4b.js.map": "/static/js/main.f9087f4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.398183b4.css",
+    "static/js/main.f9087f4b.js"
+  ]
+}

@@ -12,7 +12,6 @@ import {motion} from "framer-motion";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { ShowOnLogin } from "../protect/HiddenLink";
-import { useLocation } from "react-router-dom";
 
 
 const Header= ({
@@ -34,7 +33,6 @@ const Header= ({
       setOpen(!open);
       setToggleVariants(!toggleVariants);
     };
-    const location = useLocation();
     const linksVariants = {
       true :{
         display: 'flex',
@@ -84,20 +82,14 @@ const Header= ({
                                 <LanguageMenu />
                             </div>
                         </Tooltip>
-                         {
-                          location.pathname == "/"   
-                          ?
-                          <Tooltip title="Services">
-                              <div className="drop-down-menu">
-                                  <DropdownServices
-                                  activeNav={activeNav}
-                                  setActiveNav={setActiveNav}
-                                  />
-                              </div>
-                          </Tooltip>
-                          : 
-                          null
-                          }
+                        <Tooltip title="Services">
+                            <div className="drop-down-menu">
+                                <DropdownServices
+                                activeNav={activeNav}
+                                setActiveNav={setActiveNav}
+                                />
+                            </div>
+                        </Tooltip>
                         <Box className="flex flex-row justify-content-center items-center">
                           <Tooltip className="link" title="Mode">
                               <IconComponent        
