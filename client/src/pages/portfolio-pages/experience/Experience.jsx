@@ -15,10 +15,10 @@ const Experience = ()=> {
 				<Box className='branch-container'>
 					<GiSkills className='icon-branch' />
 				</Box>
-				<Box className="w-1/2 mb-4">
+				<Box className="mb-4">
 					<h5>{t("experience.experienceHave")}</h5>
 					<h2>{t("experience.ourExperience")}</h2>
-					<Box className="experience__container width-full">
+					<Box className="experience__container">
 						<CarouselContainer />
 					</Box>
 				</Box>

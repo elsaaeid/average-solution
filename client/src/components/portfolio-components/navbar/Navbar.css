@@ -73,14 +73,14 @@
     justify-content: space-between;
   }
   .icon-item svg {
-    font-size: 14px;
+    font-size: 9px;
 }
 a.navLink span {
-  font-size: 14px;
+  font-size: 9px;
 }
 .icon-item {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
 }
 @media screen and (max-width: 280px) {
@@ -89,7 +89,7 @@ a.navLink span {
     justify-content: space-between;
   }
   .icon-item svg {
-    font-size: 14px;
+    font-size: 9px;
 }
 a.navLink span {
   font-size: 9px;

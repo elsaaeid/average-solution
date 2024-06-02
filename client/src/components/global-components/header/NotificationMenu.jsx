@@ -83,7 +83,7 @@ export const NotificationMenu = ({profile})=> {
             }
           }}
           onClick={handleClose}>
-            {!profile.isVerified && <Notification />}
+            {profile.isVerified && <Notification />}
             <Divider />
         </MenuItem>
       </Box>

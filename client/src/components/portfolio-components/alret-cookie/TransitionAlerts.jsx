@@ -11,7 +11,7 @@ import { useCookies } from 'react-cookie';
 import "./TransitionAlerts.css"
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: '100%',
     padding: '3px',
@@ -58,7 +58,7 @@ export default function TransitionAlerts({t, setAlretState, open, setOpen}) {
           </Box>
           <p>{t("homeContainer.cookieDesc")}</p>
           <div className="flex">
-          <Button className="got-it flex flex-end" onClick={() => { 
+          <Button className="got-it mt-4 flex flex-end" onClick={() => { 
             alert('Cookies will use for session management.')
             setLoading(true)
             loadingHandling()

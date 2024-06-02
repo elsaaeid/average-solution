@@ -1,24 +1,70 @@
 #myBtn {
-    position: fixed;
-    bottom: 29px;
-    right: 19px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-    background-color: var(--color-primary);
-    box-shadow: var(--shadow-color);
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 50%;
-    transition-property: background;
+  position: fixed;
+  top: 20rem;
+  right: 1rem;
+  z-index: 99;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-color);
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  transition-property: background;
+}
+
+#myBtn:hover {
+  background-color: var(--color-bg-variant);
+  transition: ease-in-out .5s;
+}
+
+@media screen and (max-width: 1024px) {
+  #myBtn {
+    top: 20rem;
+    }
   }
-  
-  #myBtn:hover {
-    background-color: var(--color-bg-variant);
-    transition: ease-in-out .5s;
+
+
+/* ===================MEDIA QUERIES (SMALL DEVICES) =============================*/
+@media screen and (max-width: 992px) {
+#myBtn {
+top: 60rem;
+}
+}
+@media screen and (max-width: 820px){
+#myBtn {
+    top: 50rem;
+}
+}
+@media screen and (max-width: 768px){
+  #myBtn {
+      top: 40rem;
   }
+  }
+@media screen and (max-width: 540px){
+#myBtn {
+    top: 30rem;
+}
+}
+
+@media screen and (max-width: 375px){
+#myBtn {
+top: 30rem;
+}
+}
+@media screen and (max-width: 360px){
+#myBtn {
+    top: 35rem;
+}
+}
+
+@media screen and (max-width: 344px){
+#myBtn {
+  top: 45rem;
+}
+}

@@ -40,12 +40,6 @@ const { i18n } = useTranslation();
             name_ar: "تصميم الجرافيك",
             desc1: serviceDesc("logo, banner, products designer"),
             desc1_ar: serviceDesc("شعار، لافتة، مصمم المنتجات"),
-            desc2: serviceDesc("2D,3D designer a on adobe programs like as [Photoshop, Illustrator]"),
-            desc2_ar: serviceDesc("مصمم ثنائي وثلاثي الأبعاد على برامج Adobe مثل [Photoshop, Illustrator]"),
-            desc3: serviceDesc("4D,video montage on programs like as [Premiere, Filmora]"),
-            desc3_ar: serviceDesc("4D، مونتاج الفيديو على برامج مثل [Premiere, Filmora]"),
-            desc4: serviceDesc("Graphic designer on programs like as [After Effect]"),
-            desc4_ar: serviceDesc("مصمم جرافيك على برامج مثل [After Effect]"),
             desc5: serviceDesc("Photographer, Video grapher"),
             desc5_ar: serviceDesc("مصور فوتوغرافي، مصور فيديو")
         },
@@ -54,7 +48,7 @@ const { i18n } = useTranslation();
             name: "UI/UX Design",
             name_ar: "تصميم واجهة المستخدم/تجربة المستخدم",
             desc1: serviceDesc("user interface, user experience on XAdobe"),
-            desc1_ar: serviceDesc("واجهة المستخدم، تجربة المستخدم على XAdobe"),
+            desc1_ar: serviceDesc("واجهة المستخدم، تجربة المستخدم"),
         },
         {
             id: 4,

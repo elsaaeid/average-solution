@@ -77,7 +77,7 @@ const items = {
       },
     "service": {
         "offer": "ماذا نعرض",
-        "Services": "الخدمات",
+        "Services": "خدماتنا",
     },
     "experience": {
       "experienceHave": "ما هي الخبرة لدينا",

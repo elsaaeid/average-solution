@@ -83,10 +83,12 @@ const LayoutPortfolio = ({
             
         <BackToTopButton backToTop={backToTop} />
         <ChatBotContainer />
-        <Collapse in={open} className='alret-content alret-container flex items-center justify-center'>
-          <div>
-            {alretState ? (<TransitionAlerts setOpen={setOpen} open={open} t={t} setAlretState={setAlretState} className="alret" />) : null}
-          </div>
+        <Collapse in={open} className='alret-container flex items-center justify-center'>
+        {alretState ? 
+        (  <div className='alret-content'>
+              <TransitionAlerts setOpen={setOpen} open={open} t={t} setAlretState={setAlretState} className="alret" />
+          </div>)
+        : null}
         </Collapse>     
         <Footer 
           activeNav={activeNav}

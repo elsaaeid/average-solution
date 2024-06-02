@@ -78,7 +78,7 @@ const items = {
   },
     "service": {
     "offer": "What We Offer",
-    "Services": "Services",
+    "Services": "Our Services",
 },
 "experience": {
   "experienceHave": "What Experience We Have",

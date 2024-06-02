@@ -24,22 +24,22 @@ body {
 }
 :root {
   --color-bg: #fff !important;
-  --color-bg-variant: #0d6efd;
-  --color-bg-variant-hover: #0d6efd;
-  --color-primary: #004bad !important;
-  --color-primary-variant: #0d6efd !important;
+  --color-bg-variant: #297e8a !important;
+  --color-bg-variant-hover: #297e8a !important;
+  --color-primary: #297e8a !important;
+  --color-primary-variant: #3d8d9b !important;
   --color-white: #e5e5e5;
   --color-gray: #989898;
   --color-opacity-white: #e5e5e5a6;
   --color-light: hsla(0,0%,100%,.88);
   --color-text: black;
-  --border-color: #0d6efd;
+  --border-color: #297e8a !important;
   --color-danger: red;
-  --color-input: #0d6efd;
-  --color-link: #0d6efd !important;
+  --color-input: #297e8a !important;
+  --color-link: #297e8a !important;
   --shadow-color: 0 0 15px 15px rgba(13, 109, 253, 0.048);
   --shadow-dark-color: 0 0 15px 15px rgba(3, 3, 3, 0.274);
-  --color-overlay: #0d6efd80;
+  --color-overlay: #297e8ab5 !important;
   --transition: 0.5s all ease-in-out;
   --color-cursor: #27ff0a;
   --cursor-outline-shade: 0.3;
