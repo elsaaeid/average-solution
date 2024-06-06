@@ -12,7 +12,7 @@ const ServiceShowToggle = ({
     const [btnReplace, setBtnReplace] = useState(true);
     useEffect(()=> {
     
-        if(location.pathname === "/") {
+        if(location.pathname === "/home") {
             setBtnReplace(true);
         }
         else if (location.pathname === `/service/${item.id}`) {
@@ -21,7 +21,7 @@ const ServiceShowToggle = ({
     }, [location.pathname, item.id]);
     return(
         <Link
-            to={btnReplace ? `/service/${item.id}` : "/"}
+            to={btnReplace ? `/service/${item.id}` : "/home"}
             underline="none"
             className={btnState === "reviewActive" ? "btn btn-active flex flex-row items-center" : "btn flex flex-row items-center"}
             >

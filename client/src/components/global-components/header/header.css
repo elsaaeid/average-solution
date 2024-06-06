@@ -172,7 +172,7 @@ header {
   position: absolute;
   width: 47%;
   right: 0;
-  top: 189px;
+  top: 100%;
   flex-direction: column;
   justify-content: center;
   gap: 17px;
