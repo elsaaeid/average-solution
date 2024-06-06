@@ -63,7 +63,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/");
+      navigate("/home");
     }
 
     if (isError && twoFactor) {
@@ -79,7 +79,7 @@ const Login = () => {
     await dispatch(
       loginWithGoogle({ userToken: credentialResponse.credential })
     );
-    navigate("/");
+    navigate("/home");
   };
 
 
@@ -145,7 +145,7 @@ const Login = () => {
               <Link to="/forget">{t("profile.forgotPassword")}</Link>
             </span>
             <span className={styles.links}>
-              <Link to="/">{t("profile.home")}</Link>
+              <Link to="/home">{t("profile.home")}</Link>
             </span>
           </Box>
         </div>

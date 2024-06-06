@@ -1,25 +1,8 @@
 .landing-container {
-    position: fixed;
-    top: 3rem;
-    z-index: 2300;
     background-color: var(--color-primary) !important;
-    overflow-y: scroll;
     box-shadow: var(--shadow-color);
 }
 .landing {flex-direction: row;}
-.landing-close-icon {
-    color:  var(--color-primary);
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-bg);
-    border-radius: 50%;
-    position: absolute;
-    top: -14px;
-}
-.landing-close-icon:hover {
-    color:  var(--color-bg);
-    border: 1px solid var(--color-bg);
-    background-color: transparent;
-}
 .right-content h2, .right-content p {
     color: var(--color-bg);
     font-weight: bold;
@@ -27,16 +10,59 @@
 .right-content h2{
     border-bottom: 1px dashed var(--color-bg);
 }
-.landingClosed {
-    display: none !important;
-    opacity: 0;
-    visibility: hidden;
+.intro-section, .about-section {
+    box-shadow: var(--shadow-color);
+    height: 300px;
+    width: 100%;
+    background-color: #7db0b8;
 }
-.landingOpened {
-    display: flex !important;
-    opacity: 1;
-    visibility: visible;
+.intro-section {
+    border-radius: 0px 0px 150px 150px;
 }
+.about-section {
+    border-radius: 150px 150px 0px 0px;
+}
+.about-section h1, .intro-section h1 {
+    background-color: var(--color-bg-variant-hover);
+    color: var(--color-white);
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .right-side h1 {
+    border-bottom: 1px solid var(--color-primary);
+  }
+  .intro-section p {
+    width: 80%;
+    font-size: 12px;
+    color: var(--color-white);
+  }
+  .feature-section {
+    background-color: var(--color-white);
+  }
+  .feature-image {
+    width: 70%;
+  }
+  .element {
+    transform: translate(-50%, -50%);
+    animation: shake 0.5s infinite;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: bounce 2s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
 /* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
       @media screen and (max-width: 820px) {
         .landing {
@@ -47,6 +73,10 @@
         }
         .left-content p {
             font-size: 12px;
+        }
+        .right-side {
+            font-size: 11px;
+            width: 66%;
         }
       }
       
@@ -64,6 +94,9 @@
         .left-content p {
             font-size: 12px;
         }
+        .feature-item {
+            flex-direction: column;
+          }
       }
       @media screen and (max-width:280px) {
         .landing-container {

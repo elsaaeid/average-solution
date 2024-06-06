@@ -11,11 +11,14 @@ const items = {
     "Experience": "حياة مهنية",
     "Portfolio": "الأعمال",
     "Contact": "اتصال",
-    "logoTitle" : "محفظتنا",
+    "logoTitle" : "الحل المعدل",
     "noImg": "لم يتم تعيين صورة لهذا المنتج",
     "letTalk": "هيا بنا نتحدث",
     "dropdownServices": {
       "Services": "خدمات",
+    },
+    "main": {
+      "introDesc": "مرحبا بعودتك للحل المعدل",
     },
     "homeContainer" : {
         "cookieTitle" : "حول ملفات تعريف الارتباط",
@@ -28,7 +31,11 @@ const items = {
         "select": "تحديد الخدمة",
         "addToCart": "اضف الخدمة الى الكرت",
         "removeFromCart": "ازالة الخدمة من الكرت",
+        "btnLeft": "اشترك مجانا",
+        "btnRight": "خد نظرة عن الشركة",
+        "aboutDesc": "This provides digital solutions services to clients to enable their products and brands to take off in the market",
     },
+    "featureCaption": "أثناء التمرير لأسفل، لرؤية المزيد من الخدمات المتاحة",
     "profile" : {
     "name": "بروفايل",
       "signUp" : "تسجيل الدخول",

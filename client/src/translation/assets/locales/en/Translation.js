@@ -12,11 +12,14 @@ const items = {
     "Experience": "Career",
     "Portfolio": "Works",
     "Contact": "Contact",
-    "logoTitle" : "my portfolio",
+    "logoTitle" : "Average Solution",
     "noImg": "No image set for this product",
     "letTalk": "Let's Talk",
     "dropdownServices": {
     "Services": "Services",
+    },
+    "main": {
+      "introDesc": "Welcome back to Average Solution",
     },
     "homeContainer" : {
       "cookieTitle" : "About Cookies",
@@ -28,7 +31,11 @@ const items = {
       "select": "select service",
       "addToCart": "Add Service To Cart",
       "removeFromCart": "Remove Service From Cart",
+      "btnLeft": "Sign Up For Now",
+      "btnRight": "Look At The Company",
+      "aboutDesc": "This provides digital solutions services to clients to enable their products and brands to take off in the market",
     },
+    "featureCaption": "As you scroll down, to see more available services",
     "profile" : {
       "name":"Profile",
       "signUp" : "Sign Up",

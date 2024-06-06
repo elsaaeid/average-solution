@@ -56,7 +56,7 @@ const LoginWithCode = () => {
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/");
+      navigate("/home");
     }
 
     dispatch(RESET());
@@ -101,7 +101,7 @@ const LoginWithCode = () => {
             </span>
             <div className={`flex justify-around items-center ${styles.links}`}>
               <p>
-                <Link to="/">{t("profile.home")}</Link>
+                <Link to="/home">{t("profile.home")}</Link>
               </p>
               <p onClick={sendUserLoginCode} className="v-link color-primary">
                 <b>{t("profile.resentCode")}</b>

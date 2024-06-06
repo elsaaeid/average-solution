@@ -97,7 +97,7 @@ const Reset = () => {
             </Box>
             <div className="mt-5 mb-5 flex flex-row justify-around items-center">
               <span className={styles.links_clChange}>
-                <Link to="/">{t("profile.home")}</Link>
+                <Link to="/home">{t("profile.home")}</Link>
               </span>
               <span className={styles.links}>
                 <Link to="/login">{t("profile.Login")}</Link>

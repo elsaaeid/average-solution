@@ -201,14 +201,17 @@ export const HeaderIcons = ({
         return (
                 <Box className='header__icons w-1/2 flex justify-between items-center'>
                     <Bar 
+                        profile={profile}
                         activeNav={activeNav}
                         setActiveNav={setActiveNav}
-                        profile={profile} 
+                        imagePreview={imagePreview}
+                        toggleTab={toggleTab}
+                        joinState={joinState}
+                        setJoinState={setJoinState}
                         selectedServices={selectedServices}
                         handleCheckboxChange={handleCheckboxChange}
                         servicesItem={servicesItem}
                         quantity={quantity}
-                        toggleTab={toggleTab}
                         />
                         <MobileBar 
                             toggleVariants={toggleVariants}

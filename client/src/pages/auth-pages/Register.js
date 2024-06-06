@@ -218,7 +218,7 @@ const Register = () => {
           </form>
           <div className="flex flex-row justify-center items-center mt-5">
             <span className={styles.links}>
-              <Link to="/"
+              <Link to="/home"
                style={{
                 color: colors.grey[500],
               }}

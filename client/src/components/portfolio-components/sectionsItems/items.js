@@ -11,7 +11,7 @@ const items = [
         id: 1,
         title: "Home",
         title_ar: "الرائيسية",
-        href: "/",
+        href: "/home",
         icon: <AiOutlineHome className='icon' />,
     },
     {

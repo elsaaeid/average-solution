@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Main from '../../../components/portfolio-components/main/Main';
 import IntroHome from "../../../components/portfolio-components/intro-home/IntroHome";
-import LandingContainer from "../../../components/portfolio-components/landing-container/LandingContainer";
+
 
  const Home = ({
   t,
@@ -9,12 +9,9 @@ import LandingContainer from "../../../components/portfolio-components/landing-c
   handleCheckboxChange,
   servicesItem,
   selectedServices,
+  btnState,
+  btnHandling,
 }) => {
-  const [btnState, setBtnState] = useState();
-
-  const btnHandling = (state)=>{
-    setBtnState(state);
-}
 
   return (
      <section>
@@ -28,7 +25,6 @@ import LandingContainer from "../../../components/portfolio-components/landing-c
           servicesItem={servicesItem}
           selectedServices={selectedServices}
           />
-          <LandingContainer />
     </section>
   )
 }

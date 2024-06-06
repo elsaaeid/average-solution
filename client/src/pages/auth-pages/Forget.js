@@ -71,7 +71,7 @@ const Forgot = () => {
           </Box>
           <div className="mt-5 mb-5 w-full flex flex-row justify-around items-center">
             <span>
-              <Link to="/">{t("profile.home")}</Link>
+              <Link to="/home">{t("profile.home")}</Link>
             </span>
             <span className={styles.links}>
               <Link to="/login">{t("profile.Login")}</Link>

@@ -26,6 +26,11 @@ export const App = ()=> {
   const [joinState, setJoinState] = useState(true);
   const [selectedServices, setSelectedServices] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [btnState, setBtnState] = useState();
+
+  const btnHandling = (state)=>{
+    setBtnState(state);
+}
     const toggleTab = (order) => {
         setOrderState(order);
       };
@@ -131,6 +136,8 @@ const { t } = useTranslation();
                 <Cursor />
                   <Routes 
                     t={t} 
+                    btnState={btnState}
+                    btnHandling={btnHandling}
                     activeNav={activeNav}
                     setActiveNav={setActiveNav}
                     orderState={orderState} 

@@ -24,6 +24,9 @@ import EditProfile from "../components/global-components/profile/EditProfile.js"
 import ChangePassword from '../components/global-components/changePassword/ChangePassword.js';
 import PageMenu from "../components/global-components/page-menu/PageMenu.jsx";
 import Service from "../components/portfolio-components/intro-home/Service.jsx"
+import LandingPage from "../pages/portfolio-pages/landing-page/LandingPage.jsx"
+
+
 
 const index = ({ 
   t,
@@ -46,6 +49,8 @@ const index = ({
   handleCheckboxChange,
   servicesItem,
   quantity,
+  btnState,
+  btnHandling,
 }) => {
 
   return(
@@ -87,6 +92,12 @@ const index = ({
       />
       {/*Portfolio*/}
       <Route path='/' element={
+        <LandingPage 
+          btnState={btnState}
+          btnHandling={btnHandling}
+          />} 
+        />
+      <Route path='/home' element={
         <LayoutPortfolio
           joinState={joinState}
           setJoinState={setJoinState}
@@ -106,6 +117,8 @@ const index = ({
             handleCheckboxChange={handleCheckboxChange}
             servicesItem={servicesItem}
             selectedServices={selectedServices}
+            btnState={btnState}
+            btnHandling={btnHandling}
           />
         </LayoutPortfolio>
       } />
