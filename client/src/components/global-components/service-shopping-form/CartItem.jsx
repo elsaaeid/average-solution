@@ -41,7 +41,7 @@ const CartItem = ({
     return(
         <form onSubmit={sendEmail}>
             <label>{t("homeContainer.select")}</label>
-                <ul className="w-full flex flex-col justify-center items-center">
+                <ul className="service-checkBox w-1/2 flex flex-col justify-center items-center">
                     {servicesItem.map((item, id)=>
                     <li key={id} className="w-full flex flex-col justify-center">
                     {

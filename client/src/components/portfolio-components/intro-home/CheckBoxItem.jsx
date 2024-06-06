@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import FormGroup from '@mui/material/FormGroup';
 import "./IntroHome.css";
 import FormGroupItem from "./FormGroupItem";
-
+import ServiceShowToggle from "./ServiceShowToggle";
 
   const ListItem = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -17,6 +17,7 @@ import FormGroupItem from "./FormGroupItem";
 
 const CheckBoxItem = (
   {
+  item,
   secondary,
   setSecondaryState,
   itemIcon1,
@@ -48,12 +49,17 @@ const CheckBoxItem = (
 
   return (
         <Grid className="w-full">
-          <FormGroup className="m-3" row>
-            <FormGroupItem
-            secondary={secondary}
-            setSecondaryState={setSecondaryState}
-            />
-          </FormGroup>
+          <Box className="flex flex-row items-center justify-between w-full">
+            <FormGroup className="m-3" row>
+              <FormGroupItem
+              secondary={secondary}
+              setSecondaryState={setSecondaryState}
+              />
+            </FormGroup>
+            <ServiceShowToggle 
+                item={item}
+              />
+          </Box>
           <Grid className="w-full">
               <List className="m-auto w-full flex flex-col">
                 <Box className="box-items w-full flex justify-center items-center">

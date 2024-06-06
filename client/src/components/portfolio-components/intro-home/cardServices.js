@@ -95,9 +95,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={bestPrice} alt="Best Price" />,
     itemIcon7: <img className="w-full h-full" src={tecSupport} alt="Technical Support" />,
     itemIcon8: <img className="w-full h-full" src={maintenance} alt="maintenance" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
   },
   {
@@ -144,9 +142,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={Strategy} alt="Strategy" />,
     itemIcon7: <img className="w-full h-full" src={localEfforts} alt="improve local Efforts" />,
     itemIcon8: <img className="w-full h-full" src={longSuccess} alt="Long Success" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
   },
   {
@@ -193,9 +189,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={eCommerceSales} alt="eCommerceSales" />,
     itemIcon7: <img className="w-full h-full" src={Lighting} alt="Lighting" />,
     itemIcon8: <img className="w-full h-full" src={CameraEquipment} alt="CameraEquipment" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
 },
   {
@@ -242,9 +236,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={IncreasedEngagement} alt="Increased Engagement" />,
     itemIcon7: <img className="w-full h-full" src={CostTime} alt="Cost, Time" />,
     itemIcon8: <img className="w-full h-full" src={FlexibilityAdaptability} alt="Flexibility Adaptability" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
     },
   {
@@ -291,9 +283,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={DifferentiationCompetitors} alt="DifferentiationCompetitors" />,
     itemIcon7: <img className="w-full h-full" src={ReuseContent} alt="Reuse and Recycle Content" />,
     itemIcon8: <img className="w-full h-full" src={CostStrategy} alt="CostStrategy" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
   },
   {
@@ -340,9 +330,7 @@ const items = [
     itemIcon6: <img className="w-full h-full" src={SponsoredVideo} alt="SponsoredVideo" />,
     itemIcon7: <img className="w-full h-full" src={BoostingImage} alt="BoostingImage" />,
     itemIcon8: <img className="w-full h-full" src={TrustCredibility} alt="TrustCredibility" />,
-    "acceptService": "complete service",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reMaintenanceService_ar": "صيانة",
   },
 ]

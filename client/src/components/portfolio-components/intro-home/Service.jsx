@@ -8,11 +8,10 @@ import { useTranslation } from "react-i18next";
 import items from "./cardServices";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material"; 
-import ServiceButton from './ServiceButton';
 import {useParams} from "react-router-dom";
 
 
-const Services = ({btnHandling, btnState, setActiveNav}) => {
+const Service = () => {
 
      // Translation
 const { i18n } = useTranslation();
@@ -76,6 +75,7 @@ const servicesItem = items.map(item => {
                 </Typography>
                 <Grid container>
                 <CheckBoxItem 
+                  item={item}
                   secondary={secondary}
                   setSecondaryState={setSecondaryState}
                   items={items}
@@ -106,16 +106,10 @@ const servicesItem = items.map(item => {
                   />
                 </Grid>
               </Box>
-              <ServiceButton
-                item={item}
-                btnHandling={btnHandling} 
-                btnState={btnState} 
-                setActiveNav={setActiveNav}
-               />
           </Box>
         ))}
       </Box>
   )
 }
 
-export default Services
+export default Service

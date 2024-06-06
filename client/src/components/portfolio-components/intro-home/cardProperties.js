@@ -71,10 +71,8 @@ const items = [
     options={DesignWeb}
     className="lottie"
     />,
-    "acceptService": "complete service",
     "reviewService": "More",
     "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
  },
@@ -88,10 +86,8 @@ const items = [
       options={DesignSeo}
       className="lottie"
     />,
-    "acceptService": "complete service",
       "reviewService": "More",
       "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
   },
@@ -105,10 +101,8 @@ const items = [
     options={DesignCamera}
     className="lottie"
   />,
-  "acceptService": "complete service",
       "reviewService": "More",
       "reMaintenanceService": "Maintenance",
-  "acceptService_ar": "اكمل الخدمة",
   "reviewService_ar": "المزيد",
   "reMaintenanceService_ar": "صيانة",
 },
@@ -122,10 +116,8 @@ const items = [
       options={DesignGraphic}
       className="lottie"
     />,
-    "acceptService": "complete service",
       "reviewService": "More",
       "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
 
@@ -140,10 +132,8 @@ const items = [
       options={DesignContent}
       className="lottie"
     />,
-    "acceptService": "complete service",
       "reviewService": "More",
       "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
   },
@@ -157,10 +147,8 @@ const items = [
       options={DesignSponsor}
       className="lottie"
     />,
-    "acceptService": "complete service",
       "reviewService": "More",
       "reMaintenanceService": "Maintenance",
-    "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
   },
