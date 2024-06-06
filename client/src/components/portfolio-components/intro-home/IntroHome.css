@@ -6,12 +6,13 @@
   margin-top: 3rem;
   border-radius: 5px;
 }
-.design {
-    width: 25rem;
+  .design {
+    width: 23rem;
     background-image: url("../../../assets/intro-home-bg.gif");
     background-position: center;
     background-repeat: no-repeat;
-  }
+    padding: 40px;
+}
   .Design-box-content:hover {
     border: 1px solid var(--color-primary-variant);
   }
@@ -33,7 +34,6 @@
     box-shadow: inset 0px 0px 5px black;
     margin: auto;
     height: 8rem;
-    width: 90%;
   }
   .show-service-icons:hover {
     border: 1px solid var(--color-primary-variant);
@@ -73,7 +73,20 @@
     font-size: 20px;
 }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .intro-home {
+    margin-top: 24rem;
+}
+}
+@media screen and (max-width: 912px) {
+  .intro-home {
+    margin-top: 0;
+}
+}
+@media screen and (max-width: 853px) {
+  .intro-home {
+      margin-top: 2rem;
+  }
 }
 @media screen and (max-width: 540px) {
   .text-role {
@@ -91,16 +104,34 @@
   flex-direction: column;
 }
 }
+@media screen and (max-width: 430px) {
+  .intro-home {
+      margin-top: 1rem;
+  }
+}
 @media screen and (max-width: 414px) {
 .text-role {
   font-size: 13px;
 }
+.intro-home {
+  margin-top: 1rem;
+}
+}
+@media screen and (max-width: 414px) {
+  .intro-home {
+      margin-top: 0rem;
+  }
 }
   @media screen and (max-width: 375px) {
     .intro-home {
       margin-top: -25px;
   }
   }
+  @media screen and (max-width: 344px) {
+    .intro-home {
+        margin-top: 0px;
+    }
+}
   @media screen and (max-width: 280px) {
     .item-property {
       width: 97%;

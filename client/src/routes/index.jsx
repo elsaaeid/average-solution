@@ -42,17 +42,21 @@ const index = ({
   setIsSidebar,
   joinState,
   setJoinState,
+  selectedServices,
+  handleCheckboxChange,
+  servicesItem,
+  quantity,
 }) => {
 
   return(
     <Routes>
       <Route path="/register" element={
         <PageMenu 
-        orderState={orderState}
-        toggleTab={toggleTab}
-        firstLinkNav="/register" firstTitleNav="Signup"
-        secondLinkNav="/login" secondTitleNav="Login"
-        >
+          orderState={orderState}
+          toggleTab={toggleTab}
+          firstLinkNav="/register" firstTitleNav="Signup"
+          secondLinkNav="/login" secondTitleNav="Login"
+          >
           <Register 
              joinState={joinState} 
           />
@@ -61,11 +65,11 @@ const index = ({
       />
       <Route path="/login" element={
         <PageMenu 
-        orderState={orderState}
-        toggleTab={toggleTab}
-        firstLinkNav="/register" firstTitleNav="Signup"
-        secondLinkNav="/login" secondTitleNav="Login"
-        >
+          orderState={orderState}
+          toggleTab={toggleTab}
+          firstLinkNav="/register" firstTitleNav="Signup"
+          secondLinkNav="/login" secondTitleNav="Login"
+          >
           <Login 
             setJoinState={setJoinState}
           />
@@ -84,16 +88,24 @@ const index = ({
       {/*Portfolio*/}
       <Route path='/' element={
         <LayoutPortfolio
-        joinState={joinState}
-        setJoinState={setJoinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} imagePreview={imagePreview}>
-          <Home 
+          joinState={joinState}
+          setJoinState={setJoinState}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
+          selectedServices={selectedServices}
+          handleCheckboxChange={handleCheckboxChange}
+          servicesItem={servicesItem}
+          quantity={quantity}
+          t={t}
+          toggleTab={toggleTab}
+          profile={profile} 
+          imagePreview={imagePreview}>
+          <Home
             t={t}
             setActiveNav={setActiveNav}
+            handleCheckboxChange={handleCheckboxChange}
+            servicesItem={servicesItem}
+            selectedServices={selectedServices}
           />
         </LayoutPortfolio>
       } />
@@ -103,6 +115,10 @@ const index = ({
         setJoinState={setJoinState}
         activeNav={activeNav}
         setActiveNav={setActiveNav}
+        selectedServices={selectedServices}
+        handleCheckboxChange={handleCheckboxChange}
+        servicesItem={servicesItem}
+        quantity={quantity}
         t={t}
         toggleTab={toggleTab}
         profile={profile} imagePreview={imagePreview}>
@@ -115,6 +131,10 @@ const index = ({
         activeNav={activeNav}
         setJoinState={setJoinState}
         setActiveNav={setActiveNav}
+        selectedServices={selectedServices}
+        handleCheckboxChange={handleCheckboxChange}
+        servicesItem={servicesItem}
+        quantity={quantity}
         t={t}
         toggleTab={toggleTab}
         profile={profile} imagePreview={imagePreview}>
@@ -127,6 +147,10 @@ const index = ({
         joinState={joinState}
         activeNav={activeNav}
         setActiveNav={setActiveNav}
+        selectedServices={selectedServices}
+        handleCheckboxChange={handleCheckboxChange}
+        servicesItem={servicesItem}
+        quantity={quantity}
         t={t}
         toggleTab={toggleTab}
         profile={profile} 
@@ -140,6 +164,10 @@ const index = ({
         joinState={joinState}
         activeNav={activeNav}
         setActiveNav={setActiveNav}
+        selectedServices={selectedServices}
+        handleCheckboxChange={handleCheckboxChange}
+        servicesItem={servicesItem}
+        quantity={quantity}
         t={t}
         toggleTab={toggleTab}
         profile={profile} 
@@ -153,6 +181,10 @@ const index = ({
         joinState={joinState}
         activeNav={activeNav}
         setActiveNav={setActiveNav}
+        selectedServices={selectedServices}
+        handleCheckboxChange={handleCheckboxChange}
+        servicesItem={servicesItem}
+        quantity={quantity}
         t={t}
         toggleTab={toggleTab}
         profile={profile} 
@@ -167,6 +199,10 @@ const index = ({
             joinState={joinState}
             activeNav={activeNav}
             setActiveNav={setActiveNav}
+            selectedServices={selectedServices}
+            handleCheckboxChange={handleCheckboxChange}
+            servicesItem={servicesItem}
+            quantity={quantity}
             t={t}
             toggleTab={toggleTab}
             profile={profile} 

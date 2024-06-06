@@ -155,7 +155,7 @@ const openSearch = ()=> {
         setOpenPortfolioSearch(true);
     };
   return (
-    <div className="product-list w-full">
+    <div className="product-list flex flex-col items-center justify-center w-full">
     <div className="products-filter relative flex flex-row items-center justify-center">
       <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
       <div className="search-portfolio-container absolute flex flex-row items-center justify-center">

@@ -25,6 +25,9 @@ const items = {
       "introDesc": "It's worth noting that while an average solution may be sufficient in some cases, striving for excellence and continuous improvement is often desired in the programming industry.",
       "background": "About Us",
       "EnDesc": "Enable simple description",
+      "select": "select service",
+      "addToCart": "Add Service To Cart",
+      "removeFromCart": "Remove Service From Cart",
     },
     "profile" : {
       "name":"Profile",
@@ -95,7 +98,6 @@ const items = {
     "inputService": "Supply us an option of the service",
     "service": "service",
     "message": "Your Message",
-    "ServiceOption": "Select a service",
     "Service1": "Website Development",
     "Service2": "Graphic Designing & Web Designing",
     "Service3": "Products Photography",

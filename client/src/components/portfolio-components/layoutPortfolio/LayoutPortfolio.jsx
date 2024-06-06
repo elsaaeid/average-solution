@@ -20,6 +20,10 @@ const LayoutPortfolio = ({
   activeNav,
   setActiveNav,
   setJoinState,
+  selectedServices,
+  handleCheckboxChange,
+  servicesItem,
+  quantity,
  }) => {
     const [backToTop, setBackToTop] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -66,14 +70,18 @@ const LayoutPortfolio = ({
     (
       <Box className='app-container'>
         <Header 
-        t={t}
-        toggleTab={toggleTab} 
-        profile={profile} 
-        imagePreview={imagePreview} 
-        joinState={joinState}
-        setJoinState={setJoinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
+          t={t}
+          toggleTab={toggleTab} 
+          profile={profile} 
+          imagePreview={imagePreview} 
+          joinState={joinState}
+          setJoinState={setJoinState}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
+          selectedServices={selectedServices}
+          handleCheckboxChange={handleCheckboxChange}
+          servicesItem={servicesItem}
+          quantity={quantity}
         />
         <Navbar
           activeNav={activeNav}

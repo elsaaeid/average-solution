@@ -131,7 +131,7 @@ img {
   flex-direction: column;
 }
 section {
-  margin-top: 190px;
+  margin-top: 186px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -294,6 +294,19 @@ svg#search-icon {
 .app-container {
     width: 100%;
 }
+section {
+    margin-top: 188px;
+}
+}
+@media screen and (max-width: 912px){
+  section {
+    margin-top: 135px;
+  }
+  }
+  @media screen and (max-width: 853px) {
+    section {
+        margin-top: 128px;
+    }
 }
 @media screen and (max-width: 768px)
 {
@@ -317,6 +330,9 @@ svg#search-icon {
 }
 @media screen and (max-width: 540px)
 {
+  section {
+    margin-top: 129px;
+}
   a.tabs {
     width: 10rem;
     height: 2rem;
@@ -329,27 +345,41 @@ svg#search-icon {
   width: 260px;
 }
 }
+@media screen and (max-width: 430px)
+{
+  section {
+    margin-top: 143px;
+}
+}
+@media screen and (max-width: 414px) {
+  section {
+      margin-top: 147px;
+  }
+}
 @media screen and (max-width: 412px)
 {
 .lists {
   flex-direction: column;
 }
+section {
+  margin-top: 142px;
+}
 }
 @media screen and (max-width: 375px){
-  .app-container {
-    width: 375px;
-}
 .lists {
   flex-direction: column;
 }
 .btn {
   font-size: 10px;
   padding: 8px;
+}
+  section {
+      margin-top: 140px;
 }
 }
 @media screen and (max-width: 360px){
-  .app-container {
-    width: 360px;
+  section {
+    margin-top: 138px;
 }
 .lists {
   flex-direction: column;
@@ -359,10 +389,12 @@ svg#search-icon {
   padding: 8px;
 }
 }
-@media screen and (max-width: 280px){
-  .app-container {
-    width: 280px;
+@media screen and (max-width: 344px) {
+  section {
+      margin-top: 140px;
+  }
 }
+@media screen and (max-width: 280px){
 .lists {
   flex-direction: column;
 }

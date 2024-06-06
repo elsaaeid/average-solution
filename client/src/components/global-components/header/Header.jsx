@@ -22,6 +22,10 @@ const Header= ({
   setJoinState, 
   activeNav,
   setActiveNav,
+  selectedServices,
+  handleCheckboxChange,
+  servicesItem,
+  quantity,
 })=> {
     
     const [open, setOpen] = useState(false);
@@ -65,6 +69,10 @@ const Header= ({
                     imagePreview={imagePreview} 
                     toggleVariants={toggleVariants}
                     handleToggle={handleToggle}
+                    selectedServices={selectedServices}
+                    handleCheckboxChange={handleCheckboxChange}
+                    servicesItem={servicesItem}
+                    quantity={quantity}
                     />
                     {/* ======= menu ======= */} 
                     <motion.div  

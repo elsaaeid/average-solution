@@ -31,11 +31,11 @@ export default function LandingContainer() {
                 <img src={landingImg} alt="landingImg" />
             </div>
             <div className="right-content flex flex-col justify-center align-items-center">
-                <h2>{t("landingContainer.title")}</h2>
-                <p>{t("landingContainer.article")}</p>
+                <h2 className='m-3'>{t("landingContainer.title")}</h2>
+                <p className='p-2'>{t("landingContainer.article")}</p>
                 <NavLink to="/ContactPortfolio" 
                     underline="none"
-                    className="btn mt-3"
+                    className="btn mt-3 mb-3"
                     onClick={handleClose}
                     >{t("landingContainer.btn")}
                 </NavLink>

@@ -12,7 +12,6 @@
   grid-gap: 2rem;
   gap: 2rem;
 }
-
 .contact__option {
   background: var(--color-bg-variant);
   padding: 1.2rem;
@@ -21,6 +20,10 @@
   border: 1px solid transparent;
   transition: var(--transition);
   width: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 article.contact__option h5 {
   color: var(--color-white);

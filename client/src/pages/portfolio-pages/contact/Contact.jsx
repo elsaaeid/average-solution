@@ -4,7 +4,7 @@ import {MdContactPhone} from 'react-icons/md';
 import 'react-toastify/dist/ReactToastify.css';
 import {Box} from '@mui/material';
 import { useTranslation } from "react-i18next";
-import ContactForm from "../../dashboard-pages/contact-form/ContactForm"
+import ContactForm from "../../../components/global-components/contact-form/ContactForm"
 import ContactOption from "./ContactOption";
 
 

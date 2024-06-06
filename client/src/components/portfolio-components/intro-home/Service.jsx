@@ -12,7 +12,7 @@ import ServiceButton from './ServiceButton';
 import {useParams} from "react-router-dom";
 
 
-const Services = ({btnHandling, btnState, setActiveNav, item}) => {
+const Services = ({btnHandling, btnState, setActiveNav}) => {
 
      // Translation
 const { i18n } = useTranslation();

@@ -5,7 +5,10 @@ import LandingContainer from "../../../components/portfolio-components/landing-c
 
  const Home = ({
   t,
-  setActiveNav
+  setActiveNav,
+  handleCheckboxChange,
+  servicesItem,
+  selectedServices,
 }) => {
   const [btnState, setBtnState] = useState();
 
@@ -20,7 +23,11 @@ import LandingContainer from "../../../components/portfolio-components/landing-c
           btnState={btnState} btnHandling={btnHandling} />
         <IntroHome
           setActiveNav={setActiveNav}
-          btnHandling={btnHandling} />
+          btnHandling={btnHandling} 
+          handleCheckboxChange={handleCheckboxChange}
+          servicesItem={servicesItem}
+          selectedServices={selectedServices}
+          />
           <LandingContainer />
     </section>
   )

@@ -25,6 +25,9 @@ const items = {
         "background": "نبذة عنا",
         "letTalk": "هيا بنا نتحدث",
         "EnDesc": "تمكين الوصف البسيط",
+        "select": "تحديد الخدمة",
+        "addToCart": "اضف الخدمة الى الكرت",
+        "removeFromCart": "ازالة الخدمة من الكرت",
     },
     "profile" : {
     "name": "بروفايل",

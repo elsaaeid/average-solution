@@ -59,14 +59,13 @@ export const CardPortfolio = ( {
             (<Box className={selectedProduct === id ?
                 'details_Active details flex flex-col justify-center items-center' 
                 : 'details flex flex-col justify-center items-center'}>
-                <Box className="portfolio__item-details">
                     <div
+                    className="portfolio__item-details"
                     dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(product.description),
                     }}
                     ></div>
-                </Box>
-                <Box className="mt-3 category-content flex"><span className="found">{t("portfolio.foundIn")}</span><p className="category">{category}</p></Box>
+                <Box className="category-content flex"><span className="found">{t("portfolio.foundIn")}</span><p className="category">{category}</p></Box>
                 <Box className="portfolio__item-cta ">
                     <NavLink to={liveDemo} 
                     underline="none"

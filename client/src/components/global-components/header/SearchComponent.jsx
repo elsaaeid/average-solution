@@ -60,7 +60,7 @@ useEffect(()=>{
         style={{
           position: "relative",
       }}>
-        <div className='header-search flex flex-row justify-center items-center'>
+        <div className='header-search h-full flex flex-row justify-center items-center'>
           <SearchContainer
             style={{
               color: colors.grey[900],

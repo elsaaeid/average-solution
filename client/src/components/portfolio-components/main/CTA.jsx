@@ -4,10 +4,10 @@ import {NavLink} from "react-router-dom"
 
 const CTA = ({ t, btnState, btnHandling })=>{
     return (
-        <Box className='cta flex flex-col items-center'>
+        <Box className='cta mt-5 h-full flex flex-col justify-center items-center'>
             <article className="introduction w-full flex flex-col justify-center items-center">
                 <div className="flex flex-col justify-center items-center">
-                    <span className="mt-5">{t("homeContainer.background")}</span>
+                    <span className="mt-2">{t("homeContainer.background")}</span>
                 </div>
                 <p>{t("homeContainer.introDesc")}</p>
             </article>

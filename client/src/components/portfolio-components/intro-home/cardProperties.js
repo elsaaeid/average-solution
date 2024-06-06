@@ -72,8 +72,8 @@ const items = [
     className="lottie"
     />,
     "acceptService": "complete service",
-      "reviewService": "More",
-      "reMaintenanceService": "Maintenance",
+    "reviewService": "More",
+    "reMaintenanceService": "Maintenance",
     "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
@@ -128,6 +128,7 @@ const items = [
     "acceptService_ar": "اكمل الخدمة",
     "reviewService_ar": "المزيد",
     "reMaintenanceService_ar": "صيانة",
+
     },
   {
     id: "contentCreating",
