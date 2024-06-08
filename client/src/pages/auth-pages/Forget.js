@@ -14,12 +14,18 @@ import { tokens } from "../../theme";
 
 const Forgot = () => {
   // Translation
-       const { t } = useTranslation();
+  const { t } = useTranslation();
+  // Email States
   const [email, setEmail] = useState("");
+  // Loading States
   const [isLoading, setIsLoading] = useState(false);
+
+  // Use Dispatch
   const dispatch = useDispatch();
-    const theme = useTheme();
+  // Theme Colors Mode
+  const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // Forgot Function
   const forgot = async (e) => {
     e.preventDefault();
     if (!email) {

@@ -25,7 +25,7 @@ export const CardPortfolio = ( {
 	// Translation
 	const { t } = useTranslation();
     return (
-        <article key={key} className='portfolio__item'>
+        <article key={key} className='portfolio__item mb-3'>
         <Box className="portfolio__item-image">
             {product ? (product?.image ? (
             <img
@@ -73,7 +73,7 @@ export const CardPortfolio = ( {
                     >{t("portfolio.demoLive")}
                     </NavLink>
                 </Box>
-                <IconButton><HeartRating /></IconButton>
+                {/* <IconButton><HeartRating /></IconButton> */}
             </Box>)
             }
         </article>

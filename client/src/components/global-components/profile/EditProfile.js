@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../../global-components/card/Card";
 import Spinner from "../Spinner";
 import { updateUser } from "../../../redux/features/auth/authSlice";
@@ -9,30 +9,41 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
+import { Context } from "../../../context/Context";
 
-const EditProfile = ({profile, setProfile, profileImage, setProfileImage, setImagePreview}) => {
-       // Translation
-       const { t } = useTranslation();
-       const navigate = useNavigate()
+const EditProfile = () => {
+
+  // App Context
+  const {profile, setProfile, profileImage, setProfileImage, setImagePreview} = useContext(Context);
+  // Translation
+  const { t } = useTranslation();
+  // Use Navigate
+  const navigate = useNavigate()
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-     
+  
+  // Auth State Select
  const { isLoading } = useSelector(
     (state) => state.auth
   );
 
+  // Use Dispatch
   const dispatch = useDispatch();
 
+  // Image Change Handle Function
   const handleImageChange = (e) => {
     setProfileImage(e.target.files[0]);
     setImagePreview(URL.createObjectURL(e.target.files[0]));
   };
 
+  // handleInputChange Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProfile({ ...profile, [name]: value });
   };
 
+  // saveProfile Function
   const saveProfile = async (e) => {
     e.preventDefault();
     let imageURL;

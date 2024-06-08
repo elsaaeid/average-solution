@@ -155,10 +155,31 @@ const updateProduct = asyncHandler(async (req, res) => {
   res.status(200).json(updatedProduct);
 });
 
+const increaseLikes = asyncHandler( async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // Find the post by ID and update the likes count
+    const updatedPost = await Product.findByIdAndUpdate(
+      id,
+      { $inc: { likes: 1 } }, // Increment the likes count by 1
+      { new: true } // Return the updated post
+    );
+
+    res.json({ likes: updatedPost.likes });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update likes' });
+  }
+});
+
+
+
 module.exports = {
   createProduct,
   getProducts,
   getProduct,
   deleteProduct,
   updateProduct,
+  increaseLikes,
 };
+

@@ -6,14 +6,11 @@ import Box from '@mui/material/Box';
 
 const ServiceItem = ({
     item,
-    setActiveNav,
-    btnHandling,
-    btnState,
-    handleCheckboxChange,
-    selectedServices,
 })=>{
-const theme = useTheme();
-const colors = tokens(theme.palette.mode);
+  
+  // Theme Color Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
 
     return(
@@ -35,12 +32,7 @@ const colors = tokens(theme.palette.mode);
         </Box>
         <ServiceButton 
             item={item}
-            btnHandling={btnHandling} 
-            btnState={btnState} 
-            setActiveNav={setActiveNav} 
-            handleCheckboxChange={handleCheckboxChange}
-            selectedServices={selectedServices}
-          />
+        />
       </Box> 
     )
 }

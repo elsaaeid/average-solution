@@ -1,22 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import {RiHeartAddLine} from "react-icons/ri" 
+import { useDispatch, useSelector } from 'react-redux';
+import { likeProduct, unlikeProduct } from '../../../redux/features/likes/likesSlice';
 
+const HeartRating = ({ productId, isLiked }) => {
+  const dispatch = useDispatch();
+  const likes = useSelector((state) => state.product.likes);
 
-const HeartRating = () => {
-  const [count, setCount] = useState(36);
-
-  const handleIncrement = () => {
-    localStorage.setItem('heartCount', setCount(count => count + 1));
-    localStorage.getItem('heartCount');
+  const handleLike = () => {
+    if (isLiked) {
+      dispatch(unlikeProduct(productId));
+    } else {
+      dispatch(likeProduct(productId));
+    }
+    console.log(likes);
   };
-
- 
-
-
   return (
-    <div className="portfolio__item-icon">
-      {count}
-      <RiHeartAddLine onClick={handleIncrement} />
+    <div className="product">
+      {likes}
+      {isLiked ? 'Unlike' : 'Like'}
+      <RiHeartAddLine onClick={handleLike} />
     </div>
   );
 };

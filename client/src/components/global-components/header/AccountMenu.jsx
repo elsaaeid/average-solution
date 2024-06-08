@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Box, Menu, MenuItem, ListItemIcon, Divider, IconButton, Tooltip} from '@mui/material';
 import {RiLoginCircleLine} from 'react-icons/ri';
 import {RiLogoutCircleLine} from 'react-icons/ri';
@@ -8,8 +8,7 @@ import { NavLink } from "react-router-dom";
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { ShowOnLogin, ShowOnLogout } from "../../global-components/protect/HiddenLink";
 import Profile from "../../global-components/profile/Profile";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../../../redux/features/auth/authSlice";
+import { useDispatch } from "react-redux";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from "react-router-dom";
@@ -20,43 +19,41 @@ import {AiOutlineHome} from 'react-icons/ai';
 import { useTranslation } from "react-i18next";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
+import { Context } from '../../../context/Context';
+import { UserName } from "./UserName"
 
 
 
-export const UserName = () => {
-  const user = useSelector(selectUser);
-   const shortenText = (text, n) => {
-    if (text.length > n) {
-      const shoretenedText = text.substring(0, n).concat("...");
-      return shoretenedText;
-    }
-    return text;
-  };
-  
-  const username = user?.name || "...";
 
-  return <p className="flex flex-row mb-3 justify-around items-center w-full">Hi, {shortenText(username, 9)} |</p>;
-};
+export const AccountMenu = ()=> {
 
+  // App Context
+  const { toggleTab, joinState, setJoinState } = useContext(Context);
 
-export const AccountMenu = ({profile, imagePreview, toggleTab, joinState, setJoinState,})=> {
-
-     // Translation
+  // Translation
   const { t } = useTranslation();
+  // Anchor Element States
   const [anchorEl, setAnchorEl] = useState(null);
+  // Profile Title Showing States
   const [profileShowTitle, setProfileShowTitle] = useState(true);
+  // Profile Content Showing States
   const [profileShowContent, setProfileShowContent] = useState(false);
+  // Use Navigation
   const navigate = useNavigate();
+  // Boolean Method For Anchor Element
   const open = Boolean(anchorEl);
+  // Anchor Element openning Function
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  // Anchor Element Closing Function
   const handleClose = () => {
     setAnchorEl(null);
   };
+  // use Dispatch
   const dispatch = useDispatch();
 
-
+  // logout User Function
   const logoutUser = async ({}) => {
      // join-title state
      setJoinState(true);
@@ -64,26 +61,34 @@ export const AccountMenu = ({profile, imagePreview, toggleTab, joinState, setJoi
     await dispatch(logout());
     navigate("/login");
   };
+
+  // go To Login Function
   const goToLogin = ()=>{
     navigate('/login');
     handleClose();
     toggleTab("2");
-  }
+  };
   
+  // go To Register Function
   const goToRegister = ()=>{
     navigate('/register');
     handleClose();
     toggleTab("1");
-  }
+  };
 
+  // Profile Handling Function
   const profileHandling = ()=>{
     setProfileShowTitle(false);
     setProfileShowContent(true);
-  }
+  };
 
-const pathName = window.location.pathname;
-const theme = useTheme();
-const colors = tokens(theme.palette.mode);
+
+  // Location path Name
+  const pathName = window.location.pathname;
+
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   return (
     <React.Fragment>
       <Box 
@@ -183,7 +188,7 @@ const colors = tokens(theme.palette.mode);
                   {t("profile.name")}
                 </NavLink>}
               {profileShowContent && <Box className="flex flex-col justify-center items-center w-full">
-                <Profile toggleTab={toggleTab} profile={profile} imagePreview={imagePreview} setProfileShowTitle={setProfileShowTitle} setProfileShowContent={setProfileShowContent} />
+                <Profile setProfileShowTitle={setProfileShowTitle} setProfileShowContent={setProfileShowContent} />
               </Box>}
             </MenuItem>
             <Divider />
@@ -215,7 +220,7 @@ const colors = tokens(theme.palette.mode);
             </MenuItem>
             <Divider />
           </ShowOnLogout>
-            {pathName === "/" ? 
+            {pathName === "/home" ? 
             (
               <AdminAuthorLink>
                 <MenuItem onClick={handleClose} className="w-full h-full">
@@ -235,7 +240,7 @@ const colors = tokens(theme.palette.mode);
               (
                 <MenuItem onClick={handleClose} className="w-full h-full">
                   <NavLink
-                      to='/'
+                      to='/home'
                       className="flex flex-row justify-center items-center w-full"
                     >
                       <ListItemIcon>

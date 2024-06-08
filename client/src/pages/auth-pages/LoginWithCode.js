@@ -17,25 +17,43 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
+
+
+
 const LoginWithCode = () => {
-         // Translation
+  // Translation
   const { t } = useTranslation();
+  
+  // Login Code States
   const [loginCode, setLoginCode] = useState("");
+
+  // Loading States
   const [loading, setLoading] = useState(false);
+
+  // Email Params
   const { email } = useParams();
+  // Use Dispatch
   const dispatch = useDispatch();
+  // Use Navigate
   const navigate = useNavigate();
- const theme = useTheme();
+  // Use Theme 
+  const theme = useTheme();
+
+  // Theme Colors Mode
   const colors = tokens(theme.palette.mode);
+
+  // Auth State select
   const { isLoading, isLoggedIn, isSuccess } = useSelector(
     (state) => state.auth
   );
 
+  // Send User Login Code Function
   const sendUserLoginCode = async () => {
     await dispatch(sendLoginCode(email));
     await dispatch(RESET());
   };
 
+  // Login User With Code Function
   const loginUserWithCode = async (e) => {
     e.preventDefault();
     
@@ -54,6 +72,7 @@ const LoginWithCode = () => {
     setLoading(false);
   };
 
+  // navigate Side Effect
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
       navigate("/home");

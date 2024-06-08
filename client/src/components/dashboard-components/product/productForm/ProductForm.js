@@ -79,7 +79,7 @@ const ProductForm = ({
           />
 
           <div>
-            <button type="submit" className="btn --btn-primary">
+            <button type="submit" className="btn mt-3">
               {t("dashboard.product.saveProduct")}
             </button>
           </div>

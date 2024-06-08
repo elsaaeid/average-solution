@@ -14,19 +14,7 @@ import { tokens } from "../../../theme";
 import { ShowOnLogin } from "../protect/HiddenLink";
 
 
-const Header= ({
-  profile, 
-  imagePreview, 
-  toggleTab, 
-  joinState, 
-  setJoinState, 
-  activeNav,
-  setActiveNav,
-  selectedServices,
-  handleCheckboxChange,
-  servicesItem,
-  quantity,
-})=> {
+const Header= ()=> {
     
     const [open, setOpen] = useState(false);
     const [toggleVariants, setToggleVariants] = useState(true);
@@ -59,21 +47,9 @@ const Header= ({
               className="flex flex-row justify-between items-center">
                 <Box className='header__container flex flex-row justify-between items-center'>
                   <LogoContent />
-                  <HeaderIcons 
-                    activeNav={activeNav}
-                    setActiveNav={setActiveNav}
-                    setJoinState={setJoinState}
-                    joinState={joinState}
-                    toggleTab={toggleTab}
-                    profile={profile} 
-                    imagePreview={imagePreview} 
+                  <HeaderIcons  
                     toggleVariants={toggleVariants}
-                    handleToggle={handleToggle}
-                    selectedServices={selectedServices}
-                    handleCheckboxChange={handleCheckboxChange}
-                    servicesItem={servicesItem}
-                    quantity={quantity}
-                    />
+                    handleToggle={handleToggle} />
                     {/* ======= menu ======= */} 
                     <motion.div  
                       initial={`${open}`}
@@ -93,8 +69,6 @@ const Header= ({
                         <Tooltip title="Services">
                             <div className="drop-down-menu">
                                 <DropdownServices
-                                activeNav={activeNav}
-                                setActiveNav={setActiveNav}
                                 />
                             </div>
                         </Tooltip>
@@ -106,7 +80,7 @@ const Header= ({
                           <ShowOnLogin>
                               <Tooltip title="Notification">
                                   <IconComponent        
-                                  icon={<NotificationMenu profile={profile} />} />
+                                  icon={<NotificationMenu />} />
                               </Tooltip>
                           </ShowOnLogin>
                         </Box>

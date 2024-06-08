@@ -1,24 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {SiCodereview} from "react-icons/si"
 import {Link} from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Context } from "../../../context/Context";
 
 
-const ServiceShowToggle = ({
-    item, 
-    btnState, })=>{
+const ServiceShowToggle = ({ item })=>{
+  // Replacing Between Home Page and Service Page 
+  const [btnReplace, setBtnReplace] = useState(true);
+
+  // App Context
+  const {btnState} = useContext(Context);
+  // Use Location
   let location = useLocation();
-    const [btnReplace, setBtnReplace] = useState(true);
-    useEffect(()=> {
-    
-        if(location.pathname === "/home") {
-            setBtnReplace(true);
-        }
-        else if (location.pathname === `/service/${item.id}`) {
-            setBtnReplace(false);
-        }
-    }, [location.pathname, item.id]);
+
+  // Replacing Between Home Page and Service Page - Side Effect
+  useEffect(()=> {
+      if(location.pathname === "/home") {
+        setBtnReplace(true);
+      }
+      else if (location.pathname === `/service/${item.id}`) {
+        setBtnReplace(false);
+      }
+  }, [location.pathname, item.id]);
+
     return(
         <Link
             to={btnReplace ? `/service/${item.id}` : "/home"}

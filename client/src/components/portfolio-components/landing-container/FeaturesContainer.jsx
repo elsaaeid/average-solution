@@ -27,7 +27,7 @@ const colors = tokens(theme.palette.mode);
     return(
       <Box className="feature-section flex flex-col justify-center items-center">
         <Box 
-          onClick={() => window.scrollTo(0, document.body.scrollHeight / 3)}
+          onClick={() => window.scrollTo(0, document.body.scrollHeight / 2)}
           className="element btn flex justify-center items-center">
             <IoIosArrowDown />
         </Box>
@@ -51,16 +51,10 @@ const colors = tokens(theme.palette.mode);
                     </Box>
                     <Box className="right-side flex flex-col justify-center items-center w-1/2 p-5">
                         <h1
-                        className="font-bold mb-2 w-full"
-                        style={{
-                        color: colors.grey[500],
-                      }}
+                        className="font-bold flex justify-center items-center mb-2 w-full"
                         >{item.featureTitle}</h1>
                         <p
-                        className="w-full"
-                        style={{
-                        color: colors.grey[500],
-                      }}
+                        className="flex justify-center items-center w-full"
                         >{item.featureDesc}</p>
                     </Box>
                 </Box>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Profile.scss";
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
 import { useSelector } from "react-redux";
@@ -8,27 +8,35 @@ import {Link} from "react-router-dom"
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { useTranslation } from "react-i18next";
-
+import { Context } from '../../../context/Context';
     
 // const cloud_name = process.env.REACT_APP_CLOUD_NAME;
 // const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
 
-const Profile = ({toggleTab, setProfileShowTitle, setProfileShowContent, profile, imagePreview}) => {
-     // Translation
-     const { t } = useTranslation();
+const Profile = ({setProfileShowTitle, setProfileShowContent}) => {
+  // App Context
+  const {toggleTab, profile, imagePreview} = useContext(Context);
+
+  // Translation
+  const { t } = useTranslation();
+  // Use Redirect Of LoggedOut User
   useRedirectLoggedOutUser("/login");
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  // Auth State Select
   const { isLoading, user } = useSelector(
     (state) => state.auth
   );
 
-  
+  // Profile Handling Function
   const profileHandling = ()=>{
     setProfileShowTitle(true);
     setProfileShowContent(false);
   }
 
+  // goTo EditProfile Function
    const goToEditProfile = ()=>{
     toggleTab("1");
   }

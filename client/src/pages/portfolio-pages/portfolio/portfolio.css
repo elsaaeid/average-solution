@@ -16,10 +16,7 @@ section#portfolio {
     gap: 2.5rem;
 }
 .projects-number {
-  color: var(--color-primary);
   width: 100%;
-  margin-top: 91px;
-  margin-bottom: 20px;
   font-size: 13px;
   font-weight: 700;
 }
@@ -45,7 +42,7 @@ video {
 }
 .details_Active {
   transition: 0.5s all ease-in-out;
-  height: 100%;
+  height: max-content;
 }
 .portfolio__item {
   z-index: 1;
@@ -224,7 +221,7 @@ transition: 0.5s all ease-in-out;
   flex-direction: row;
 }
 .found {
-  background-color: green;
+  background-color: var(--color-primary);
   padding: 5px;
 }
 .category {
@@ -234,6 +231,12 @@ transition: 0.5s all ease-in-out;
   align-items: center;
   padding: 5px;
 }
+.item.activePage {
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 100%;
+}
+
 /* ===================MEDIA QUERIES (MEDIUM DEVICES) =============================*/
 
 @media screen and (max-width: 1024px) {

@@ -1,23 +1,33 @@
-import React, {useEffect} from 'react';
-import Box from '@mui/material/Box';
+import React, {useEffect, useContext} from 'react';
 import "./Navbar.css"
-import { useTranslation } from "react-i18next";
-import items from "../sectionsItems/items";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material"; 
-import NavIcon from './NavIcon';
 import { useLocation } from 'react-router-dom';
+import { Context } from "../../../context/Context";
+import { useTranslation } from "react-i18next";
+import items from "../sectionsItems/items";
+import Box from '@mui/material/Box';
+import NavIcon from './NavIcon';
 
-const Navbar = (
-    {activeNav,
-    setActiveNav}
-) => {
-     // Translation
+
+const Navbar = ()=>{
+  // Translation
 const { i18n } = useTranslation();
-const theme = useTheme();
-const colors = tokens(theme.palette.mode);
 
-const navItem = items.map(item => {
+  // App Context
+  const { activeNav, setActiveNav} = useContext(Context);
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  // Location
+  const location = useLocation();
+
+  // Location Handlling Side Effect
+  useEffect(() => {
+    setActiveNav(location.pathname);
+  }, [location, setActiveNav]);
+
+  const navItems = items.map(item => {
   if(i18n.language == 'ar') {
     return({
       id: item.id,
@@ -28,30 +38,22 @@ const navItem = items.map(item => {
   }
   return item;
 });
-
-const location = useLocation();
-
-  useEffect(() => {
-    setActiveNav(location.pathname);
-  }, [location, setActiveNav]);
-
-  return (
-      <Box className="nav-container">
-      {navItem
-        .map((item) => (
-            <NavIcon
-                style={{
-                    borderColor: colors.grey[500],
-                }}
-                titleIcon={item.title}
-                hrefIcon={item.href}
-                clickIcon={() => setActiveNav(item.href)}
-                classIcon={activeNav === item.href ? 'active icon-item' : 'icon-item'}
-                icon={item.icon}
-            />
-        ))}
-      </Box>
+  return(
+    <Box className="nav-container">
+    {navItems
+      .map((item) => (
+          <NavIcon
+              style={{
+                  borderColor: colors.grey[500],
+              }}
+              titleIcon={item.title}
+              hrefIcon={item.href}
+              clickIcon={() => setActiveNav(item.href)}
+              classIcon={activeNav === item.href ? 'active icon-item' : 'icon-item'}
+              icon={item.icon}
+          />
+      ))}
+    </Box>
   )
 }
-
 export default Navbar

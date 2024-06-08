@@ -4,6 +4,8 @@ import productReducer from "./features/product/productSlice";
 import emailReducer from "../redux/features/email/emailSlice";
 import filterReducerProduct from "../redux/features/product/filterSlice";
 import filterReducerAuth from "../redux/features/auth/filterSlice";
+import likeReducer from "../redux/features/likes/likesSlice";
+
 
 
 export const store = configureStore({
@@ -13,5 +15,6 @@ export const store = configureStore({
     email: emailReducer,
     filterReducerAuth: filterReducerAuth,
     filterReducerProduct: filterReducerProduct,
+    likeReducer: likeReducer,
   },
 });

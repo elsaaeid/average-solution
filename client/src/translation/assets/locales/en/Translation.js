@@ -133,8 +133,8 @@ const items = {
   },
   "dashboard": {
     "product": {
-      "productImage":"product image",
-      "Supported Formats: jpg, jpeg, png": " Supported Formats: jpg, jpeg, png",
+      "productImage": "product image",
+      "supportedFormats": "Supported Formats: jpg, jpeg, png",
       "productName": "Product Name",
       "saveProduct": "Save Product",
     },

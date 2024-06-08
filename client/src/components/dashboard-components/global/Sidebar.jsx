@@ -1,43 +1,26 @@
 import React, { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, IconButton, useTheme } from "@mui/material";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import InventoryIcon from '@mui/icons-material/Inventory';
+import { SidebarItem } from "./SidebarItem";
 import "./Sidebar.css";
 
 
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  return (
-    <MenuItem
-      active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography style={{
-        color: colors.grey[100],
-      }}>{title}</Typography>
-      <Link to={to} />
-    </MenuItem>
-  );
-};
 
-const Sidebar = ({t}) => {
+const Sidebar = () => {
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // Sidebar Collapsed States
   const [isCollapsed, setIsCollapsed] = useState(false);
+  // Item Select
   const [selected, setSelected] = useState("Dashboard");
 
   return (
@@ -85,46 +68,31 @@ const Sidebar = ({t}) => {
             )}
           </MenuItem>
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            <Item
+            <SidebarItem
               title="Dashboard"
               to="/dashboard"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-
-            <Typography
-              variant="h6"
-              color={colors.grey[100]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Data
-            </Typography>
-            <Item
+            <SidebarItem
               title="Add product"
               to="/add-product"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <SidebarItem
               title="products"
               to="/products"
               icon={<InventoryIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <SidebarItem
               title="Manage users"
               to="/users"
               icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Contacts Information"
-              to="/contact-us"
-              icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

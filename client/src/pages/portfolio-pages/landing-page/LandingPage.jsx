@@ -1,17 +1,11 @@
 import React from 'react';
 import LandingContainer from "../../../components/portfolio-components/landing-container/LandingContainer";
 
- const LandingPage = ({
-    btnState,
-    btnHandling,
-}) => {
+ const LandingPage = () => {
 
   return (
      <>
-        <LandingContainer
-            btnState={btnState}
-            btnHandling={btnHandling}
-            />
+        <LandingContainer />
     </>
   )
 }

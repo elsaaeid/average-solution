@@ -6,19 +6,11 @@ import { Box } from "@mui/material";
 
 
 
-const ServiceShoppingForm = ({
-  selectedServices, 
-  handleCheckboxChange,
-  servicesItem
-}) => {
+const ServiceShoppingForm = () => {
 
   return (
     <Box>
-      <CartItem 
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        />
+      <CartItem />
     </Box>
   );
 };

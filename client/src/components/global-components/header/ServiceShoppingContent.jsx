@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Box, Menu, MenuItem, Divider, IconButton, Tooltip} from '@mui/material';
 import {IconComponent} from './IconComponent';
 import { TbShoppingCartCog } from "react-icons/tb";
@@ -7,26 +7,33 @@ import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import ServiceShoppingForm from '../service-shopping-form/ServiceShoppingForm';
 import Badge from '@mui/material/Badge';
+import { Context } from '../../../context/Context';
 
 
-export const ServiceShoppingContent = ({
-  selectedServices,
-  handleCheckboxChange,
-  servicesItem,
-  quantity,
-})=> {
+export const ServiceShoppingContent = ()=> {
 
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  // App Context
+  const {quantity} = useContext(Context);
+
+  // Anchor Element States
   const [anchorEl, setAnchorEl] = useState(null);
+
+  // Anchor Element Boolean Method
   const open = Boolean(anchorEl);
+
+  // Open Handle Function
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  // Close Handle Function
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-const theme = useTheme();
-const colors = tokens(theme.palette.mode);
   return (
     <React.Fragment>
       <Box 
@@ -109,11 +116,7 @@ const colors = tokens(theme.palette.mode);
           }}
           >
             <MenuItem className="w-full h-full">
-                <ServiceShoppingForm 
-                  selectedServices={selectedServices}
-                  handleCheckboxChange={handleCheckboxChange}
-                  servicesItem={servicesItem}
-                  />
+                <ServiceShoppingForm />
             </MenuItem>
             <Divider />
         </div>

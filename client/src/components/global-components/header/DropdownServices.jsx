@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import Box from '@mui/material/Box';
@@ -9,11 +9,11 @@ import Select from '@mui/material/Select';
 import { useTranslation } from "react-i18next";
 import shortenText from "../shortenText";
 import ActiveLink from "../active-link/ActiveLink";
+import { Context } from "../../../context/Context";
 
-const DropdownServices = ({
-  activeNav,
-  setActiveNav,
-}) => {
+const DropdownServices = () => {
+  //App Context
+  const { activeNav, setActiveNav} = useContext(Context);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
        // Translation

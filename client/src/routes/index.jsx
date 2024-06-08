@@ -28,56 +28,25 @@ import LandingPage from "../pages/portfolio-pages/landing-page/LandingPage.jsx"
 
 
 
-const index = ({ 
-  t,
-  activeNav,
-  setActiveNav,
-  orderState, 
-  toggleTab, 
-  profile, 
-  setProfile, 
-  profileImage, 
-  setProfileImage, 
-  imagePreview, 
-  setImagePreview, 
-  selection, 
-  isSidebar, 
-  setIsSidebar,
-  joinState,
-  setJoinState,
-  selectedServices,
-  handleCheckboxChange,
-  servicesItem,
-  quantity,
-  btnState,
-  btnHandling,
-}) => {
+const index = () => {
 
   return(
     <Routes>
       <Route path="/register" element={
         <PageMenu 
-          orderState={orderState}
-          toggleTab={toggleTab}
           firstLinkNav="/register" firstTitleNav="Signup"
           secondLinkNav="/login" secondTitleNav="Login"
           >
-          <Register 
-             joinState={joinState} 
-          />
+          <Register />
         </PageMenu>
         } 
       />
       <Route path="/login" element={
         <PageMenu 
-          orderState={orderState}
-          toggleTab={toggleTab}
           firstLinkNav="/register" firstTitleNav="Signup"
           secondLinkNav="/login" secondTitleNav="Login"
           >
-          <Login 
-            setJoinState={setJoinState}
-          />
+          <Login />
         </PageMenu>
       } 
     />
@@ -92,134 +61,41 @@ const index = ({
       />
       {/*Portfolio*/}
       <Route path='/' element={
-        <LandingPage 
-          btnState={btnState}
-          btnHandling={btnHandling}
-          />} 
+        <LandingPage />} 
         />
       <Route path='/home' element={
-        <LayoutPortfolio
-          joinState={joinState}
-          setJoinState={setJoinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          selectedServices={selectedServices}
-          handleCheckboxChange={handleCheckboxChange}
-          servicesItem={servicesItem}
-          quantity={quantity}
-          t={t}
-          toggleTab={toggleTab}
-          profile={profile} 
-          imagePreview={imagePreview}>
-          <Home
-            t={t}
-            setActiveNav={setActiveNav}
-            handleCheckboxChange={handleCheckboxChange}
-            servicesItem={servicesItem}
-            selectedServices={selectedServices}
-            btnState={btnState}
-            btnHandling={btnHandling}
-          />
+        <LayoutPortfolio>
+          <Home />
         </LayoutPortfolio>
       } />
       <Route path='/about' element={
-        <LayoutPortfolio 
-        joinState={joinState}
-        setJoinState={setJoinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        quantity={quantity}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} imagePreview={imagePreview}>
+        <LayoutPortfolio>
           <About />
         </LayoutPortfolio>
       } />
       <Route path='/experience' element={
-        <LayoutPortfolio 
-        joinState={joinState}
-        activeNav={activeNav}
-        setJoinState={setJoinState}
-        setActiveNav={setActiveNav}
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        quantity={quantity}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} imagePreview={imagePreview}>
+        <LayoutPortfolio>
           <Experience />
         </LayoutPortfolio>
       } />
       <Route path='/services' element={
-        <LayoutPortfolio 
-        setJoinState={setJoinState}
-        joinState={joinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        quantity={quantity}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} 
-        imagePreview={imagePreview}>
+        <LayoutPortfolio>
           <Services />
         </LayoutPortfolio>
       } />
       <Route path='/portfolio' element={
-        <LayoutPortfolio 
-        setJoinState={setJoinState}
-        joinState={joinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        quantity={quantity}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} 
-        imagePreview={imagePreview}>
+        <LayoutPortfolio>
           <Portfolio />
         </LayoutPortfolio>
       } />
       <Route path='/contact' element={
-        <LayoutPortfolio 
-        setJoinState={setJoinState}
-        joinState={joinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        selectedServices={selectedServices}
-        handleCheckboxChange={handleCheckboxChange}
-        servicesItem={servicesItem}
-        quantity={quantity}
-        t={t}
-        toggleTab={toggleTab}
-        profile={profile} 
-        imagePreview={imagePreview}>
+        <LayoutPortfolio>
           <Contact />
         </LayoutPortfolio>
       } />
       {/*Services*/}
       <Route path="/service/:id" exact element={
-         <LayoutPortfolio 
-            setJoinState={setJoinState}
-            joinState={joinState}
-            activeNav={activeNav}
-            setActiveNav={setActiveNav}
-            selectedServices={selectedServices}
-            handleCheckboxChange={handleCheckboxChange}
-            servicesItem={servicesItem}
-            quantity={quantity}
-            t={t}
-            toggleTab={toggleTab}
-            profile={profile} 
-            imagePreview={imagePreview}> 
+         <LayoutPortfolio > 
           <Service />
         </LayoutPortfolio>
       } />
@@ -227,18 +103,10 @@ const index = ({
         path="/edit-profile"
         element={
             <PageMenu 
-            orderState={orderState}
-            toggleTab={toggleTab}
-            firstLinkNav="/edit-profile" firstTitleNav="Edit Profile"
-            secondLinkNav="/change-password" secondTitleNav="Change Password"
+              firstLinkNav="/edit-profile" firstTitleNav="Edit Profile"
+              secondLinkNav="/change-password" secondTitleNav="Change Password"
             >
-              <EditProfile 
-              profile={profile} 
-              setProfile={setProfile} 
-              profileImage={profileImage} 
-              setProfileImage={setProfileImage} 
-              imagePreview={imagePreview} 
-              setImagePreview={setImagePreview} />
+              <EditProfile />
             </PageMenu>
             }
           />
@@ -246,96 +114,37 @@ const index = ({
       path="/change-password"
       element={
           <PageMenu 
-          orderState={orderState}
-          toggleTab={toggleTab}
-          firstLinkNav="/edit-profile" firstTitleNav="Edit Profile"
-          secondLinkNav="/change-password" secondTitleNav="Change Password">
-            <ChangePassword 
-            profile={profile} 
-            setProfile={setProfile}
-            profileImage={profileImage}
-            setProfileImage={setProfileImage} 
-            imagePreview={imagePreview} 
-            setImagePreview={setImagePreview} />
+            firstLinkNav="/edit-profile" firstTitleNav="Edit Profile"
+            secondLinkNav="/change-password" secondTitleNav="Change Password">
+            <ChangePassword />
           </PageMenu>
           }
         />
       <Route path='/dashboard' element={
-        <LayoutDashboard 
-        toggleTab={toggleTab}
-        setJoinState={setJoinState}
-        joinState={joinState}
-        activeNav={activeNav}
-        setActiveNav={setActiveNav}
-        t={t}
-        profile={profile} 
-        imagePreview={imagePreview} 
-        isSidebar={isSidebar} 
-        setIsSidebar={setIsSidebar}>
+        <LayoutDashboard >
           <Dashboard />
         </LayoutDashboard>} />
 
         <Route path='/products' element={
-          <LayoutDashboard 
-          toggleTab={toggleTab}
-          setJoinState={setJoinState}
-          joinState={joinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          t={t}
-          profile={profile} 
-          imagePreview={imagePreview} 
-          isSidebar={isSidebar} 
-          setIsSidebar={setIsSidebar}>
+          <LayoutDashboard >
             <Products />
           </LayoutDashboard>} />
           <Route path='/users' element={
-            <LayoutDashboard 
-            toggleTab={toggleTab}
-            joinState={joinState}
-            setJoinState={setJoinState}
-            activeNav={activeNav}
-            setActiveNav={setActiveNav}
-            t={t}
-            profile={profile} 
-            imagePreview={imagePreview} 
-            isSidebar={isSidebar} 
-            setIsSidebar={setIsSidebar}>
+            <LayoutDashboard >
               <UserList />
             </LayoutDashboard>} />
 
           <Route
           path="/add-product"
           element={
-            <LayoutDashboard 
-            toggleTab={toggleTab}
-            joinState={joinState}
-            setJoinState={setJoinState}
-            activeNav={activeNav}
-            setActiveNav={setActiveNav}
-            t={t}
-            profile={profile} 
-            imagePreview={imagePreview} 
-            isSidebar={isSidebar} 
-            setIsSidebar={setIsSidebar}>
+            <LayoutDashboard >
               <AddProduct />
             </LayoutDashboard>} />
 
         <Route
         path="/edit-product/:id"
         element={
-          <LayoutDashboard 
-          toggleTab={toggleTab}
-          joinState={joinState}
-          setJoinState={setJoinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          t={t}
-          profile={profile} 
-          imagePreview={imagePreview} 
-          selection={selection} 
-          isSidebar={isSidebar} 
-          setIsSidebar={setIsSidebar}>
+          <LayoutDashboard >
             <EditProduct />
           </LayoutDashboard>} />
     

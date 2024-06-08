@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Box, Menu, MenuItem, Divider, IconButton, Tooltip} from '@mui/material';
 import {IconComponent} from './IconComponent';
 import Notification from "../../global-components/profile/notification/Notification";
@@ -7,19 +7,31 @@ import CloseIcon from '@mui/icons-material/Close';
 import Badge from '@mui/material/Badge';
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
+import { Context } from '../../../context/Context';
 
 
 
-export const NotificationMenu = ({profile})=> {
-  const [anchorEl, setAnchorEl] = useState(null);
+export const NotificationMenu = ()=> {
+
+  // App Context 
+  const {profile} = useContext(Context);
+  // count Notice Badge State
   const [countNotice, setCountNotice] = useState(true);
+
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // Anchor Element State
+  const [anchorEl, setAnchorEl] = useState(null);
 
+  // Anchor Element Boolean Method
   const open = Boolean(anchorEl);
+  // Open handle Function
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  // Close Hnadling Function
   const handleClose = () => {
     setAnchorEl(null);
   };

@@ -12,6 +12,7 @@ import {Box} from '@mui/material';
 import { useTranslation } from "react-i18next";
 
 
+// Initial State
 const initialState = {
   password: "",
   password2: "",
@@ -20,23 +21,32 @@ const initialState = {
 const Reset = () => {
   // Translation
   const { t } = useTranslation();
+  // Form Data States
   const [formData, setFormData] = useState(initialState);
+  // Form Data Passing
   const { password, password2 } = formData;
+  // Reset Token Params
   const { resetToken } = useParams();
-  const [loading, setLoading] = useState(false);
-  console.log(resetToken);
 
+  // Loading States
+  const [loading, setLoading] = useState(false);
+
+  // State Auth Select
   const { isLoading, isSuccess, message } = useSelector(
     (state) => state.auth
   );
+  // Use Dispatch
   const dispatch = useDispatch();
+  // Use Navigate
   const navigate = useNavigate();
-
+  
+  // Input Change Handle Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Reset Function
   const reset = async (e) => {
     e.preventDefault();
 
@@ -55,6 +65,7 @@ const Reset = () => {
     setLoading(false);
   };
 
+  // Navigate Side Effect
   useEffect(() => {
     if (isSuccess && message.includes("Reset Successful")) {
       navigate("/login");

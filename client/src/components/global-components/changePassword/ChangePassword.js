@@ -16,6 +16,7 @@ import {Box} from "@mui/material";
 import { useTranslation } from "react-i18next";
  
 
+// Initial State
 const initialState = {
   oldPassword: "",
   password: "",
@@ -23,23 +24,34 @@ const initialState = {
 };
 
 const ChangePassword = () => {
-      // Translation
-      const { t } = useTranslation();
+  // Translation
+  const { t } = useTranslation();
 
+  // Use Redirect LoggedOut User
   useRedirectLoggedOutUser("/login");
+
+  // Form Data States
   const [formData, setFormData] = useState(initialState);
+  // formData Passing
   const { oldPassword, password, password2 } = formData;
 
+  // Auth State Select
   const { isLoading, user } = useSelector((state) => state.auth);
 
+  // useDispatch
   const dispatch = useDispatch();
+
+  // useNavigate
   const navigate = useNavigate();
 
+  // Input Change Handle Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+
+  // Update Password Function
   const updatePassword = async (e) => {
     e.preventDefault();
 

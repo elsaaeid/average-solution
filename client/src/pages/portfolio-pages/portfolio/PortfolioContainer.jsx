@@ -20,6 +20,9 @@ import { useTranslation } from "react-i18next";
 import {RiSearchEyeLine} from "react-icons/ri";
 import {VscSearch} from "react-icons/vsc";
 import { CardPortfolio } from "./CardPortfolio";
+import Grid from '@material-ui/core/Grid';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 
@@ -88,7 +91,7 @@ useEffect(() => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [numState, setNumState] = useState(19);
+  const [numState, setNumState] = useState(18);
   const itemsPerPage = 5;
 
   useEffect(() => {
@@ -208,15 +211,21 @@ const openSearch = ()=> {
         >-- {t("portfolio.noProduct")}...</p>
       ) : (
         <Box>
-        <Box className="projects-number flex flex-row justify-around items-center">
+        <Box 
+          style={{
+            color: colors.grey[500],
+          }}
+          className="projects-number mb-3 flex flex-row justify-around items-center">
           <span>{categoryState}</span>
           <p><span>{t("portfolio.projectsNumber")}</span> <span>{numState}</span></p>
         </Box>
-          <Box>
+          <Grid className="row mt-5" container justifyContent="center" spacing={4}>
             {currentItems.map((product) => {
               const { _id, name, category, liveDemo } = product;
               return (
-                <Box className={orderState ? "content-portfolio active-content" : "content-portfolio"}>
+                <Grid 
+                  xs={6} sm={6} md={6} lg={6} 
+                  className={orderState ? "content-portfolio active-content" : "content-portfolio"}>
                   <CardPortfolio
                     id={product._id}
                     key={_id}
@@ -229,35 +238,36 @@ const openSearch = ()=> {
                     liveDemo={liveDemo}
                     shortenText={shortenText}
                     />
-                </Box>
+                </Grid>
               );
             })}
-          </Box>
+          </Grid>
         </Box>
       )}
     </div>
   {/* pagination */}
      <ReactPaginate
-          className="pagination flex flex-row justify-around items-center"
+          className={`pagination flex flex-row justify-around items-center`}
           breakLabel="..."
-          nextLabel="Next"
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
-          previousLabel="Prev"
           renderOnZeroPageCount={null}
           containerClassName="pagination"
           pageLinkClassName="page-num"
           previousLinkClassName="page-num"
           nextLinkClassName="page-num"
-          activeLinkClassName="activePage"
-          style={{
-            color: colors.grey[500],
-            backgroundColor: colors.grey[500],
-            borderColor: colors.grey[500],
-          }}
+          activeLinkClassName="item activePage"
+          previousLabel={<ArrowBackIosIcon style={{ color: colors.grey[100], fontSize: 18, width: 50 }} />}
+          nextLabel={<ArrowForwardIosIcon style={{ color: colors.grey[500], fontSize: 18, width: 50 }} />}
+          breakClassName={'item break-me'}
+          disabledClassName={'disabled-page'}
+          marginPagesDisplayed={2}
+          nextClassName={"item next"}
+          pageClassName={'item pagination-page'}
+          previousClassName={"item previous"}
         />
-</div>
+    </div>
   );
 };
 

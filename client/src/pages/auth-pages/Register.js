@@ -21,7 +21,7 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
 
-
+// Initial State
 const initialState = {
   name: "",
   email: "",
@@ -31,27 +31,39 @@ const initialState = {
 
 
 const Register = () => {
+  // Form Data
   const [formData, setFormData] = useState(initialState);
+  // Form Data Passing
   const { name, email, password, password2 } = formData;
 // Translation
   const { t } = useTranslation();
+  // Use Dispatch
   const dispatch = useDispatch();
+  // Use Navigate
   const navigate = useNavigate();
+  //Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  // Slice Auth States Select
   const { isLoading, isLoggedIn, isSuccess } = useSelector(
     (state) => state.auth
   );
 
+  // Use Case States
   const [uCase, setUCase] = useState(false);
+  // Numbers States
   const [num, setNum] = useState(false);
+  // Characters States
   const [sChar, setSChar] = useState(false);
+  // Password Length States
   const [passLength, setPassLength] = useState(false);
 
+  // Icons Components
   const timesIcon = <FaTimes color="red" size={15} />;
   const checkIcon = <BsCheck2All color="green" size={15} />;
 
+  // Switch Icon Conditions
   const switchIcon = (condition) => {
     if (condition) {
       return checkIcon;
@@ -59,11 +71,14 @@ const Register = () => {
     return timesIcon;
   };
 
+
+  // Input Change Handle Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Register States Checking
   useEffect(() => {
     // Check Lower and Uppercase
     if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
@@ -91,6 +106,7 @@ const Register = () => {
     }
   }, [password]);
 
+  // register User Function
   const registerUser = async (e) => {
     e.preventDefault();
 
@@ -116,6 +132,7 @@ const Register = () => {
     await dispatch(sendVerificationEmail());
   };
 
+  // navigate Side Effect 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
       navigate("/login");
@@ -123,6 +140,8 @@ const Register = () => {
 
     dispatch(RESET());
   }, [isLoggedIn, isSuccess, dispatch, navigate]);
+
+
   return (
     <div className={`${styles.auth} p-3`}>
         <div className={styles.form}

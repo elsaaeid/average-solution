@@ -7,17 +7,8 @@ import "./LayoutDashboard.css";
 
 
 const LayoutDashboard = ({ 
-  t, 
   children, 
-  profile, 
-  imagePreview, 
-  isSidebar, 
-  toggleTab, 
-  colors, 
-  joinState, 
-  setJoinState,
-  activeNav,
-  setActiveNav,
+  colors
 }) => {
   const [loading, setLoading] = useState(true);
   
@@ -35,18 +26,9 @@ const LayoutDashboard = ({
     : 
     (
       <Box className="app-container flex flex-col">
-        <Header 
-          t={t}
-          toggleTab={toggleTab} 
-          profile={profile} 
-          imagePreview={imagePreview} 
-          joinState={joinState}
-          setJoinState={setJoinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          />
+        <Header />
         <Box className="content-main flex flex-row">
-          <Sidebar t={t} colors={colors} isSidebar={isSidebar} />
+          <Sidebar colors={colors} />
           <Box className="basic-content w-full">
               {children}
           </Box>

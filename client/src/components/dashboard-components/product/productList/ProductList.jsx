@@ -190,8 +190,8 @@ const openSearch = ()=> {
     <div className="product-list">
       <ProductSummary products={products} />
       <hr />
-      <div className="w-full">
-        <div className="flex flex-col justify-between">
+      <div className="w-full flex flex-col justify-between items-center">
+        <div className="flex flex-col justify-between mt-3">
           <span>
             <h3 style={{
               color: colors.grey[500],

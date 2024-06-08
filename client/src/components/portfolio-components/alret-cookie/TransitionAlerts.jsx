@@ -9,7 +9,7 @@ import { Button } from '@material-ui/core';
 import CircularIndeterminate from "../../global-components/Spinner"
 import { useCookies } from 'react-cookie';
 import "./TransitionAlerts.css"
-
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -20,12 +20,17 @@ const useStyles = makeStyles(() => ({
 
 
 
-export default function TransitionAlerts({t, setAlretState, open, setOpen}) {
+export default function TransitionAlerts({
+  setAlretState, 
+  open, 
+  setOpen
+}) {
   const classes = useStyles();
   const [cookies, ] = useCookies(['access_token', 'refresh_token'])
   const [loading, setLoading] = React.useState(false);
 
-  
+            // Translation
+	const { t } = useTranslation();
 
 
  const loadingHandling = ()=>{

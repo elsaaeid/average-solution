@@ -10,21 +10,7 @@ import TransitionAlerts from "../alret-cookie/TransitionAlerts";
 import Collapse from '@material-ui/core/Collapse';
 
 
-const LayoutPortfolio = ({ 
-  t, 
-  toggleTab, 
-  profile, 
-  imagePreview, 
-  children, 
-  joinState,
-  activeNav,
-  setActiveNav,
-  setJoinState,
-  selectedServices,
-  handleCheckboxChange,
-  servicesItem,
-  quantity,
- }) => {
+const LayoutPortfolio = ({children}) => {
     const [backToTop, setBackToTop] = useState(false);
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = React.useState(true);
@@ -32,7 +18,7 @@ const LayoutPortfolio = ({
 
 
 
-  
+  // Scroll Handlling Side Effect
   useEffect(() => {
     window.addEventListener("scroll", ()=>{
       if(window.scrollY > 80) {
@@ -46,6 +32,7 @@ const LayoutPortfolio = ({
     })
     }, []);
 
+    // Loading Handlling Side Effect
     useEffect(() => {
       setLoading(true);
       setTimeout(() => {
@@ -53,6 +40,7 @@ const LayoutPortfolio = ({
       }, 3000);
     }, []);
 
+    // Alret Handlling Side Effect
     useEffect(()=>{
       setTimeout(function(){
         setAlretState(true);
@@ -69,39 +57,19 @@ const LayoutPortfolio = ({
     : 
     (
       <Box className='app-container'>
-        <Header 
-          t={t}
-          toggleTab={toggleTab} 
-          profile={profile} 
-          imagePreview={imagePreview} 
-          joinState={joinState}
-          setJoinState={setJoinState}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          selectedServices={selectedServices}
-          handleCheckboxChange={handleCheckboxChange}
-          servicesItem={servicesItem}
-          quantity={quantity}
-        />
-        <Navbar
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          />
+        <Header />
+        <Navbar />
             {children}
-            
         <BackToTopButton backToTop={backToTop} />
         <ChatBotContainer />
         <Collapse in={open} className='alret-container flex items-center justify-center'>
         {alretState ? 
         (  <div className='alret-content'>
-              <TransitionAlerts setOpen={setOpen} open={open} t={t} setAlretState={setAlretState} className="alret" />
+              <TransitionAlerts setOpen={setOpen} open={open} setAlretState={setAlretState} className="alret" />
           </div>)
         : null}
         </Collapse>     
-        <Footer 
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
-          />
+        <Footer />
       </Box>
       )
     }

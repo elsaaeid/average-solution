@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link} from "react-router-dom";
 import Box from '@mui/material/Box';
 import { useTranslation } from "react-i18next";
 import ServiceShowToggle from './ServiceShowToggle';
+import { Context } from '../../../context/Context';
   
 const ServiceButton = ({
-    btnState, 
-    item,
-    handleCheckboxChange,
-    selectedServices,
+    item
   }) => {
 
-
-    	// Translation
+  // App Context
+  const {
+    handleCheckboxChange,
+    selectedServices,
+  } = useContext(Context);
+  
+  // Translation
 	const { t } = useTranslation();
 
 
-
+  // Add To Cart 
   const AddToCart = ()=>{
     handleCheckboxChange(item.id);
   }
@@ -26,7 +29,6 @@ const ServiceButton = ({
     <Box className='show-service-icons w-full mt-3 flex flex-row justify-around items-initial'>
       <Box class="overlay p-3 flex flex-row items-center justify-between">
           <ServiceShowToggle 
-            btnState={btnState}
             item={item}
           />
         <Link onClick={AddToCart} className='btn'>

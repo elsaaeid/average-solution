@@ -12,11 +12,16 @@ import { useTranslation } from "react-i18next";
 const Verify = () => {
   // Translation
   const { t } = useTranslation();
+  // use Dispatch
   const dispatch = useDispatch();
+  // Token Params
   const { verificationToken } = useParams();
+  // Loading States
   const [loading, setLoading] = useState(false);
+  // Auth State Select
   const { isLoading } = useSelector((state) => state.auth);
 
+  // Verify Account Function
   const verifyAccount = async () => {
     setLoading(true);
     await dispatch(verifyUser(verificationToken));

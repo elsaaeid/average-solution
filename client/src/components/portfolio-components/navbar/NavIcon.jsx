@@ -6,8 +6,9 @@ import {useTheme} from '@mui/material';
 
                
 const NavIcons = ({titleIcon, hrefIcon, clickIcon, classIcon, icon}) => {
+  // Theme Colors Mode
   const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode);
   return (
         <Tooltip title={titleIcon}>
             <Link 

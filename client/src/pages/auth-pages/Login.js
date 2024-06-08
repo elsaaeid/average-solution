@@ -19,48 +19,60 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
-
+// Initial State
 const initialState = {
   email: "",
   password: "",
 };
 
 const Login = () => {
+  // Form Data
   const [formData, setFormData] = useState(initialState);
+  // Form Data Passing
   const { email, password } = formData;
-       // Translation
-       const { t } = useTranslation();
+  // Translation
+  const { t } = useTranslation();
+  // Input Change handle Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  
+  // Use Dispatch
   const dispatch = useDispatch();
+  // Use Navigate
   const navigate = useNavigate();
 
+  // Auth States Select
   const { isLoading, isLoggedIn, isSuccess, isError, twoFactor } =
     useSelector((state) => state.auth);
+
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
-  const loginUser = async (e) => {
-    e.preventDefault();
+    // Login User Function
+    const loginUser = async (e) => {
+      e.preventDefault();
+      
+      if (!email || !password) {
+        return toast.error("All fields are required");
+      }
+
+      if (!validateEmail(email)) {
+        return toast.error("Please enter a valid email");
+      }
+      const userData = {
+        email,
+        password,
+      };
     
-    if (!email || !password) {
-      return toast.error("All fields are required");
-    }
-
-    if (!validateEmail(email)) {
-      return toast.error("Please enter a valid email");
-    }
-    const userData = {
-      email,
-      password,
+      // console.log(userData);
+      await dispatch(login(userData));
     };
-   
-    // console.log(userData);
-    await dispatch(login(userData));
-  };
 
+
+    // Navigating Side Effect
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
       navigate("/home");
@@ -74,6 +86,7 @@ const Login = () => {
     dispatch(RESET());
   }, [isLoggedIn, isSuccess, dispatch, navigate, isError, twoFactor, email]);
 
+  // Google Login Function
   const googleLogin = async (credentialResponse) => {
     // console.log(credentialResponse);
     await dispatch(

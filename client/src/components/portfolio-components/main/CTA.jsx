@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Box} from '@mui/material';
-import {NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Context } from '../../../context/Context';
 
-const CTA = ({ t, btnState, btnHandling })=>{
+
+const CTA = ()=>{
+    // App Context
+    const { btnState, btnHandling } = useContext(Context);
+    // Translation
+	const { t } = useTranslation();
     return (
         <Box className='cta mt-5 h-full flex flex-col justify-center items-center'>
             <article className="introduction w-full flex flex-col justify-center items-center">

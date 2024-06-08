@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Box from '@mui/material/Box';
 import "./IntroHome.css"
 import ServiceItem from './ServiceItem';
+import { Context } from '../../../context/Context';
 
 
-const IntroHome = ({
-  btnHandling, 
-  btnState, 
-  setActiveNav,
-  handleCheckboxChange,
-  servicesItem,
-  selectedServices,
-}) => {
+const IntroHome = () => {
 
-
+  // App Context
+  const { servicesItem } = useContext(Context);
   return (
     <Box className="intro-home w-full flex flex-col justify-center items-center">
       {
@@ -27,11 +22,6 @@ const IntroHome = ({
           <ServiceItem 
             key={id}
             item={item}
-            setActiveNav={setActiveNav}
-            btnHandling={btnHandling}
-            btnState={btnState}
-            handleCheckboxChange={handleCheckboxChange}
-            selectedServices={selectedServices}
             />
           </>
         )

@@ -1,5 +1,5 @@
 .landing-container {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-bg-variant) !important;
     box-shadow: var(--shadow-color);
 }
 .landing {flex-direction: row;}
@@ -29,6 +29,9 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 12px;
+  }
+  .right-side h1, .right-side p {
+    color: var(--color-text);
   }
   .right-side h1 {
     border-bottom: 1px solid var(--color-primary);

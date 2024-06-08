@@ -3,13 +3,17 @@ import {Box} from "@mui/material";
 import landingImg from "../../../assets/landing.gif";
 import "./LandingContainer.css";
 import { useTranslation } from "react-i18next";
-import {NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
 import FeaturesContainer from "./FeaturesContainer";
 import HeaderBar from "../../global-components/header-bar/HeaderBar";
+import IntroBtn from './IntroBtn';
 
-export default function LandingContainer({ btnState, btnHandling }) {
+
+export default function LandingContainer() {
+
 // Translation
-		const { t } = useTranslation();
+const { t } = useTranslation();
+
   return (
     <Box className="landing-container flex flex-col items-center justify-content-center">
         <HeaderBar 
@@ -17,20 +21,7 @@ export default function LandingContainer({ btnState, btnHandling }) {
         <div id="home" className="intro-section mt-5 flex flex-col justify-center items-center">
             <h1>{t("logoTitle")}</h1>
             <p className='mt-3'>{t("homeContainer.introDesc")}</p>
-            <Box className="flex justify-around items-center mt-3 w-1/2">    
-                <NavLink 
-                    to="/register" 
-                    underline="none"
-                    className={btnState === "thertlyActive" ? "btnX" : "btnX"}
-                    onClick={() =>btnHandling("thertlyActive")}
-                    >{t("homeContainer.btnLeft")}</NavLink>
-                    <NavLink 
-                    to="/home" 
-                    underline="none"
-                    className={btnState === "thertlyActive" ? "btn" : "btn"}
-                    onClick={() =>btnHandling("thertlyActive")}
-                    >{t("homeContainer.btnRight")}</NavLink>
-            </Box>
+            <IntroBtn />
         </div>
         <div id="about" className="about-section mt-5 flex flex-col justify-center items-center">
             <h1>{t("About")}</h1>
