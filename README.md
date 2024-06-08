@@ -11,5 +11,6 @@
   <ul>
     <li>REACT JS</li>
     <li>NODE JS EXPRESS</li>
+    <li>MONGO DATABASE</li>
   </ul>
 </details>
