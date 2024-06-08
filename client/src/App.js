@@ -11,6 +11,8 @@ import { ContextProvider } from "./context/Context";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getLoginStatus,
+  selectUser,
+  getUser,
 } from "./redux/features/auth/authSlice";
 
 axios.defaults.withCredentials = true;
@@ -18,6 +20,8 @@ axios.defaults.withCredentials = true;
 export const App = ()=> {
   // Theme State
   const [theme, colorMode] = useMode();
+  // user Select
+  const user = useSelector(selectUser);
   //Login Status
   const dispatch = useDispatch();
 
@@ -28,9 +32,10 @@ export const App = ()=> {
   // getLoginStatus Side Effect
   useEffect(() => {
     dispatch(getLoginStatus());
-    if (isLoggedIn === null) {
+    if (isLoggedIn && user === null) {
+      dispatch(getUser());
     }
-  }, [dispatch, isLoggedIn, isSuccess]);
+  }, [dispatch, isLoggedIn, isSuccess, user]);
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>

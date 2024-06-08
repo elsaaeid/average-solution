@@ -27,12 +27,19 @@ const navItem = items.map(item => {
       <Grid className='row' container justifyContent="center" spacing={2}>
       {navItem
         .map((item) => (
-            <Grid className="mt-3" xs={6} sm={6} md={4} lg={4}>
+            <Grid 
+              key={item.id}
+              className="mt-3" 
+              xs={6} 
+              sm={6} 
+              md={4} 
+              lg={4}>
                 <ActiveLink
                     clickHandling={() => setActiveNav(item.href)}
                     classN={activeNav === item.href ? 'active global-Link' : 'global-Link'}
                     href={item.href}
-                    obj={item.title} />
+                    obj={item.title} 
+                    />
             </Grid>
             ))}
       </Grid>

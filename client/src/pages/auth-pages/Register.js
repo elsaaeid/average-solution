@@ -224,8 +224,8 @@ const Register = () => {
                 </li>
               </ul>
             </Card>
-            <Box className="flex justify-center items-center mt-5">
-            <button type="submit" className="tabs flex justify-center items-center w-full">
+            <Box className="w-1/2 flex justify-center items-center mt-5">
+            <button type="submit" className="btnX flex justify-center items-center w-full">
               {
                 isLoading ? <Spinner />
                 :

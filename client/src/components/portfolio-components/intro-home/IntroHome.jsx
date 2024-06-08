@@ -19,8 +19,8 @@ const IntroHome = () => {
       {
         (
           <>
-          <ServiceItem 
-            key={id}
+          <ServiceItem
+            id={id}
             item={item}
             />
           </>

@@ -106,8 +106,8 @@ const LoginWithCode = () => {
               value={loginCode}
               onChange={(e) => setLoginCode(e.target.value)}
             />
-            <Box className="flex justify-center items-center">
-            <button type="submit" className="tabs flex justify-center items-center w-full">
+            <Box className="w-1/2 flex justify-center items-center">
+            <button type="submit" className="btnX flex justify-center items-center w-full">
               {
                 loading ? <Spinner />
                 :

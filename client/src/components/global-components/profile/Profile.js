@@ -10,8 +10,7 @@ import { tokens } from "../../../theme";
 import { useTranslation } from "react-i18next";
 import { Context } from '../../../context/Context';
     
-// const cloud_name = process.env.REACT_APP_CLOUD_NAME;
-// const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
+
 
 const Profile = ({setProfileShowTitle, setProfileShowContent}) => {
   // App Context

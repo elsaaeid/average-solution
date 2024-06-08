@@ -14,10 +14,10 @@ const BottomFooter = (
       {bottomItems
         .map((item) => (
             <Grid 
-            className="footer__socials_icons mt-5 flex flex-row justify-center items-center" 
-            xs={6} sm={6} md={4} lg={4}>
+              key={item.id}
+              className="footer__socials_icons mt-5 flex flex-row justify-center items-center" 
+              xs={6} sm={6} md={4} lg={4}>
               <ActiveLink
-                  key={item.id}
                   clickHandling={() => setActiveNav(item.href)}
                   classN={activeNav === item.href ? 'active global-Link' : 'global-Link'}
                   href={item.href}

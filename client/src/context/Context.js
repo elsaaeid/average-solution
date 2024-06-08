@@ -1,10 +1,8 @@
 import React, { createContext, useState, useLayoutEffect, useEffect } from 'react';
 import items from ".././components/portfolio-components/intro-home/cardProperties";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
-  getLoginStatus,
-  getUser,
   selectUser,
 } from "../redux/features/auth/authSlice";
 
@@ -57,21 +55,6 @@ const toggleTab = (order) => {
   setOrderState(order);
 };
 
-  //Login Status
-  const dispatch = useDispatch();
-
-  // Auth State select
-  const { isLoggedIn, isSuccess } =
-      useSelector((state) => state.auth);
-
-  // getLoginStatus Side Effect
-  useEffect(() => {
-    dispatch(getLoginStatus());
-    if (isLoggedIn && user === null) {
-      dispatch(getUser());
-    }
-  }, [dispatch, isLoggedIn, isSuccess, user]);
-
 useLayoutEffect(() => {
   if (user) {
     setProfile({
@@ -86,6 +69,10 @@ useLayoutEffect(() => {
     });
   }
 }, [user]);
+
+  // Auth State select
+  const { isLoggedIn, isSuccess } =
+      useSelector((state) => state.auth);
 
 // Join title changing on Condition
 useEffect(() => {
@@ -132,30 +119,32 @@ const servicesItem = items.map(item => {
   return item;
 });
   return (
-    <Context.Provider value={{
-                        btnState, 
-                        btnHandling, 
-                        activeNav,
-                        setActiveNav, 
-                        orderState,
-                        toggleTab, 
-                        joinState,
-                        setJoinState, 
-                        service,
-                        setService, 
-                        profile, 
-                        setProfile, 
-                        profileImage, 
-                        setProfileImage, 
-                        imagePreview, 
-                        setImagePreview,
-                        selectedServices,
-                        setSelectedServices,
-                        quantity,
-                        setQuantity,
-                        handleCheckboxChange,
-                        servicesItem,
-                    }}>
+    <Context.Provider 
+      value={{
+          btnState, 
+          btnHandling, 
+          activeNav,
+          setActiveNav, 
+          orderState,
+          toggleTab, 
+          joinState,
+          setJoinState, 
+          service,
+          setService, 
+          profile, 
+          setProfile, 
+          profileImage, 
+          setProfileImage, 
+          imagePreview, 
+          setImagePreview,
+          selectedServices,
+          setSelectedServices,
+          quantity,
+          setQuantity,
+          handleCheckboxChange,
+          servicesItem,
+      }}
+      >
       {children}
     </Context.Provider>
   );

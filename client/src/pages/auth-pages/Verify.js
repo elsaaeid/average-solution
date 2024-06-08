@@ -36,8 +36,8 @@ const Verify = () => {
         <h1>{t("profile.accountVerification")}</h1>
         <p>{t("profile.verBelow")}</p>
         <br />
-        <div className="flex justify-center items-center">
-          <button onClick={verifyAccount} className="tabs flex justify-center items-center w-full">
+        <div className="w-1/2 flex justify-center items-center">
+          <button onClick={verifyAccount} className="btnX flex justify-center items-center w-full">
             {
               loading ? <Spinner />
               :

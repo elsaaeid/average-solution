@@ -46,6 +46,7 @@ const { i18n } = useTranslation();
               style={{
                   borderColor: colors.grey[500],
               }}
+              key={item.id}
               titleIcon={item.title}
               hrefIcon={item.href}
               clickIcon={() => setActiveNav(item.href)}
