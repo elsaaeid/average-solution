@@ -1,4 +1,5 @@
 <h1>Average Solution</h1>
+<img src="./average.gif" alt="web application architecture" />
 <p>It's a website for digital solutions</p>
 <details>
 	<summary>
