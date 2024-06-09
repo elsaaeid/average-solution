@@ -12,7 +12,7 @@
     <li>Alsaaeid Ellithy Johar</li>
   </ul>
 </details>
-<p>I am celebrating the completion of the Portfolio Project with Alx Scholarship.</p>
+<p>I'm celebrating the completion of the Portfolio Project with Alx Scholarship.</p>
 <br/>
 <img src="././client//src/assets/Architecture.gif" alt="web application architecture" />
 <center><h1>“Technology Stack”</h1></center>
