@@ -14,6 +14,8 @@
     <li>Alsaaeid Ellithy Johar</li>
   </ul>
 </details>
+<p>I am celebrating the completion of the Portfolio Project with Alex Scholarship.</p>
+<br/>
 <details>
 	<summary>
     <b>
