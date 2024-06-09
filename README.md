@@ -1,5 +1,5 @@
 <h1>Average Solution</h1>
-<img src="./average.gif" alt="web application architecture" />
+<img src="././client//src/assets/average.gif" alt="web application architecture" />
 <p>It's a website for digital solutions</p>
 <details>
 	<summary>
@@ -14,7 +14,7 @@
 </details>
 <p>I am celebrating the completion of the Portfolio Project with Alx Scholarship.</p>
 <br/>
-<img src="./Architecture.gif" alt="web application architecture" />
+<img src="././client//src/assets/Architecture.gif" alt="web application architecture" />
 <center><h1>“Technology Stack”</h1></center>
 <details>
 	<summary>
