@@ -11,7 +11,7 @@
     <li>Alsaaeid Ellithy Johar</li>
   </ul>
 </details>
-<p>I am celebrating the completion of the Portfolio Project with Alex Scholarship.</p>
+<p>I am celebrating the completion of the Portfolio Project with Alx Scholarship.</p>
 <br/>
 <img src="./Architecture.gif" alt="web application architecture" />
 <center><h1>“Technology Stack”</h1></center>
