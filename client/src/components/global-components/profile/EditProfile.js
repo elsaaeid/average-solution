@@ -15,7 +15,6 @@ import { Context } from "../../../context/Context";
 const cloud_name = process.env.REACT_APP_CLOUD_NAME;
 const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
 
-
 const EditProfile = () => {
 
   // App Context

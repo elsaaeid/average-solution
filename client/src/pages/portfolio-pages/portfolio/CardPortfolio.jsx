@@ -1,7 +1,7 @@
 import React from 'react';
-import HeartRating from './HeartRating';
+// import HeartRating from './HeartRating';
 import { IoIosArrowUp } from "react-icons/io";
-import {Box, Typography, IconButton, useTheme} from '@mui/material';
+import {Box, Typography, useTheme} from '@mui/material';
 import {NavLink} from "react-router-dom";
 import DOMPurify from "dompurify";
 import { useTranslation } from "react-i18next";

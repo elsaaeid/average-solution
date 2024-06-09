@@ -48,14 +48,23 @@ const Forgot = () => {
 
   return (
     <div className={`${styles.auth} p-3`}>
-      <div className={styles.form}>
+      <div 
+        className={styles.form}
+        style={{
+          backgroundColor: colors.grey[900],
+        }}
+        >
         <div className="flex flex-col justify-center items-center">
           <AiOutlineMail size={35} 
             style={{
                 color: colors.grey[500],
               }}
           />
-          <h1>{t("profile.forgotPassword")}</h1>
+          <h1
+          style={{
+            color: colors.grey[500],
+          }}
+          >{t("profile.forgotPassword")}</h1>
         </div>
         <form onSubmit={forgot}>
           <input
@@ -66,7 +75,7 @@ const Forgot = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Box className="w-1/2 flex justify-center items-center">
+          <Box className="flex justify-center items-center">
           <button type="submit" className="btnX flex justify-center items-center w-full">
             {
               isLoading ? <Spinner />

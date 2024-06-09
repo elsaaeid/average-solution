@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Main from '../../../components/portfolio-components/main/Main';
 import IntroHome from "../../../components/portfolio-components/intro-home/IntroHome";
 
