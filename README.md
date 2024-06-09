@@ -1,8 +1,5 @@
 <h1>Average Solution</h1>
-
 <p>It's a website for digital solutions</p>
-<img src="./Architecture.gif" alt="web application architecture" />
-<center><h1>“Technology Stack”</h1></center>
 <details>
 	<summary>
     <b>
@@ -16,6 +13,8 @@
 </details>
 <p>I am celebrating the completion of the Portfolio Project with Alex Scholarship.</p>
 <br/>
+<img src="./Architecture.gif" alt="web application architecture" />
+<center><h1>“Technology Stack”</h1></center>
 <details>
 	<summary>
     <b>
