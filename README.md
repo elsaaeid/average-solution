@@ -6,6 +6,17 @@
 <details>
 	<summary>
     <b>
+      Work Team:
+    </b>
+  </summary>
+	<br/>
+  <ul>
+    <li>Alsaaeid Ellithy Johar</li>
+  </ul>
+</details>
+<details>
+	<summary>
+    <b>
       Front-end Development:
     </b>
   </summary>

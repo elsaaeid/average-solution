@@ -2,13 +2,12 @@ import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import axios from "axios";
-import {BACKEND_URL} from "../../../redux/helper";
 import {LuHeartHandshake} from "react-icons/lu";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { ServiceCheckBox } from "./ServiceCheckBox";
 import { Context } from "../../../context/Context";
-const API_URL = `${BACKEND_URL}/api/contactus`;
+const API_URL = `${process.env.BACKEND_URL}/api/contactus`;
 
 const CartItem = ()=>{
     // App Context
