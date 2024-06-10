@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {Box} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {NavLink} from "react-router-dom";
-import { Context } from '../../../context/Context';
+import { Context } from '../../../../context/Context';
 
 
 const IntroBtn = ()=>{

@@ -15,8 +15,11 @@ import { useTranslation } from "react-i18next";
 
 
 const ChangeRole = ({ _id, email }) => {
+  // user Role State
   const [userRole, setUserRole] = useState("");
+  // A hook to access the redux dispatch function
   const dispatch = useDispatch();
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 	// Translation

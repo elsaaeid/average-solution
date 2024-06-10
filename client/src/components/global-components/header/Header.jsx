@@ -15,9 +15,10 @@ import { ShowOnLogin } from "../protect/HiddenLink";
 
 
 const Header= ()=> {
-    
+    // Boolean States
     const [open, setOpen] = useState(false);
     const [toggleVariants, setToggleVariants] = useState(true);
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode); 
     //for collapsing sidebar
@@ -25,6 +26,8 @@ const Header= ()=> {
       setOpen(!open);
       setToggleVariants(!toggleVariants);
     };
+    
+    // linksVariants 
     const linksVariants = {
       true :{
         display: 'flex',
@@ -37,6 +40,7 @@ const Header= ()=> {
       false:{
         display: 'none',
         opacity: 0,
+        visibility: "hidden",
         height: "0",
         transition: 'opacity display height .7s ease-in-out',
       }

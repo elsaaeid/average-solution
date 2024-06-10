@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from "../../global-components/header/Header";
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
@@ -8,29 +8,18 @@ import Loader from "../../global-components/Loader";
 import {ChatBotContainer} from "../../global-components/chat/ChatBotContainer"
 import TransitionAlerts from "../alret-cookie/TransitionAlerts";
 import Collapse from '@material-ui/core/Collapse';
+import { Context } from '../../../context/Context';
 
 
 const LayoutPortfolio = ({children}) => {
-    const [backToTop, setBackToTop] = useState(false);
+    // loading State
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = React.useState(true);
+
+    // Alret State
     const [alretState, setAlretState] = useState(false);
-
-
-
-  // Scroll Handlling Side Effect
-  useEffect(() => {
-    window.addEventListener("scroll", ()=>{
-      if(window.scrollY > 80) {
-        }
-        if(window.scrollY > 100) {
-        setBackToTop(true)
-        }
-        else {
-        setBackToTop(false)
-        }
-    })
-    }, []);
+    // App Context
+    const { backToTop } = useContext(Context);
 
     // Loading Handlling Side Effect
     useEffect(() => {

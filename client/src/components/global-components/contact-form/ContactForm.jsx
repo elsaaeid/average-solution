@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const ContactForm = () => {
   	// Translation
     const { t } = useTranslation();
+    // "Send Email" Function
     const sendEmail = (e) => {
       e.preventDefault();
   

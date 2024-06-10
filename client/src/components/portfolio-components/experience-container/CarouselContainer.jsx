@@ -8,6 +8,7 @@ function CarouselContainer()
 {
       // Translation
 const { i18n } = useTranslation();
+    // Experience Section Items
     var items = [
         {
             id: 1,

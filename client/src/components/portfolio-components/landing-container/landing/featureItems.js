@@ -1,8 +1,8 @@
-import webDevelop from "../../../assets/webDevelop.png";
-import graphicDesign from "../../../assets/graphicDesign.png";
-import productsCapture from "../../../assets/productsCapture.png";
-import SeoOptimization from "../../../assets/SeoOptimization.png";
-import sponsoredAds from "../../../assets/sponsoredAds.png";
+import webDevelop from "../../../../assets/webDevelop.png";
+import graphicDesign from "../../../../assets/graphicDesign.png";
+import productsCapture from "../../../../assets/productsCapture.png";
+import SeoOptimization from "../../../../assets/SeoOptimization.png";
+import sponsoredAds from "../../../../assets/sponsoredAds.png";
 
 
 const featureItems = [

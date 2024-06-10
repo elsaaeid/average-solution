@@ -17,13 +17,20 @@ export const MobileBar =({
     toggleVariants,
     handleToggle,
 })=>{
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
+    // searchIcon Direction
     const [searchIconDir, setSearchIconDir] = useState(true);
+    // searchOpen States
     const [searchOpen, setSearchOpen] = useState(false);
+    // openHeaderSearch States
     const [openHeaderSearch, setOpenHeaderSearch] = useState(true);
+    // searchVal Values
     const [searchVal, setSearchVal] = useState("");
 
+    // searchIcon Direction Side Effect
     useEffect(() => {
         if(document.body.dir === "ltr") {
             setSearchIconDir(true);
@@ -33,9 +40,11 @@ export const MobileBar =({
         }
     }, [])
 
+    // openSearch Function
     const openSearch = ()=> {
-    setSearchOpen(true)
+        setSearchOpen(true)
     }
+    // closeSearch Function
     const closeSearch = ()=> {
         setSearchOpen(false);
         setSearchVal("");

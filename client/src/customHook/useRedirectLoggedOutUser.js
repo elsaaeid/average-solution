@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import authService from "../redux/features/auth/authService";
 
 const useRedirectLoggedOutUser = (path) => {
+  // Returns an imperative method for changing the location.
   const navigate = useNavigate();
 
   useEffect(() => {

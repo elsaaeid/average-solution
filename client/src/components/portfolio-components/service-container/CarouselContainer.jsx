@@ -22,6 +22,7 @@ function CarouselContainer()
           // Translation
 const { i18n } = useTranslation();
   
+    // Services Section Items
     var items = [
         {
             id: 1,

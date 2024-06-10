@@ -26,7 +26,7 @@ export const App = ()=> {
   const dispatch = useDispatch();
 
   // Auth State select
-  const { isLoggedIn, isSuccess } =
+  const { isLoggedIn } =
       useSelector((state) => state.auth);
 
   // getLoginStatus Side Effect
@@ -35,7 +35,7 @@ export const App = ()=> {
     if (isLoggedIn && user === null) {
       dispatch(getUser());
     }
-  }, [dispatch, isLoggedIn, isSuccess, user]);
+  }, [dispatch, isLoggedIn, user]);
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>

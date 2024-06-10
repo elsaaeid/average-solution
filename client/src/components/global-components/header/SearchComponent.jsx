@@ -16,10 +16,12 @@ const SearchComponent = ({
   searchOpen,
 }) => { 
  const [orderState, setOrderState] = useState("");
+ // Theme Colors Mode
  const theme = useTheme();
  const colors = tokens(theme.palette.mode);
 
 
+ // filtering For Search Items
  const filteredItems = searchItems.filter((item) => {
   if (searchVal == "") { 
     return null;
@@ -50,6 +52,7 @@ useEffect(()=>{
   }
 }, [searchVal]);
 
+  // searchCloseHandle
   const searchCloseHandle = ()=> {
     setSearchVal("");
     setOpenHeaderSearch(true);

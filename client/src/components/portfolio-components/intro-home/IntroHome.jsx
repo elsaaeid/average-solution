@@ -14,18 +14,17 @@ const IntroHome = () => {
       {
         servicesItem
         .map(
-          (item, id) => 
-        <Box className="Design-box-container w-full flex flex-col justify-center items-center">
-      {
-        (
-          <>
-          <ServiceItem
-            id={id}
-            item={item}
-            />
-          </>
-        )
-      }
+          (item, index) => 
+        <Box key={index} className="Design-box-container w-full flex flex-col justify-center items-center">
+          {
+            (
+              <>
+              <ServiceItem
+                item={item}
+                />
+              </>
+            )
+          }
         </Box>
          )
       }

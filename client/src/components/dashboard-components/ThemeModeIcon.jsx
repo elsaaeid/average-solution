@@ -8,10 +8,13 @@ import { tokens } from "../../theme";
 
 
 export const ThemeModeIcon = () => {
-    const colorMode = useContext(ColorModeContext);
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-         
+
+  // App Context
+  const colorMode = useContext(ColorModeContext);
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+        
   return (
         <IconButton
             size="small"

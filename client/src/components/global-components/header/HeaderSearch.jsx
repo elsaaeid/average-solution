@@ -17,6 +17,7 @@ const HeaderSearch = ({
     openHeaderSearch,
     setOpenHeaderSearch
 })=>{
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return(

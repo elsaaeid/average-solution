@@ -5,6 +5,7 @@ const {
   selectUser,
 } = require("../../../redux/features/auth/authSlice");
 
+// Show OnLogin
 export const ShowOnLogin = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -14,6 +15,7 @@ export const ShowOnLogin = ({ children }) => {
   return null;
 };
 
+// Show OnLogout
 export const ShowOnLogout = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -23,6 +25,7 @@ export const ShowOnLogout = ({ children }) => {
   return null;
 };
 
+// Show On Admin || Author
 export const AdminAuthorLink = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);

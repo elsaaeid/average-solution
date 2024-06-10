@@ -10,8 +10,9 @@ import { useTranslation } from "react-i18next";
 function CarouselContainer()
 {
      // Translation
-const { t, i18n } = useTranslation();
+const { i18n } = useTranslation();
   
+    // About Section Items
     var items = [
         {
             id: 1,

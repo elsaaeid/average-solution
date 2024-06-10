@@ -19,12 +19,17 @@ const categoryIcon = <BiCategory size={40} color="#fff" />;
 
 
 const ProductSummary = ({ products }) => {
+
+  // A hook to access the redux dispatch function.
   const dispatch = useDispatch();
+  // A hook to access the redux store's state.
   const category = useSelector(selectCategory);
+
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-
+  // Calculating Products
   useEffect(() => {
     dispatch(CALC_CATEGORY(products));
   }, [dispatch, products]);

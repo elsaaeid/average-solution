@@ -12,8 +12,11 @@ export const SearchContainer = ({
   searchCloseHandle,
   openSearch
 }) => {
+  // Theme Colors Mode
   const theme = useTheme()
   const colors = tokens(theme.palette.mode);
+
+  // Current Input Reference
   const inputRef = useRef(null);
  
 useEffect(() => {

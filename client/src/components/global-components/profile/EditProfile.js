@@ -85,7 +85,7 @@ const EditProfile = () => {
     } catch (error) {
       toast.error(error.message);
     }
-    navigate('/');
+    navigate('/home');
   };
 
   return (

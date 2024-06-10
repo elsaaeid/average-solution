@@ -5,7 +5,6 @@ import { useTheme } from "@mui/material";
 import Box from '@mui/material/Box';
 
 const ServiceItem = ({
-    id,
     item,
 })=>{
   
@@ -15,7 +14,7 @@ const ServiceItem = ({
 
 
     return(
-        <Box key={id} id={item.id} className="Design-box-content front-card w-full item-property flex flex-col about__cards justify-center items-center">
+        <Box id={item.id} className="Design-box-content front-card w-full item-property flex flex-col about__cards justify-center items-center">
         <Box class="overlay p-5 flex flex-col items-center width-full">
             <h4 
             style={{

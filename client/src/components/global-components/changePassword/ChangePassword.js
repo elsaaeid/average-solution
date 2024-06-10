@@ -69,7 +69,7 @@ const ChangePassword = () => {
     };
 
     const emailData = {
-      subject: "Password Changed - Average",
+      subject: "Password Changed - Average Solution",
       send_to: user.email,
       reply_to: "saidsadaoy@gmail.com",
       template: "changePassword",

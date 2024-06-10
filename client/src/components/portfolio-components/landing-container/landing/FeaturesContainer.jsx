@@ -3,14 +3,15 @@ import { useTranslation } from "react-i18next";
 import featureItems from './featureItems';
 import {Box} from "@mui/material";
 import { useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
+import { tokens } from "../../../../theme";
 import { IoIosArrowDown } from "react-icons/io";
 
 
 const FeaturesContainer = ()=>{
       // Translation
-  const { i18n } = useTranslation();
-  const {t} = useTranslation();
+const { i18n } = useTranslation();
+const {t} = useTranslation();
+// Theme Colors Mode
 const theme = useTheme();
 const colors = tokens(theme.palette.mode); 
   const items = featureItems.map(item => {
@@ -41,11 +42,11 @@ const colors = tokens(theme.palette.mode);
         {
         items
         .map(
-          (item, id) => 
-            <Box className="flex flex-col justify-center items-center">
+          (item, index) => 
+            <Box key={index} className="flex flex-col justify-center items-center">
             {
                 (
-                <Box key={id} className={`feature-item m-3 flex ${item.style} justify-center items-center`}>
+                <Box className={`feature-item m-3 flex ${item.style} justify-center items-center`}>
                     <Box className="left-side w-1/2">
                         <img className="feature-image" src={item.featureImage} alt={item.featureTitle} />
                     </Box>

@@ -12,6 +12,7 @@ const LayoutDashboard = ({
 }) => {
   const [loading, setLoading] = useState(true);
   
+  // Loading Side Effect
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {

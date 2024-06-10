@@ -7,8 +7,9 @@ import "./ActiveLink.css"
 
 
 const ActiveLink = ({obj, href, classN, clickHandling}) => {
+  // Theme Colors Mode
   const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode);
   return (
         <Tooltip title={obj}>
             <Link 

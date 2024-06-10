@@ -6,6 +6,7 @@ import {Box} from '@mui/material';
 
 const BackToTopButton = ({backToTop}) => {
 
+    // Scroll To Top Of Window
     const goToTop = () => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     } 

@@ -6,10 +6,10 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 
 export const BannerContent = () => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
- 
-
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  
   return (
     <section>
       <Row className='banner-content'>

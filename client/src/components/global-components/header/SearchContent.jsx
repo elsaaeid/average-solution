@@ -72,6 +72,7 @@ const SearchContent = ({
      // Translation
      const { i18n } = useTranslation();
 
+     // Search Items
      const searchItems = items.map(item => {
       if(i18n.language === 'ar') {
       return({

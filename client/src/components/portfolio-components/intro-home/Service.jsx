@@ -13,13 +13,17 @@ import {useParams} from "react-router-dom";
 
 const Service = () => {
 
-     // Translation
+// Translation
 const { i18n } = useTranslation();
+// Theme Colors Mode
 const theme = useTheme();
 const colors = tokens(theme.palette.mode);
+// secondary State
 const [secondary, setSecondaryState] = useState(false);
 const {id} = useParams();
-const servicesItem = items.map(item => {
+
+// services Items
+const servicesItems = items.map(item => {
   if(i18n.language == 'ar') {
     return({
       id: item.id,
@@ -57,7 +61,7 @@ const servicesItem = items.map(item => {
 
   return (
       <Box className="service-home w-full flex flex-col justify-center items-center">
-      {servicesItem
+      {servicesItems
         .filter((item) => item.id === id)
         .map((item) => (
           <Box

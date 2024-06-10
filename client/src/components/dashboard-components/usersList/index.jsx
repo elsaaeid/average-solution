@@ -40,27 +40,36 @@ const columns = [
 ];
 
 const UsersList = () => {
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
+  // A hook to access the redux dispatch function.
   const dispatch = useDispatch();
 
+  // Search State
   const [search, setSearch] = useState("");
+
+  // openUserSearch State
   const [openUserSearch, setOpenUserSearch] = useState(true);
+  // To Access Auth State
   const { users, isLoading } = useSelector(
     (state) => state.auth
   );
+  // A hook to access the redux store's state. 
   const filteredUsers = useSelector(selectUsers);
-
+  
+  // Getting Users
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
 
+  // Removing Users
   const removeUser = async (id) => {
     await dispatch(deleteUser(id));
     dispatch(getUsers());
   };
 
+  // confirmDelete Function
   const confirmDelete = (id) => {
     confirmAlert({
       title: "Delete This User",
@@ -78,6 +87,7 @@ const UsersList = () => {
     });
   };
 
+  // USERS FILTER
   useEffect(() => {
     dispatch(FILTER_USERS({ users, search }));
   }, [dispatch, users, search]);
@@ -99,20 +109,20 @@ const UsersList = () => {
   // End Pagination
 
  
- 
- useEffect(()=>{
-   if(search == "") {
-     setOpenUserSearch(true);
-   }
-   else {
-     setOpenUserSearch(false);
-   }
- }, [search]);
- 
-   const searchCloseHandle = ()=> {
-     setSearch("");
-     setOpenUserSearch(true);
-   };
+  // set Open For User Search
+  useEffect(()=>{
+    if(search == "") {
+      setOpenUserSearch(true);
+    }
+    else {
+      setOpenUserSearch(false);
+    }
+  }, [search]);
+  
+    const searchCloseHandle = ()=> {
+      setSearch("");
+      setOpenUserSearch(true);
+    };
  
   return (
     <div className="flex flex-col justify-center items-center user-list w-full">

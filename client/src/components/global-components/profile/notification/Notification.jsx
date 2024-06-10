@@ -11,11 +11,14 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../../../../theme";
 
 const Notification = () => {
+  // A hook to access the redux dispatch function.
   const dispatch = useDispatch();
   // Translation
   const { t } = useTranslation();
-      const theme = useTheme();
- const colors = tokens(theme.palette.mode); 
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode); 
+  // Send Verification Of Email Function
   const sendVerEmail = async () => {
     await dispatch(sendVerificationEmail());
     await dispatch(RESET());

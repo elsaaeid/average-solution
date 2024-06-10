@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <Box className="loader-container">
       <center>
-          <Typography variant="span" class="loader"></Typography>
+          <Typography variant="span" className="loader"></Typography>
       </center>
     </Box>
   )

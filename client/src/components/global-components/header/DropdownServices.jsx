@@ -14,17 +14,19 @@ import { Context } from "../../../context/Context";
 const DropdownServices = () => {
   //App Context
   const { activeNav, setActiveNav} = useContext(Context);
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-       // Translation
-        const { t, i18n } = useTranslation();
-        const [selected, setSelected] = useState();
+  // Translation
+  const { t, i18n } = useTranslation();
+  const [selected, setSelected] = useState();
+  // handleChange Function
+  const handleChange = (e) => {
+      e.preventDefault();
+      setSelected(e.target.value);
+  }
 
-      const handleChange = (e) => {
-          e.preventDefault();
-          setSelected(e.target.value);
-      }
-
+    // Service Items
     const items = [
       {
         id: 1,
@@ -64,17 +66,16 @@ const DropdownServices = () => {
       }
     ];
 
-       const serviceItems = items.map(item => {
-        if(i18n.language === 'ar') {
-        return({
-          id: item.id,
-          name: item.name_ar,
-          link: item.link,
-        })
-        }
-        return item;
-        })
-      
+    const serviceItems = items.map(item => {
+    if(i18n.language === 'ar') {
+    return({
+      id: item.id,
+      name: item.name_ar,
+      link: item.link,
+    })
+    }
+    return item;
+    });
     
     return (
       <Box sx={{width: 100}} className="select flex flex-row">
@@ -95,9 +96,9 @@ const DropdownServices = () => {
             border: colors.grey[100],
           }}
         >
-        {serviceItems.map((item)=>{
+        {serviceItems.map((item, index)=>{
           return(
-            <MenuItem key={item.id}
+            <MenuItem key={index}
               style={{
                   background: colors.grey[900],
                   color: colors.grey[100],
@@ -108,12 +109,12 @@ const DropdownServices = () => {
                   alignItems: "center",
                   padding: "10px"
               }}
-              value={item.id}>
+              value={item.name}>
               <ActiveLink
                 clickHandling={() => {
-                  setActiveNav(item.id)
+                  setActiveNav(item.link)
                 }}
-                classN={activeNav === item.id ? 'active global-Link' : 'global-Link'}
+                classN={activeNav === item.link ? 'active global-Link' : 'global-Link'}
                 href={item.link}
                 obj={shortenText(item.name, 16)} />
             </MenuItem>

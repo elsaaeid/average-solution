@@ -4,6 +4,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import styles from "./PasswordInput.module.scss";
 
 const PasswordInput = ({name, value, placeholder, handleInputChange, onPaste}) => {
+  // Password Show and UnShow State
   const [passwordShow,setPasswordShow] = useState(false);
   return (
     <div className="flex flex-row justify-center items-center relative">

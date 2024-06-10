@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 const API_URL = `${process.env.BACKEND_URL}/api/products/`;
 
 // Create New Product

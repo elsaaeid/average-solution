@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingContainer from "../../../components/portfolio-components/landing-container/LandingContainer";
+import LandingContainer from "../../../components/portfolio-components/landing-container/landing/LandingContainer";
 
  const LandingPage = () => {
 

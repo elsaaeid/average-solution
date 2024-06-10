@@ -37,30 +37,33 @@ const ProductList = () => {
   //Dropdown
   const [categoryState, setCategoryState] = useState("All");
   const [orderState, setOrderState] = useState("All");
-    // open Portfolio Search
-    const [openPortfolioSearch, setOpenPortfolioSearch] = useState(true);
+  // open Portfolio Search
+  const [openPortfolioSearch, setOpenPortfolioSearch] = useState(true);
 
-    // direction of web page
-    const [searchIconDir, setSearchIconDir] = useState(true);
-  
-    // open search
-    const [searchOpen, setSearchOpen] = useState(true);
+  // direction of web page
+  const [searchIconDir, setSearchIconDir] = useState(true);
+
+  // open search
+  const [searchOpen, setSearchOpen] = useState(true);
 
   const filteredProducts = useSelector(selectFilteredPoducts);
+  // Theme Colors Mode
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
+  // A hook to access the redux dispatch function
   const dispatch = useDispatch();
-
+  // Use Params for id 
   const { id } = useParams();
 
-
+  // Selecting Login Status
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-
+  // Product State Selecting
   const { products, isError, message } = useSelector(
     (state) => state.product
   );
+
+  // Get Product Depend On Login Status
   useEffect(() => {
     if (isLoggedIn === true) {
       dispatch(getProduct(id));
@@ -72,7 +75,7 @@ const ProductList = () => {
   }, [isLoggedIn, isError, message, dispatch]);
 
 
-
+  // The Shorten Of Text
   const shortenText = (text, n) => {
     if (text.length > n) {
       const shortenedText = text.substring(0, n).concat("...");
@@ -81,12 +84,14 @@ const ProductList = () => {
     return text;
   };
 
+  // Product Deleting Function
   const delProduct = async (id) => {
     console.log(id);
     await dispatch(deleteProduct(id));
     await dispatch(getProducts());
   };
 
+  // Confirm of Product Deleting Function
   const confirmDelete = (id) => {
     confirmAlert({
       title: "Delete Product",
@@ -109,13 +114,15 @@ useEffect(() => {
   dispatch(CALC_CATEGORY(products));
 }, [dispatch, products]);
 
-  //   Begin Pagination
+  // Begin Pagination
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [numState, setNumState] = useState(products.length);
   const itemsPerPage = 5;
 
+
+  // filtering Products And Set Current Items
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
 
@@ -129,6 +136,7 @@ useEffect(() => {
   };
   //   End Pagination
 
+  // Products Filtering Side Effect
   useEffect(() => {
     dispatch(FILTER_PRODUCTS({ products, search }));
   }, [products, search, dispatch]);
@@ -149,6 +157,7 @@ const SearchChange = (e)=> {
  };
 
 
+ // Set Search Value = ""
 useEffect(()=>{
   if(search == "") {
     setOpenPortfolioSearch(true);
@@ -169,15 +178,17 @@ useEffect(() => {
         }
     }, [])
 
-// Handel Close Search
-const searchCloseHandle = ()=> {
-    setSearch("");
-    setOpenPortfolioSearch(true);
-  };
+    // Handel Close Search
+    const searchCloseHandle = ()=> {
+      setSearch("");
+      setOpenPortfolioSearch(true);
+    };
 
-const openSearch = ()=> {
-    setSearchOpen(false)
+    // openSearch Handling
+    const openSearch = ()=> {
+      setSearchOpen(false)
     }
+    // closeSearch Handling
     const closeSearch = ()=> {
         setSearchOpen(true);
         setSearch("");

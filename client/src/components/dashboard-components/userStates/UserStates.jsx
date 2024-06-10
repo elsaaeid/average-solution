@@ -17,12 +17,16 @@ const icon3 = <BiUserMinus size={40} color="#fff" />;
 const icon4 = <BiUserX size={40} color="#fff" />;
 
 const UserStates = () => {
+  // A hook to access the redux dispatch function.
   const dispatch = useDispatch();
+
+  // To Access Auth State
   const { users, verifiedUsers, suspendedUsers } = useSelector(
     (state) => state.auth
   );
   const unverifiedUsers = users.length - verifiedUsers;
 
+  // CALCULATING VERIFIED_USER
   useEffect(() => {
     dispatch(CALC_VERIFIED_USER());
     dispatch(CALC_SUSPENDED_USER());

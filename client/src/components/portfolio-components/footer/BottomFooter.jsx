@@ -12,9 +12,9 @@ const BottomFooter = (
   return (
       <Grid className="row" container justifyContent="center" spacing={4}>
       {bottomItems
-        .map((item) => (
+        .map((item, index) => (
             <Grid 
-              key={item.id}
+              key={index}
               className="footer__socials_icons mt-5 flex flex-row justify-center items-center" 
               xs={6} sm={6} md={4} lg={4}>
               <ActiveLink

@@ -7,8 +7,12 @@ import { tokens } from "../../theme";
 
 
 
-export const ThemeModeIcon = () => {
+export const ThemeModeIcon = () => 
+{
+
+    // App Context
     const colorMode = useContext(ColorModeContext);
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
          

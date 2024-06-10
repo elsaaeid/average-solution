@@ -26,9 +26,9 @@ const navItem = items.map(item => {
   return (
       <Grid className='row' container justifyContent="center" spacing={2}>
       {navItem
-        .map((item) => (
+        .map((item, index) => (
             <Grid 
-              key={item.id}
+              key={index}
               className="mt-3" 
               xs={6} 
               sm={6} 

@@ -4,6 +4,7 @@ import { tokens } from "../../../theme";
 import { Box, Typography } from "@mui/material";
 
 export const FullBanner = ({FullBannerBg, FullBannerColorTitle, FullBannerTitle, FullBannerColorParaOne, FullBannerParaOne,FullBannerAlt, FullBannerImg, FullBannerBgButton, FullBannerColorButton, FullBannerTitleButton}) => {
+    // Theme Colors Mode
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
  

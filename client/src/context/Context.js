@@ -30,6 +30,8 @@ const { i18n } = useTranslation();
 const [btnState, setBtnState] = useState();
 // active Nav Item State
 const [activeNav, setActiveNav] = useState('/');
+// active Bar Item State
+const [activeBar, setActiveBar] = useState('#home');
 // Order State 
 const [orderState, setOrderState] = useState("");
 // Join State
@@ -46,6 +48,22 @@ const [imagePreview, setImagePreview] = useState(null);
 const [selectedServices, setSelectedServices] = useState([]);
 // Quantity State
 const [quantity, setQuantity] = useState(0)
+const [backToTop, setBackToTop] = useState(false);
+  // Scroll Handlling Side Effect
+  useEffect(() => {
+    window.addEventListener("scroll", ()=>{
+      if(window.scrollY > 80) {
+        }
+        if(window.scrollY > 100) {
+        setBackToTop(true)
+        }
+        else {
+        setBackToTop(false)
+        }
+    })
+    }, []);
+
+
 // Button Handling Function
 const btnHandling = (state)=>{
   setBtnState(state);
@@ -121,6 +139,7 @@ const servicesItem = items.map(item => {
   return (
     <Context.Provider 
       value={{
+          backToTop,
           btnState, 
           btnHandling, 
           activeNav,
@@ -143,6 +162,8 @@ const servicesItem = items.map(item => {
           setQuantity,
           handleCheckboxChange,
           servicesItem,
+          activeBar,
+          setActiveBar,
       }}
       >
       {children}
