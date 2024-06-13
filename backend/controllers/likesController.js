@@ -1,6 +1,7 @@
+const asyncHandler = require("express-async-handler");
 const Product = require('../models/productModel');
 const User = require('../models/userModel');
-const asyncHandler = require("express-async-handler");
+
 
 // Like a product
 const likeProduct = asyncHandler(async (req, res) => {
