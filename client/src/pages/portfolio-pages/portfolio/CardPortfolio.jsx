@@ -1,7 +1,7 @@
 import React from 'react';
-// import HeartRating from './HeartRating';
+import HeartRating from './HeartRating';
 import { IoIosArrowUp } from "react-icons/io";
-import {Box, Typography, useTheme} from '@mui/material';
+import {Box, Typography, useTheme, IconButton} from '@mui/material';
 import {NavLink} from "react-router-dom";
 import DOMPurify from "dompurify";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,7 @@ export const CardPortfolio = ( {
     key,
     rotate,
     product, 
+    currentItems,
     handleViewDetails, 
     selectedProduct,
     name, 
@@ -39,8 +40,16 @@ export const CardPortfolio = ( {
             }}>No image set for this product</p>
             ) ) : null}
         </Box>
-        <Box className="portfolio__item-details ">
-            <Typography variant='h6'>{shortenText(name, 16)}</Typography>
+        <Box className="portfolio__item-details mt-3 flex flex-col justify-center items-center w-full">
+            <span className='flex flex-col justify-between w-full'>
+                <Typography variant="h6" component="h6" className="portfolio__item-name flex justify-center items-center w-full">
+                {shortenText(name, 16)}
+                </Typography>
+                <HeartRating 
+                    product={product} 
+                    currentItems={currentItems} 
+                />
+            </span>
             <NavLink
             className='view-btn btn flex justify-center items-center' 
             underline="none"
@@ -73,8 +82,12 @@ export const CardPortfolio = ( {
                     >{t("portfolio.demoLive")}
                     </NavLink>
                 </Box>
-                {/* <IconButton><HeartRating /></IconButton> */}
-            </Box>)
+                <span className='flex flex-row justify-between'>
+                    <h7 className="found">Created at</h7>
+                    <Typography className="category" variant='h7'>{shortenText(product.createdAt, 16)}</Typography>
+                </span>
+            </Box>
+            )
             }
         </article>
     )

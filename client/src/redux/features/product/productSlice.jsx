@@ -106,7 +106,51 @@ export const updateProduct = createAsyncThunk(
   }
 );
 
-const productSlice = createSlice({
+
+
+// likeProduct 
+
+export const likeProduct = createAsyncThunk(
+  "products/likeProduct",
+  async (id, thunkAPI) => {
+    try {
+      return await productService.likeProduct(id);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      console.log(message);
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+
+
+// unlikeProduct 
+
+export const unlikeProduct = createAsyncThunk(
+  "products/unlikeProduct",
+  async (id, thunkAPI) => {
+    try {
+      return await productService.unlikeProduct(id);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      console.log(message);
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+const productSlice = createSlice( {
   name: "product",
   initialState,
   reducers: {
@@ -203,9 +247,32 @@ const productSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
         toast.error(action.payload);
+      })
+      .addCase(likeProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(likeProduct.fulfilled, (state, action) => {
+        const productIndex = state.products.findIndex((product) => product._id === action.meta.arg);
+        if (productIndex !== -1) {
+          state.products[productIndex].likes++;
+        }
+      })
+      .addCase(likeProduct.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+        toast.error(action.payload);
+      })
+      .addCase(unlikeProduct.fulfilled, (state, action) => {
+        const productIndex = state.products.findIndex((product) => product._id === action.meta.arg);
+        if (productIndex !== -1 && state.products[productIndex].likes > 0) {
+          state.products[productIndex].likes--;
+        }
       });
+
   },
 });
+
 
 export const { CALC_CATEGORY } =
   productSlice.actions;
@@ -215,3 +282,4 @@ export const selectProduct = (state) => state.product.product;
 export const selectCategory = (state) => state.product.category;
 
 export default productSlice.reducer;
+

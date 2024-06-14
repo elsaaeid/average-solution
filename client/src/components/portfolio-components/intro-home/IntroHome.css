@@ -106,7 +106,7 @@
 }
 @media screen and (max-width: 430px) {
   .intro-home {
-      margin-top: 1rem;
+      margin-top: 2rem;
   }
 }
 @media screen and (max-width: 414px) {
@@ -114,7 +114,7 @@
   font-size: 13px;
 }
 .intro-home {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 }
 @media screen and (max-width: 414px) {

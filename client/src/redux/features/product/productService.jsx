@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 const API_URL = `${process.env.BACKEND_URL}/api/products/`;
 
 // Create New Product
@@ -31,12 +30,27 @@ const updateProduct = async (id, formData) => {
   return response.data;
 };
 
+
+
+// Like product 
+const likeProduct = async (id) => {
+  const response = await axios.post(`${API_URL}${id}`);
+  return response.data;
+};
+
+// unlike Product
+const unlikeProduct = async (id) => {
+  const response = await axios.post(`${API_URL}${id}`);
+  return response.data;
+};
 const productService = {
   createProduct,
   getProducts,
   getProduct,
   deleteProduct,
   updateProduct,
+  likeProduct,
+  unlikeProduct,
 };
 
 export default productService;

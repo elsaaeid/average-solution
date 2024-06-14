@@ -61,14 +61,6 @@ video {
   transform: scale(1.1);
   transition: 0.5s all ease-in-out;
 }
-.portfolio__item-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 34px;
-}
 .portfolio__item-cta {
   display: flex;
   justify-content: space-evenly;
@@ -256,9 +248,6 @@ button#dropdown-basic {
 }
 article.portfolio__item {
   width: 90%;
-}
-.portfolio__item-details p {
-  margin-bottom: 35px;
 }
 .dropdown-menu.show {
   height: 20rem;

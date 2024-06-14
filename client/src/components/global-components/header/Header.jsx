@@ -33,6 +33,7 @@ const Header= ()=> {
         display: 'flex',
         opacity: 1,
         borderRadius: '0px 0px 150px 150px',
+        visibility: "visible",
         width: '50%',
         height: "",
         transition: 'opacity display height .7s ease-in-out',

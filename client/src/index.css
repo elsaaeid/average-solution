@@ -325,7 +325,7 @@ svg#search-icon {
     width: 100%;
 }
 section {
-    margin-top: 188px;
+    margin-top: 145px;
 }
 }
 @media screen and (max-width: 912px){
@@ -387,7 +387,7 @@ section {
 }
 @media screen and (max-width: 414px) {
   section {
-      margin-top: 147px;
+      margin-top: 137px;
   }
 }
 @media screen and (max-width: 412px)

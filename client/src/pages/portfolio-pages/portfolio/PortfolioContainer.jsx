@@ -230,6 +230,7 @@ const openSearch = ()=> {
                     id={product._id}
                     key={_id}
                     product={product}
+                    currentItems={currentItems}
                     rotate={rotate}
                     handleViewDetails={() => handleViewDetails(product._id)}
                     selectedProduct={selectedProduct}
@@ -258,7 +259,7 @@ const openSearch = ()=> {
           previousLinkClassName="page-num"
           nextLinkClassName="page-num"
           activeLinkClassName="item activePage"
-          previousLabel={<ArrowBackIosIcon style={{ color: colors.grey[100], fontSize: 18, width: 50 }} />}
+          previousLabel={<ArrowBackIosIcon style={{ color: colors.grey[500], fontSize: 18, width: 50 }} />}
           nextLabel={<ArrowForwardIosIcon style={{ color: colors.grey[500], fontSize: 18, width: 50 }} />}
           breakClassName={'item break-me'}
           disabledClassName={'disabled-page'}

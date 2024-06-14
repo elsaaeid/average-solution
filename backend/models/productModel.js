@@ -13,7 +13,7 @@ const productSchema = mongoose.Schema(
       trim: true,
     },
     likes: { type: Number, default: 0 },
-    usersLiked: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    likedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     sku: {
       type: String,
       required: true,
