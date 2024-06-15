@@ -20,7 +20,7 @@ router.patch("/:id", protect, upload.single("image"), updateProduct);
 router.get("/", getProducts);
 router.get("/:id", getProduct);
 router.delete("/:id", protect, deleteProduct);
-router.post('/:id', protect, likeProduct);
-router.post('/:id', protect, unLikeProduct);
+router.post('/:productId', likeProduct);
+router.post('/:productId', unLikeProduct);
 
 module.exports = router;

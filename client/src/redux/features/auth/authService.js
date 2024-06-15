@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export const API_URL = `${process.env.BACKEND_URL}/api/users/`;
 
 // Validate email

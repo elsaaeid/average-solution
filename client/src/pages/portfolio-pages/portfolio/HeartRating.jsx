@@ -1,46 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiLike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { likeProduct, unlikeProduct } from '../../../redux/features/product/productSlice';
 import { useTheme, Box } from "@mui/material";
 import { tokens } from "../../../theme";
+import { selectUser } from '../../../redux/features/auth/authSlice';
+import { useNavigate } from 'react-router-dom'; 
 
-const HeartRating = ({product, currentItems}) => {
-    const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+
+const HeartRating = ({product}) => {
   const [isLike, setIsLike] = useState(false);
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   const dispatch = useDispatch();
-  const isLiked = currentItems.includes(product._id);
+  const user = useSelector(selectUser);
+  const navigate = useNavigate(); 
+  
+  useEffect(() => {
+    if (user) {
+      if (product.likedBy.includes(user.id)) {
+        setIsLike(isLike);
+        const isLiked = product.likedBy.includes(user.id);
+        if(isLiked) {
+          setIsLike(!isLike);
+        } else {
+          setIsLike(isLike);
+        }
+      }
+      else {
+        setIsLike(!isLike);
+      }
+    }
+    else {
+      setIsLike(!isLike);
+    }
+    
+  }, [product, user]);
+  
+ 
+
 
   const handleLike = () => {
-    dispatch(likeProduct(product._id));
-    setIsLike(true);
-    console.log(isLiked);
+    console.log(isLike);
+    if (user) {
+    if (!isLike) {
+      dispatch(unlikeProduct(product._id));
+    } else {
+      dispatch(likeProduct(product._id));
+    }
+  } else {
+    alert(`Please login to like this product. You will be redirected to the login page.`);
+    navigate('/login', { replace: true }); // Add this line to navigate to login page
+  }
   };
-
-  const handleUnlike = () => {
-    dispatch(unlikeProduct(product._id));
-    setIsLike(false);
-  };
-
 
   return (
     <Box className="product-item flex flex-row justify-between items-center">
-       <p 
-        className="flex flex-row justify-between items-center"
-        style={{
-          color: colors.grey[500],
-        }}>{product.likes}</p>
-      {isLike? (
-        <button onClick={handleUnlike}>
-          <BiSolidLike />
-        </button>
-      ) : (
-        <button onClick={handleLike}>
-          <BiLike />
-        </button>
-      )}
+      <p 
+      className="flex flex-row justify-between items-center"
+      style={{
+        color: colors.grey[500],
+      }}>
+        {product.likes}
+      </p>
+      <button onClick={handleLike}>
+        {isLike ? <BiLike /> : <BiSolidLike />}
+      </button>
     </Box>
   );
 };

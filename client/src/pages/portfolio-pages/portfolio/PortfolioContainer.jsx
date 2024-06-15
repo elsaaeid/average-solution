@@ -224,7 +224,7 @@ const openSearch = ()=> {
               const { _id, name, category, liveDemo } = product;
               return (
                 <Grid 
-                  xs={6} sm={6} md={6} lg={6} 
+                  xs={12} sm={6} md={6} lg={6} 
                   className={orderState ? "content-portfolio active-content" : "content-portfolio"}>
                   <CardPortfolio
                     id={product._id}

@@ -47,7 +47,7 @@ import { useTranslation } from "react-i18next";
         // console.log(filteredCategory);
 
         return(<ItemTabs 
-        itemClass={orderState == category ? "tabs active-tabs" : "tabs"}
+        itemClass={orderState == category ? "dropdown-tabs dropdown-active-tabs" : "dropdown-tabs"}
         itemClick={() =>toggleTab(category , counter, category, filteredCategory)}
         itemTitle={category}
         />)}
@@ -62,7 +62,7 @@ import { useTranslation } from "react-i18next";
             </Box>         
             <ul className= {open ? "dropdown-menus flex flex-col justify-center items-center" : "dropdown-menus flex flex-col justify-center items-center dropdown-toggled"}>       
             <ItemTabs 
-              itemClass={orderState ==  "All" ? "tabs active-tabs" : "tabs"}
+              itemClass={orderState ==  "All" ? "dropdown-tabs dropdown-active-tabs" : "dropdown-tabs"}
               itemClick={() =>toggleTab("All", products.length ,  "All", products)}
               itemTitle="All"
               />

@@ -159,43 +159,52 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 // Like Product
  const likeProduct = asyncHandler(async (req, res) => {
-  const id = req.params.id;
+  const productId = req.params.productId;
   const userId = req.user.id;
-   
-try {
-  const product = await Product.findById(id);
-  const user = await User.findById(userId);
-  if (!product.likedBy.includes(user.id)) {
-    product.likes++;
-    product.likedBy.push(user.id);
-    user.likedProducts.push(product.id);
-    await product.save();
-    await user.save();
-  }
-  res.json({ message: 'Product liked successfully' });
-  } catch(error) { 
-    res.status(500).json({ message: error.message });
+  try {
+    const product = await Product.findById(productId);
+    if (product) {
+      if (!product.likedBy.includes(userId)) {
+        product.likes++;
+        product.likedBy.push(userId);
+        await product.save();
+        res.json({ message: 'Product liked successfully' });
+      } else {
+        res.status(400).json({ message: 'You already liked this product' });
+      }
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
 // unLike Product
 const unLikeProduct =  asyncHandler(async (req, res) => {
-  const id = req.params.id;
+  const productId = req.params.productId;
   const userId = req.user.id;
-   
-try {
-  const product = await Product.findById(id);
-  const user = await User.findById(userId);
-  if (product.likedBy.includes(user.id)) {
-    product.likes--;
-    product.likedBy.pull(user.id);
-    user.likedProducts.pull(product.id);
-    await product.save();
-    await user.save();
-  }
-  res.json({ message: 'Product unliked successfully' });
-  } catch(error) { 
-    res.status(500).json({ message: error.message });
+  try {
+    const product = await Product.findById(productId);
+    if (product) {
+      if (product.likedBy.includes(userId)) {
+        product.likes--;
+        const index = product.likedBy.indexOf(userId);
+        if (index !== -1) {
+          product.likedBy.splice(index, 1);
+        }
+        await product.save();
+        res.json({ message: 'Product unliked successfully' });
+      } else {
+        res.status(400).json({ message: 'You did not like this product' });
+      }
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
