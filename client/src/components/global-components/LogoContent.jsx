@@ -10,7 +10,7 @@ const LogoContent = () => {
 		navigate("/");
 	  };
   return (
-    <Box className="logo-content flex justify-center items-center flex-col" onClick={goHome}>
+    <Box id="logo-content" className="logo-content flex justify-center items-center flex-col" onClick={goHome}>
         <Box className='me flex justify-center items-center'>
             <img src={average} alt="logo" />
         </Box>

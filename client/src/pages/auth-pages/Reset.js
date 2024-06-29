@@ -10,6 +10,9 @@ import Spinner from "../../components/global-components/Spinner";
 import Loader from "../../components/global-components/Loader";
 import {Box} from '@mui/material';
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
+
 
 
 // Initial State
@@ -39,7 +42,9 @@ const Reset = () => {
   const dispatch = useDispatch();
   // Use Navigate
   const navigate = useNavigate();
-  
+//Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   // Input Change Handle Function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -79,9 +84,17 @@ const Reset = () => {
       {isLoading && <Loader />}
       <div className={styles.form}>
         <div className="flex justify-center items-center">
-          <MdPassword size={35} color="#ffff" />
+          <MdPassword
+            style={{
+              color: colors.grey[500],
+            }}
+            size={35} />
         </div>
-        <h1>{t("profile.resetPassword")}</h1>
+        <h1
+          style={{
+            color: colors.grey[500],
+          }}
+          >{t("profile.resetPassword")}</h1>
 
         <form onSubmit={reset}>
           <PasswordInput 
@@ -106,7 +119,7 @@ const Reset = () => {
                 }
               </button>
             </Box>
-            <div className="mt-5 mb-5 flex flex-row justify-around items-center">
+            <div className="mt-5 mb-5 flex flex-row justify-evenly items-center w-full">
               <span className={styles.links_clChange}>
                 <Link to="/home">{t("profile.home")}</Link>
               </span>

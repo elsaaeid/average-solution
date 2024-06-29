@@ -13,7 +13,7 @@ const items = {
     "Portfolio": "Works",
     "Contact": "Contact",
     "logoTitle" : "Average Solution",
-    "noImg": "No image set for this product",
+    "noImg": "No image set for this Project",
     "letTalk": "Let's Talk",
     "dropdownServices": {
     "Services": "Services",
@@ -33,7 +33,7 @@ const items = {
       "removeFromCart": "Remove Service From Cart",
       "btnLeft": "Sign Up For Now",
       "btnRight": "Look At The Company",
-      "aboutDesc": "This provides digital solutions services to clients to enable their products and brands to take off in the market",
+      "aboutDesc": "This provides digital solutions services to clients to enable their projects and brands to take off in the market",
     },
     "featureCaption": "As you scroll down, to see more available services",
     "profile" : {
@@ -83,7 +83,7 @@ const items = {
   "about": {
     "getToKnow": "Get To Know",
     "aboutUs": "About Us",
-    "aboutUsPara": "Software companies are responsible for various aspects of the software development process, including designing, programming, testing, and supporting software products. They employ software engineers and other professionals with expertise in different areas of software development to ensure the successful creation and delivery of high-quality software products.",
+    "aboutUsPara": "Software companies are responsible for various aspects of the software development process, including designing, programming, testing, and supporting software projects. They employ software engineers and other professionals with expertise in different areas of software development to ensure the successful creation and delivery of high-quality software projects.",
 
   },
     "service": {
@@ -114,7 +114,7 @@ const items = {
     "viewDetails": "View Details",
     "foundIn": "found in",
     "thePortfolioPara": "the best tutorials in high quality and flexible performance",
-    "noProduct": "No products found",
+    "noProduct": "No projects found",
     "projectsNumber": "projects number",
     "demoLive": "Demo live",
   },
@@ -133,10 +133,10 @@ const items = {
   },
   "dashboard": {
     "product": {
-      "productImage": "product image",
+      "productImage": "Project image",
       "supportedFormats": "Supported Formats: jpg, jpeg, png",
-      "productName": "Product Name",
-      "saveProduct": "Save Product",
+      "productName": "Project Name",
+      "saveProduct": "Save Project",
     },
     "productList": {
       "inventoryItems": "Inventory Items",

@@ -49,11 +49,7 @@ const Forgot = () => {
   return (
     <div className={`${styles.auth} p-3`}>
       <div 
-        className={styles.form}
-        style={{
-          backgroundColor: colors.grey[900],
-        }}
-        >
+        className={styles.form}>
         <div className="flex flex-col justify-center items-center">
           <AiOutlineMail size={35} 
             style={{
@@ -75,7 +71,7 @@ const Forgot = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Box className="flex justify-center items-center">
+          <Box className="flex justify-center items-center w-1/2">
           <button type="submit" className="btnX flex justify-center items-center w-full">
             {
               isLoading ? <Spinner />

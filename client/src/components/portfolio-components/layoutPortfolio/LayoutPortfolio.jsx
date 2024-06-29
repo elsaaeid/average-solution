@@ -39,7 +39,7 @@ const LayoutPortfolio = ({children}) => {
 
     
   return (
-    <Box>
+    <>
     {loading ? (
       <Loader />
     ) 
@@ -62,7 +62,7 @@ const LayoutPortfolio = ({children}) => {
       </Box>
       )
     }
-    </Box>
+    </>
   )
 }
 

@@ -50,6 +50,7 @@ const Header= ()=> {
 
         return (
             <header
+            id="header"
               className="flex flex-row justify-between items-center">
                 <Box className='header__container flex flex-row justify-between items-center'>
                   <LogoContent />

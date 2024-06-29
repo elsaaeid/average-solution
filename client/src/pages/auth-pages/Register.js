@@ -143,12 +143,8 @@ const Register = () => {
 
 
   return (
-    <div className={`${styles.auth} p-3`}>
-        <div className={styles.form}
-          style={{
-            backgroundColor: colors.grey[900],
-          }}
-        >
+    <div className={`${styles.auth} p-3 mt-5`}>
+        <div className={styles.form}>
           <div className="flex flex-col justify-center items-center mb-2">
             <TiUserAddOutline size={35} 
             style={{
@@ -224,7 +220,7 @@ const Register = () => {
                 </li>
               </ul>
             </Card>
-            <Box className="w-1/2 flex justify-center items-center mt-5">
+            <Box className="flex justify-center items-center mt-5 w-1/2">
             <button type="submit" className="btnX flex justify-center items-center w-full">
               {
                 isLoading ? <Spinner />

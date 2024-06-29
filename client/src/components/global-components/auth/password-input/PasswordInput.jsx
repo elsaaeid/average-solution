@@ -7,7 +7,7 @@ const PasswordInput = ({name, value, placeholder, handleInputChange, onPaste}) =
   // Password Show and UnShow State
   const [passwordShow,setPasswordShow] = useState(false);
   return (
-    <div className="flex flex-row justify-center items-center relative">
+    <div className="w-full flex flex-row justify-center items-center relative">
       <input
         type={!passwordShow ? "password" : "text"}
         placeholder={placeholder}

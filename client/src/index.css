@@ -14,14 +14,6 @@
   list-style: none;
   text-decoration: none;
 }
-
-body {
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 :root {
   --color-bg: #fff !important;
   --color-bg-variant: #297e8a !important;
@@ -39,18 +31,23 @@ body {
   --color-link: #297e8a !important;
   --shadow-color: 0 0 15px 15px rgba(13, 109, 253, 0.048);
   --shadow-dark-color: 0 0 15px 15px rgba(3, 3, 3, 0.274);
-  --color-overlay: #297e8ab5 !important;
+  --color-overlay: #39a9c04a !important;
   --transition: 0.5s all ease-in-out;
   --color-cursor: #27ff0a;
   --cursor-outline-shade: 0.3;
   --cursor-size: 10px;
   --cursor-outline-size: 12px;
 }
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 h1, h2, h3, h4, h5 {
   font-weight: 500;
-}
-h1, h2, h3, h4, h5, h6 {
-  color: var(--color-white);
 }
 p {
   font-size: 12px;
@@ -75,7 +72,6 @@ img {
   border-radius: .4rem;
   font-size: 9px;
   padding: 9px;
-  width: max-content;
 }
 .btn-active {
   background-color: var(--color-primary);
@@ -89,8 +85,8 @@ img {
 }
 .btnX {
   background-color: transparent;
-  border: 1px solid var(--color-white);
-  color: var(--color-white);
+  border: 1px solid var(--color-bg-variant);
+  color: var(--color-bg-variant);
 }
 .btn {
   background-color: var(--color-white);
@@ -130,9 +126,10 @@ img {
 }
 .app-container {
   position: relative;
-  height: 100vh !important;
+  height: 100% !important;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 section {
   margin-top: 186px;
@@ -216,7 +213,7 @@ border-bottom-color: var(--color-bg-variant-hover);
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #e0e0e0;
+  background: var(--color-white)
 }
 
 /* Handle */
@@ -260,7 +257,6 @@ border-bottom-color: var(--color-bg-variant-hover);
   position: relative;
   width: 35rem;
 }
-/*-------------------------Dashboard-style---------------------------------*/
 
 /*--------------------FORM-------------------------------*/
 form {
@@ -273,8 +269,8 @@ input, textarea, select {
   font-size: 12px;
   width: 80%;
   border-radius: 0.5rem;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-bg-variant);
+  border-bottom: 3px solid var(--color-bg-variant);
   resize: none;
 }
 input, textarea {
@@ -321,9 +317,6 @@ svg#search-icon {
   transition: 0.5s all ease-in-out;
   }
 @media screen and (max-width: 1024px){
-.app-container {
-    width: 100%;
-}
 section {
     margin-top: 145px;
 }
@@ -343,7 +336,7 @@ section {
   a.tabs {
     width: 6rem;
     height: 2rem;
-    font-size: 13px;
+    font-size: 9px;
 }
 #dropdown-basic {
   font-size: 15px;
@@ -352,7 +345,7 @@ section {
   font-size: 15px;
   }
   .tabs {
-    font-size: 11px;
+    font-size: 9px;
     }
     .search-content {
       width: 447px;

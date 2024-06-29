@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { tokens } from "../../../theme";
 import { useTheme } from "@mui/material";
 import { Context } from "../../../context/Context";
-
+import "./EditProfile.scss";
 
 const cloud_name = process.env.REACT_APP_CLOUD_NAME;
 const upload_preset = process.env.REACT_APP_UPLOAD_PRESET;
@@ -94,39 +94,42 @@ const EditProfile = () => {
         <h2>{t("profile.editProfile")}</h2>
         <Card>
           <form className="w-full profile-form-control" onSubmit={saveProfile}>
-          <div className="flex flex-col justify-center align-content-center">
+          <div className="w-full flex flex-col justify-center align-content-center">
             <label 
               style={{
                 color: colors.grey[500],
               }}
               >{t("profile.changePhoto")}:</label>
             <input
+              className="profile-input"
               type="file"
               accept="image/*"
               name="image"
               onChange={handleImageChange}
             />
           </div>
-          <div className="flex flex-col justify-center align-content-center">
+          <div className="w-full flex flex-col justify-center align-content-center">
             <label
               style={{
                 color: colors.grey[500],
               }}
             >{t("profile.nameValue")}:</label>
             <input
+              className="profile-input"
               type="text"
               name="name"
               value={profile?.name}
               onChange={handleInputChange}
             />
           </div>
-          <div className="flex flex-col justify-center align-content-center">
+          <div className="w-full flex flex-col justify-center align-content-center">
             <label
               style={{
                 color: colors.grey[500],
               }}
             >{t("profile.emailValue")}:</label>
             <input
+              className="profile-input"
               type="email"
               name="email"
               value={profile?.email}
@@ -134,26 +137,28 @@ const EditProfile = () => {
               disabled
             />
           </div>
-          <div className="flex flex-col justify-center align-content-center">
+          <div className="w-full flex flex-col justify-center align-content-center">
             <label
               style={{
                 color: colors.grey[500],
               }}
             >{t("profile.phone")}:</label>
             <input
+              className="profile-input"
               type="text"
               name="phone"
               value={profile?.phone}
               onChange={handleInputChange}
             />
           </div>
-          <div className="flex flex-col justify-center align-content-center">
+          <div className="w-full flex flex-col justify-center align-content-center">
             <label
               style={{
                 color: colors.grey[500],
               }}
             >{t("profile.bio")}:</label>
             <textarea
+              className="profile-input"
               name="bio"
               value={profile?.bio}
               onChange={handleInputChange}
@@ -161,7 +166,7 @@ const EditProfile = () => {
               rows="10"
             ></textarea>
           </div>
-          <Box className="flex justify-center items-center">
+          <Box className="w-1/2 flex justify-center items-center">
             <button type="submit" className="btn mt-2">
               {
                 isLoading ? <Spinner />

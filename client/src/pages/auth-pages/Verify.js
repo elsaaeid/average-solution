@@ -5,6 +5,9 @@ import Loader from "../../components/global-components/Loader";
 import { RESET, verifyUser } from "../../redux/features/auth/authSlice";
 import Spinner from "../../components/global-components/Spinner";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../theme";
+
 
 
 
@@ -20,7 +23,10 @@ const Verify = () => {
   const [loading, setLoading] = useState(false);
   // Auth State Select
   const { isLoading } = useSelector((state) => state.auth);
-
+  // Theme Colors Mode
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+   
   // Verify Account Function
   const verifyAccount = async () => {
     setLoading(true);
@@ -33,7 +39,11 @@ const Verify = () => {
     <section>
       {isLoading && <Loader />}
       <div className="flex flex-col justify-center items-center">
-        <h1>{t("profile.accountVerification")}</h1>
+        <h1
+          style={{
+            color: colors.grey[500],
+          }}
+          >{t("profile.accountVerification")}</h1>
         <p>{t("profile.verBelow")}</p>
         <br />
         <div className="w-1/2 flex justify-center items-center">

@@ -99,11 +99,7 @@ const Login = () => {
   return (
     <div className={`${styles.auth} p-3`}>
         <div 
-          className={styles.form}
-          style={{
-            backgroundColor: colors.grey[900],
-          }}
-          >
+          className={styles.form}>
           <div className="flex flex-col justify-center items-center">
             <BiLogIn size={35} 
                style={{

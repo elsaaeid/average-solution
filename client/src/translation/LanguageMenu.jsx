@@ -31,32 +31,19 @@ const languages = [
 ]
 
 const LanguageMenu = () => {
-  const [bodyDir, setBodyDir] = useState("ltr");
-  const [htmlLang, setHtmlLang] = useState("en");
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // Translation
+  const { t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState("en");
-       // Translation
-       const { t } = useTranslation();
 
-    const chooseLanguage = (e) => {
-        e.preventDefault();
-        i18n.changeLanguage(e.target.value); 
-        let langValue = e.target.value; 
-        setSelectedLanguage(langValue);
-        document.body.dir = bodyDir
-      document.querySelector("html").lang = htmlLang
-      if(selectedLanguage === "en") {
-        setBodyDir("ltr");
-        setHtmlLang("en");
-        document.getElementById("links").style.right = "50%";
-      }
-      else if(selectedLanguage === "ar") {
-        setBodyDir("rtl");
-        setHtmlLang("ar");
-        document.getElementById("links").style.right = "0";
-      }
-    }
+  const chooseLanguage = (e) => {
+    const langValue = e.target.value;
+    setSelectedLanguage(langValue);
+    i18n.changeLanguage(langValue);
+    document.body.dir = languages.find(lang => lang.code === langValue).dir;
+    document.querySelector("html").lang = langValue;
+  };
 
     return (
       <Box sx={{width: 100}} className="langs-select flex flex-row">

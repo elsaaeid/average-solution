@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from "../global/Sidebar";
+import Sidebar from "../../global-components/global/Sidebar";
 import { Box } from "@mui/material";
 import Loader from "../../global-components/Loader";
 import Header from "../../global-components/header/Header";

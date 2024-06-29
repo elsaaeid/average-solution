@@ -3,7 +3,6 @@ import { GrInsecure } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Card from "../../components/global-components/card/Card";
 import Loader from "../../components/global-components/Loader";
 import Spinner from "../../components/global-components/Spinner";
 import {Box} from '@mui/material';
@@ -87,15 +86,18 @@ const LoginWithCode = () => {
       {isLoading ? (<Loader />)
       :
       (
-      <Card>
-        <div className={styles.form}>
+      <div className={styles.form}>
           <div className="flex flex-col justify-center items-center">
             <GrInsecure size={35} 
              style={{
               color: colors.grey[500],
             }}
              />
-            <h1>{t("profile.enterCode")}</h1>
+            <h1
+              style={{
+                color: colors.grey[500],
+              }}
+              >{t("profile.enterCode")}</h1>
           </div>
           <form onSubmit={loginUserWithCode}>
             <input
@@ -106,7 +108,7 @@ const LoginWithCode = () => {
               value={loginCode}
               onChange={(e) => setLoginCode(e.target.value)}
             />
-            <Box className="w-1/2 flex justify-center items-center">
+            <Box className="w-1/2 flex justify-center items-center mb-2">
             <button type="submit" className="btnX flex justify-center items-center w-full">
               {
                 loading ? <Spinner />
@@ -118,17 +120,18 @@ const LoginWithCode = () => {
             <span className="flex justify-center items-center">
               {t("profile.checkCode")}
             </span>
-            <div className={`flex justify-around items-center ${styles.links}`}>
-              <p>
-                <Link to="/home">{t("profile.home")}</Link>
-              </p>
-              <p onClick={sendUserLoginCode} className="v-link color-primary">
-                <b>{t("profile.resentCode")}</b>
-              </p>
-            </div>
+            <Box className="w-full flex flex-row justify-between items-center mt-3">
+              <span className={styles.links}>
+                <Link to="/">{t("profile.home")}</Link>
+              </span>
+              <span className={styles.links}>
+                <span onClick={sendUserLoginCode} className="cursor-pointer color-primary">
+                    <b>{t("profile.resendCode")}</b>
+                </span>
+              </span>
+          </Box>
           </form>
-        </div>
-      </Card>
+      </div>
       )
     }
     </div>

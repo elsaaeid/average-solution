@@ -91,7 +91,7 @@ useEffect(() => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [numState, setNumState] = useState(19);
+  const [numState, setNumState] = useState(products.length || null);
   const itemsPerPage = 5;
 
   useEffect(() => {
