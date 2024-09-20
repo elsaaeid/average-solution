@@ -43,6 +43,12 @@ const LanguageMenu = () => {
     i18n.changeLanguage(langValue);
     document.body.dir = languages.find(lang => lang.code === langValue).dir;
     document.querySelector("html").lang = langValue;
+    if(langValue === "ar") {
+      document.querySelector("#links").style.right = "0px";
+    }
+    else {
+      document.querySelector("#links").style.left = "0px";
+    }
   };
 
     return (

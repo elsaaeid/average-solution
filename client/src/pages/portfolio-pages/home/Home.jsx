@@ -6,10 +6,10 @@ import IntroHome from "../../../components/portfolio-components/intro-home/Intro
  const Home = () => {
 
   return (
-     <section>
+    <div className='section-home w-full'>
         <Main />
         <IntroHome />
-    </section>
+    </div>
   )
 }
 export default Home

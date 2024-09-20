@@ -10,6 +10,11 @@ import {
   updateProduct,
 } from "../../../redux/features/product/productSlice";
 import Header from "../../../components/dashboard-components/Header";
+import { useTranslation } from "react-i18next";
+
+
+
+
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -22,7 +27,8 @@ const EditProduct = () => {
   const [productImage, setProductImage] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const [description, setDescription] = useState("");
-
+  // Translation
+  const { t } = useTranslation();
   useEffect(() => {
     dispatch(getProduct(id));
   }, [dispatch, id]);
@@ -70,7 +76,7 @@ const EditProduct = () => {
 
   return (
     <Box p="20px">
-      <Header title="Edit Product" />
+      <Header title={t("dashboard.editProduct")} />
       <ProductForm
         product={product}
         productImage={productImage}

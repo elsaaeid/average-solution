@@ -10,7 +10,7 @@ import {
 } from "../../../../redux/features/product/productSlice";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../../theme";
-
+import { useTranslation } from "react-i18next";
 
 
 // Icons
@@ -19,7 +19,8 @@ const categoryIcon = <BiCategory size={40} color="#fff" />;
 
 
 const ProductSummary = ({ products }) => {
-
+  // Translation
+  const { t } = useTranslation();
   // A hook to access the redux dispatch function.
   const dispatch = useDispatch();
   // A hook to access the redux store's state.
@@ -36,19 +37,21 @@ const ProductSummary = ({ products }) => {
 
   return (
     <div className="product-summary">
-      <h3 style={{
-        color: colors.grey[500],
-      }}>Inventory Stats</h3>
-      <div className="info-summary flex flex-row justify-around items-center">
+      <h3
+        className="mb-3"
+        style={{
+          color: colors.grey[500],
+        }}>{t("dashboard.InventoryStats")}</h3>
+      <div className="info-summary flex justify-around items-center">
         <InfoBox
           icon={productIcon}
-          title={"Total Items"}
+          title={t("dashboard.TotalItems")}
           count={products.length}
           bgColor="card1"
         />
         <InfoBox
           icon={categoryIcon}
-          title={"All Categories"}
+          title={t("dashboard.AllCategories")}
           count={category.length}
           bgColor="card4"
         />

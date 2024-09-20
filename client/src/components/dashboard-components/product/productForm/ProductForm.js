@@ -45,33 +45,33 @@ const ProductForm = ({
           <label>{t("dashboard.product.productName")}:</label>
           <input
             type="text"
-            placeholder="Product name"
+            placeholder={t("dashboard.product.productName")}
             name="name"
-            value={product?.name}
+            value={product?.name || ''}
             onChange={handleInputChange}
           />
 
-          <label>Product Category:</label>
+          <label>{t("dashboard.product.ProductCategory")}:</label>
           <input
             type="text"
-            placeholder="Product Category"
+            placeholder={t("dashboard.product.ProductCategory")}
             name="category"
-            value={product?.category}
+            value={product?.category || ''}
             onChange={handleInputChange}
           />
-          <label>Product Live Demo:</label>
+          <label>{t("dashboard.product.ProductLiveDemo")}:</label>
           <input
             type="text"
-            placeholder="Link Of Live Demo"
+            placeholder={t("dashboard.product.ProductLiveDemo")}
             name="liveDemo"
-            value={product?.liveDemo}
+            value={product?.liveDemo || ''}
             onChange={handleInputChange}
           />
           
-          <label>Product Description:</label>
+          <label>{t("dashboard.product.ProductDescription")}:</label>
           <ReactQuill
             theme="snow"
-            value={description}
+            value={description || ''}
             onChange={setDescription}
             modules={ProductForm.modules}
             formats={ProductForm.formats}

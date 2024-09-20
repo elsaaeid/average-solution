@@ -10,6 +10,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import InventoryIcon from '@mui/icons-material/Inventory';
 import { SidebarItem } from "./SidebarItem";
 import "./Sidebar.css";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -22,7 +23,8 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   // Item Select
   const [selected, setSelected] = useState("Dashboard");
-
+  // Translation
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -69,28 +71,28 @@ const Sidebar = () => {
           </MenuItem>
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <SidebarItem
-              title="Dashboard"
+              title={t("dashboard.dashboard.title")}
               to="/dashboard"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <SidebarItem
-              title="Add product"
+              title={t("dashboard.addProduct")}
               to="/add-product"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <SidebarItem
-              title="products"
+              title={t("dashboard.products")}
               to="/products"
               icon={<InventoryIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <SidebarItem
-              title="Manage users"
+              title={t("dashboard.ManageUsers")}
               to="/users"
               icon={<PeopleOutlinedIcon />}
               selected={selected}

@@ -132,12 +132,17 @@ img {
   overflow: hidden;
 }
 section {
-  margin-top: 186px;
+  margin-top: 150px;
+  width: 100%;
+}
+.section-content, .section-home, .section-contact {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+}
+.section-content {
+  height: 100%;
 }
 .full-content {
   display: flex;
@@ -316,21 +321,6 @@ svg#search-icon {
   color: var(--color-bg);
   transition: 0.5s all ease-in-out;
   }
-@media screen and (max-width: 1024px){
-section {
-    margin-top: 145px;
-}
-}
-@media screen and (max-width: 912px){
-  section {
-    margin-top: 135px;
-  }
-  }
-  @media screen and (max-width: 853px) {
-    section {
-        margin-top: 128px;
-    }
-}
 @media screen and (max-width: 768px)
 {
   a.tabs {
@@ -353,9 +343,6 @@ section {
 }
 @media screen and (max-width: 540px)
 {
-  section {
-    margin-top: 129px;
-}
   a.tabs {
     width: 10rem;
     height: 2rem;
@@ -372,24 +359,10 @@ section {
   font-size: 8px;
 }
 }
-@media screen and (max-width: 430px)
-{
-  section {
-    margin-top: 143px;
-}
-}
-@media screen and (max-width: 414px) {
-  section {
-      margin-top: 137px;
-  }
-}
 @media screen and (max-width: 412px)
 {
 .lists {
   flex-direction: column;
-}
-section {
-  margin-top: 142px;
 }
 }
 @media screen and (max-width: 375px){
@@ -399,14 +372,8 @@ section {
 .btn, .btnX {
   padding: 4px;
 }
-  section {
-      margin-top: 140px;
-}
 }
 @media screen and (max-width: 360px){
-  section {
-    margin-top: 138px;
-}
 .lists {
   flex-direction: column;
 }
@@ -414,11 +381,6 @@ section {
   font-size: 6px;
   padding: 6px;
 }
-}
-@media screen and (max-width: 344px) {
-  section {
-      margin-top: 140px;
-  }
 }
 @media screen and (max-width: 280px){
 .lists {

@@ -9,7 +9,7 @@ import {
 } from "../../../redux/features/product/productSlice";
 import Header from "../../../components/dashboard-components/Header";
 import { Box } from "@mui/material";
-
+import { useTranslation } from "react-i18next";
 
 const initialState = {
   name: "",
@@ -26,7 +26,8 @@ const AddProduct = () => {
   const [description, setDescription] = useState("");
 
   const isLoading = useSelector(selectIsLoading);
-
+  // Translation
+  const { t } = useTranslation();
   const { name, category, liveDemo, } = product;
 
   const handleInputChange = (e) => {
@@ -72,7 +73,7 @@ const AddProduct = () => {
     : 
     (
       <>
-      <Header title="Add New Product" />
+      <Header title={t("dashboard.addProduct")} />
       <ProductForm
         product={product}
         productImage={productImage}

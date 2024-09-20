@@ -202,12 +202,12 @@ useEffect(() => {
       <ProductSummary products={products} />
       <hr />
       <div className="w-full flex flex-col justify-between items-center">
-        <div className="flex flex-col justify-between mt-3">
-          <span>
+        <div className="flex flex-col justify-between my-3">
             <h3 style={{
               color: colors.grey[500],
-            }}>{t("dashboard.productList.inventoryItems")}</h3>
-          </span>
+            }}>
+              {t("dashboard.productList.inventoryItems")}
+            </h3>
         </div>
         <div className="products-filter relative flex flex-row items-center justify-center">
           <DropdownTabs products={products} toggleTab={toggleTab} orderState={orderState} />
@@ -254,7 +254,7 @@ useEffect(() => {
             <span>{categoryState}</span>
             <p><span>{t("dashboard.productList.projectsNumber")}</span> <span>{numState}</span></p>
         </Box> 
-        <Box className="table-container">
+        <Box className="table-container w-full">
             <TableItemsContainer products={products} pageCount={pageCount} handlePageClick={handlePageClick} confirmDelete={confirmDelete} shortenText={shortenText} currentItems={currentItems} />
         </Box>
       </div>

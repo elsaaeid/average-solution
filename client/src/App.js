@@ -41,7 +41,7 @@ export const App = ()=> {
   }, [dispatch, isLoggedIn, user]);
 
   return (
-    <GoogleOAuthProvider clientId="229485364448-1q5ujcvs6gt8e0erl7vc4rt5u4lb0g7f.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.APP_GOOGLE_CLIENT_ID}>
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <CssBaseline />

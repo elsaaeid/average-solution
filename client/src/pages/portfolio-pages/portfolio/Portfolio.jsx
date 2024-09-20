@@ -11,7 +11,7 @@ function Portfolio() {
 	// Translation
 	const { t } = useTranslation();
     return (
-      <section id='portfolio'>
+      <div className='portfolio w-full flex flex-col justify-center items-center'>
               <Box className='branch-container'>
                   <BsPersonWorkspace  className='icon-branch' />
               </Box>
@@ -20,7 +20,7 @@ function Portfolio() {
                 <p className='mb-3'>{t("portfolio.thePortfolioPara")}</p>
               </Box>
                 <PortfolioContainer />
-      </section>
+      </div>
     )
     };
 export default Portfolio;

@@ -6,13 +6,16 @@ import ProductSummary from "../../../components/dashboard-components/product/pro
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
 import { selectIsLoggedIn } from "../../../redux/features/auth/authSlice";
 import { getProducts } from "../../../redux/features/product/productSlice";
-import Loader from "../../../components/global-components/Loader"
+import Loader from "../../../components/global-components/Loader";
+import { useTranslation } from "react-i18next";
+import ProductCharts from "../../../components/dashboard-components/product/product-charts/ProductCharts";
 
 
 const Dashboard = () => {
   useRedirectLoggedOutUser("/login");
   const dispatch = useDispatch();
-
+  // Translation
+  const { t } = useTranslation();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { products, isLoading, isError, message } = useSelector(
     (state) => state.product
@@ -38,10 +41,11 @@ const Dashboard = () => {
     (
       <>
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title={t("dashboard.dashboard.title")} subtitle={t("dashboard.dashboard.subtitle")} />
       </Box>
       <Box>
         <ProductSummary products={products} />
+        <ProductCharts products={products} />
       </Box>
     </>
     )

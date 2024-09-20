@@ -11,7 +11,7 @@ const Experience = ()=> {
 	const { t } = useTranslation();
 	
         return (
-             <section id='experience'>
+			<div className='section-content w-full'>
 				<Box className='branch-container'>
 					<GiSkills className='icon-branch' />
 				</Box>
@@ -22,7 +22,7 @@ const Experience = ()=> {
 						<CarouselContainer />
 					</Box>
 				</Box>
-            </section> 
+            </div> 
         )
 }
 export default Experience;

@@ -48,7 +48,9 @@ const LayoutPortfolio = ({children}) => {
       <Box className='app-container'>
         <Header />
         <Navbar />
-            {children}
+        <section id='section'>
+          {children}
+        </section>
         <BackToTopButton backToTop={backToTop} />
         <ChatBotContainer />
         <Collapse in={open} className='alret-container flex items-center justify-center'>

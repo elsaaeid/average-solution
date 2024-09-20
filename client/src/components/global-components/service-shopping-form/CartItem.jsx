@@ -7,7 +7,10 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { ServiceCheckBox } from "./ServiceCheckBox";
 import { Context } from "../../../context/Context";
-const API_URL = `${process.env.BACKEND_URL}/api/contactus`;
+import {BACKEND_URL} from "../../../redux/helper.js";
+const API_URL = `${BACKEND_URL}/api/contactus`;
+
+
 
 const CartItem = ()=>{
     // App Context
@@ -48,6 +51,7 @@ const CartItem = ()=>{
             <textarea
                 style={{
                     color: colors.grey[500],
+                    background: colors.grey[900],
                 }}
                 placeholder={t("contact.message")}
                 cols="30"

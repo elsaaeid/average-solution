@@ -13,7 +13,7 @@ const Contact = ()=> {
 		// Translation
 		const { t } = useTranslation();
         return (
-            <section id='contact'>
+            <div className='section-contact w-full'>
 				<Box className='branch-container'>
 					<MdContactPhone className='icon-branch' />
 				</Box>
@@ -26,7 +26,7 @@ const Contact = ()=> {
 					{/* END OF CONTACT OPTOINS */}
 					<ContactForm />
 				</Box>
-            </section> 
+            </div> 
         )
 }
 export default Contact;

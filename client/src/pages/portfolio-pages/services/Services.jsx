@@ -10,7 +10,7 @@ const Services = ()=>{
 	// Translation
 	const { t } = useTranslation();
         return (             
-	    <section id='services'>
+		<div className='section-content w-full'>
 			<Box className='branch-container'>
 				<FcServices className='icon-branch' />
 			</Box>
@@ -19,7 +19,7 @@ const Services = ()=>{
 				<h2>{t("service.Services")}</h2>
 				<CarouselContainer />
 			</Box>
-        </section> 
+        </div> 
         )
 }
 export default Services;

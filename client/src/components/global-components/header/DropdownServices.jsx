@@ -87,7 +87,7 @@ const DropdownServices = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          label="Services"
+          label={t("services")}
           onChange={handleChange}
           value={selected}
           className="select"

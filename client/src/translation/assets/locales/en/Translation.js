@@ -83,7 +83,7 @@ const items = {
   "about": {
     "getToKnow": "Get To Know",
     "aboutUs": "About Us",
-    "aboutUsPara": "Software companies are responsible for various aspects of the software development process, including designing, programming, testing, and supporting software projects. They employ software engineers and other professionals with expertise in different areas of software development to ensure the successful creation and delivery of high-quality software projects.",
+    "aboutUsPara": "Software companies are responsible for various aspects of the software development process, including designing, programming, testing, and supporting software projects",
 
   },
     "service": {
@@ -132,11 +132,26 @@ const items = {
     "pageNotFound": "Page Not Found",
   },
   "dashboard": {
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Welcome to your dashboard",
+    },
+    "addProduct" : "Add New Service",
+    "editProduct" : "Edit Service",
+    "products": "Services",
+    "InventoryStats": "Inventory Stats",
+    "AllCategories": "All Categories",
+    "TotalItems": "Total services",
+    "ManageUsers": "Manage Users",
+    "servicesStatistics": "Services statistics",
     "product": {
       "productImage": "Project image",
       "supportedFormats": "Supported Formats: jpg, jpeg, png",
       "productName": "Project Name",
       "saveProduct": "Save Project",
+      "ProductCategory": "Service Category",  
+      "ProductDescription": "Service Description",
+      "ProductLiveDemo": "Service Live Demo",
     },
     "productList": {
       "inventoryItems": "Inventory Items",

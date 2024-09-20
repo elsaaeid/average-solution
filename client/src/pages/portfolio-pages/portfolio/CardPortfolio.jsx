@@ -1,5 +1,5 @@
 import React from 'react';
-import HeartRating from './HeartRating';
+import Like from './Like';
 import { IoIosArrowUp } from "react-icons/io";
 import {Box, Typography, useTheme, IconButton} from '@mui/material';
 import {NavLink} from "react-router-dom";
@@ -45,7 +45,7 @@ export const CardPortfolio = ( {
                 <Typography variant="h6" component="h6" className="portfolio__item-name flex justify-center items-center w-full">
                 {shortenText(name, 16)}
                 </Typography>
-                <HeartRating 
+                <Like 
                     product={product} 
                     currentItems={currentItems} 
                 />

@@ -23,7 +23,7 @@ import { CardPortfolio } from "./CardPortfolio";
 import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-
+import Spinner from "../../../components/global-components/Spinner";
 
 
 const PortfolioContainer = () => {
@@ -203,12 +203,9 @@ const openSearch = ()=> {
         </div>
       </div>
     </div>
-    <div className="port-container flex justify-center items-center">
+    <div className="port-container w-full flex justify-center items-center">
       {products.length === 0 ? (
-        <p style={{
-          color: colors.grey[500],
-        }}
-        >-- {t("portfolio.noProduct")}...</p>
+        <Spinner />
       ) : (
         <Box>
         <Box 

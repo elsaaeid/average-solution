@@ -1,7 +1,7 @@
 import axios from "axios";
 
-
-export const API_URL = `${process.env.BACKEND_URL}/api/users/`;
+import {BACKEND_URL} from "../../helper.js";
+export const API_URL = `${BACKEND_URL}/api/users/`;
 
 // Validate email
 export const validateEmail = (email) => {

@@ -9,7 +9,7 @@ const About = ()=> {
 		// Translation
 		const { t } = useTranslation();
         return (
-            <section id='about'>
+            <div className='section-content w-full'>
 				<div className='branch-container'>
 					<SiAboutdotme className='icon-branch' />
 				</div>
@@ -24,7 +24,7 @@ const About = ()=> {
 						<a href="/contact" className="aboutA btn btn-primary">{t("letTalk")}</a>
 					</div>
 					</div>
-            </section> 
+            </div> 
         )
 }
 export default About;
