@@ -42,7 +42,7 @@ const ProductSummary = ({ products }) => {
         style={{
           color: colors.grey[500],
         }}>{t("dashboard.InventoryStats")}</h3>
-      <div className="info-summary flex justify-around items-center">
+      <div className="info-summary flex items-center">
         <InfoBox
           icon={productIcon}
           title={t("dashboard.TotalItems")}
