@@ -83,11 +83,11 @@ const DropdownServices = () => {
         <InputLabel style={{
             color: colors.grey[100],
             border: "none",
-          }} id="demo-simple-select-label">{t("services")}</InputLabel>
+          }} id="demo-simple-select-label">{t("Services")}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          label={t("services")}
+          label={t("Services")}
           onChange={handleChange}
           value={selected}
           className="select"

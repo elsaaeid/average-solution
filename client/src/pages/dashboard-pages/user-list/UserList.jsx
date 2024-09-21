@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
 const UserList = () => {
   useRedirectLoggedOutUser("/login");
   const { isLoading } = useSelector(
-    (state) => state.auth
+    (state) => state.auth.user
   );
 
   return (

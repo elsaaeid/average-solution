@@ -14,9 +14,6 @@ const items = {
     "logoTitle" : "الحل المعدل",
     "noImg": "لم يتم تعيين صورة لهذا المشروع",
     "letTalk": "هيا بنا نتحدث",
-    "dropdownServices": {
-      "Services": "خدمات",
-    },
     "main": {
       "introDesc": "مرحبا بعودتك للحل المعدل",
     },

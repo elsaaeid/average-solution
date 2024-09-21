@@ -15,9 +15,6 @@ const items = {
     "logoTitle" : "Average Solution",
     "noImg": "No image set for this Project",
     "letTalk": "Let's Talk",
-    "dropdownServices": {
-    "Services": "Services",
-    },
     "main": {
       "introDesc": "Welcome back to Average Solution",
     },
