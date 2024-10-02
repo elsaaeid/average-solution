@@ -5,11 +5,8 @@ import Card from "../../../global-components/card/Card";
 import "./ProductForm.scss";
 import { useTranslation } from "react-i18next";
 
-
-
 const ProductForm = ({
   product,
-  productImage,
   imagePreview,
   description,
   setDescription,
@@ -17,24 +14,22 @@ const ProductForm = ({
   handleImageChange,
   saveProduct,
 }) => {
-          // Translation
-	const { t } = useTranslation();
+  // Translation
+  const { t } = useTranslation();
+
   return (
     <div className="add-product">
       <Card cardClass={"card"}>
         <form onSubmit={saveProduct}>
           <Card cardClass={"group"}>
             <label>{t("dashboard.product.productImage")}</label>
-            <code>
-             {t("dashboard.product.supportedFormats")}
-            </code>
+            <code>{t("dashboard.product.supportedFormats")}</code>
             <input
               type="file"
               name="image"
-              onChange={(e) => handleImageChange(e)}
+              onChange={handleImageChange}
             />
-
-            {imagePreview != null ? (
+            {imagePreview ? (
               <div className="image-preview">
                 <img src={imagePreview} alt="product" />
               </div>
@@ -42,6 +37,7 @@ const ProductForm = ({
               <p>{t("noImg")}</p>
             )}
           </Card>
+
           <label>{t("dashboard.product.productName")}:</label>
           <input
             type="text"
@@ -50,7 +46,6 @@ const ProductForm = ({
             value={product?.name || ''}
             onChange={handleInputChange}
           />
-
           <label>{t("dashboard.product.ProductCategory")}:</label>
           <input
             type="text"
@@ -67,17 +62,15 @@ const ProductForm = ({
             value={product?.liveDemo || ''}
             onChange={handleInputChange}
           />
-          
           <label>{t("dashboard.product.ProductDescription")}:</label>
           <ReactQuill
             theme="snow"
-            value={description || ''}
+            value={description}
             onChange={setDescription}
             modules={ProductForm.modules}
             formats={ProductForm.formats}
             className="text-gray-500"
           />
-
           <div>
             <button type="submit" className="btn mt-3">
               {t("dashboard.product.saveProduct")}
@@ -105,6 +98,7 @@ ProductForm.modules = {
     ["clean"],
   ],
 };
+
 ProductForm.formats = [
   "header",
   "font",

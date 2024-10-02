@@ -8,11 +8,11 @@ import {
   getProducts,
   selectProduct,
   updateProduct,
+  selectIsLoading,
 } from "../../../redux/features/product/productSlice";
 import Header from "../../../components/dashboard-components/Header";
 import { useTranslation } from "react-i18next";
-
-
+import Loader from "../../../components/global-components/Loader";
 
 
 
@@ -20,62 +20,75 @@ const EditProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const productEdit = useSelector(selectProduct);
 
-  const [product, setProduct] = useState(productEdit);
-  const [productImage, setProductImage] = useState("");
+  const [product, setProduct] = useState({});
+  const [productImage, setProductImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [description, setDescription] = useState("");
-  // Translation
-  const { t } = useTranslation();
+  const isLoading = useSelector(selectIsLoading);
+
   useEffect(() => {
     dispatch(getProduct(id));
   }, [dispatch, id]);
 
   useEffect(() => {
-    setProduct(productEdit);
-
-    setImagePreview(
-      productEdit && productEdit.image ? `${productEdit.image.filePath}` : null
-    );
-
-    setDescription(
-      productEdit && productEdit.description ? productEdit.description : ""
-    );
+    if (productEdit) {
+      setProduct(productEdit);
+      setImagePreview(productEdit.image ? productEdit.image.filePath : null);
+      setDescription(productEdit.description || "");
+    }
   }, [productEdit]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    setProduct((prevProduct) => ({ ...prevProduct, [name]: value }));
   };
 
   const handleImageChange = (e) => {
-    setProductImage(e.target.files[0]);
-    setImagePreview(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    setProductImage(file);
+    setImagePreview(URL.createObjectURL(file));
   };
 
   const saveProduct = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("name", product?.name);
-
-    formData.append("category", product?.category);
-    formData.append("liveDemo", product?.liveDemo);
+    formData.append("name", product.name);
+    formData.append("category", product.category);
+    formData.append("liveDemo", product.liveDemo);
     formData.append("description", description);
     if (productImage) {
       formData.append("image", productImage);
     }
 
-    console.log(...formData);
-
-    await dispatch(updateProduct({ id, formData }));
-    await dispatch(getProducts());
-    navigate("/products");
+    try {
+      await dispatch(updateProduct({ id, formData }));
+      await dispatch(getProducts());
+      navigate("/products");
+    } catch (error) {
+      console.error("Failed to update product:", error);
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      if (imagePreview) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
 
   return (
     <Box p="20px">
+    {isLoading ? (
+      <Loader />
+    ) 
+    : 
+    (
+    <Box id="editProduct">
       <Header title={t("dashboard.editProduct")} />
       <ProductForm
         product={product}
@@ -88,7 +101,10 @@ const EditProduct = () => {
         saveProduct={saveProduct}
       />
     </Box>
-  );
-};
+      )}
+      </Box>
+    );
+  };
+
 
 export default EditProduct;
