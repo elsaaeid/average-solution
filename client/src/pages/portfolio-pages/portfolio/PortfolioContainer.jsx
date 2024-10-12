@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {Tooltip} from '@mui/material';
 import {IconComponent} from '../../../components/global-components/header/IconComponent';
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +23,6 @@ import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Spinner from "../../../components/global-components/Spinner";
-import useMemo from "react";
 
 const LazyCardPortfolio = lazy(() => import { CardPortfolio } from "./CardPortfolio");
 
