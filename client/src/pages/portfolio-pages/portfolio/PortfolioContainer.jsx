@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback, lazy } from "react";
 import {Tooltip} from '@mui/material';
 import {IconComponent} from '../../../components/global-components/header/IconComponent';
 import { useDispatch, useSelector } from "react-redux";
