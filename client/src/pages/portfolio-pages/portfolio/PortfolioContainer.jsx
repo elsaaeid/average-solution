@@ -19,12 +19,13 @@ import {
 import { useTranslation } from "react-i18next";
 import {RiSearchEyeLine} from "react-icons/ri";
 import {VscSearch} from "react-icons/vsc";
-const LazyCardPortfolio = lazy(() => import { CardPortfolio } from "./CardPortfolio");
 import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Spinner from "../../../components/global-components/Spinner";
 import useMemo from "react";
+
+const LazyCardPortfolio = lazy(() => import { CardPortfolio } from "./CardPortfolio");
 
 
 
