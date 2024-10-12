@@ -112,12 +112,12 @@ useEffect(() => {
 
 
    //Dropdown
- const toggleTab = (category, num, order, filterTap) => {
+ const toggleTab = useCallback((category, num, order, filterTap) => {
   setCategoryState(category);
   setNumState(num);
   setOrderState(order);
   setCurrentItems(filterTap);
-};
+}, [category, num, order, filterTap]);
   //End Dropdown
 
 
