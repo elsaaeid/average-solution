@@ -63,10 +63,10 @@ const PortfolioContainer = () => {
 const { products } = useSelector(
   (state) => state.product
   );
-  const allProducts = useMemo(() => getProducts(products), [products]);
+  const getAllProducts = useMemo(() => getProducts(products), [products]);
 	
   useEffect(() =>   
-    dispatch(allProducts());
+    dispatch(getAllProducts());
   }, [dispatch]);
   
 
