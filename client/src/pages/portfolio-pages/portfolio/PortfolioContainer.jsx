@@ -19,7 +19,7 @@ import {
 import { useTranslation } from "react-i18next";
 import {RiSearchEyeLine} from "react-icons/ri";
 import {VscSearch} from "react-icons/vsc";
-lazy(import { CardPortfolio } from "./CardPortfolio");
+const LazyCardPortfolio = lazy(() => import { CardPortfolio } from "./CardPortfolio");
 import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -226,7 +226,7 @@ const openSearch = ()=> {
                 <Grid 
                   xs={12} sm={6} md={6} lg={6} 
                   className={orderState ? "content-portfolio active-content" : "content-portfolio"}>
-                  <CardPortfolio
+                  <LazyCardPortfolio
                     id={product._id}
                     key={_id}
                     product={product}
