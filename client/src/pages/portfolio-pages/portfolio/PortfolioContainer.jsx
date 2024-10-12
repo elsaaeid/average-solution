@@ -19,11 +19,13 @@ import {
 import { useTranslation } from "react-i18next";
 import {RiSearchEyeLine} from "react-icons/ri";
 import {VscSearch} from "react-icons/vsc";
-import { CardPortfolio } from "./CardPortfolio";
+lazy(import { CardPortfolio } from "./CardPortfolio");
 import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Spinner from "../../../components/global-components/Spinner";
+import useMemo from "react";
+
 
 
 const PortfolioContainer = () => {
@@ -61,9 +63,10 @@ const PortfolioContainer = () => {
 const { products } = useSelector(
   (state) => state.product
   );
-  
-  useEffect(() => {
-    dispatch(getProducts());
+  const allProducts = useMemo(() => getProducts(products), [products]);
+	
+  useEffect(() =>   
+    dispatch(allProducts());
   }, [dispatch]);
   
 
@@ -269,4 +272,4 @@ const openSearch = ()=> {
   );
 };
 
-export default PortfolioContainer;
+export default React.memo(PortfolioContainer);
