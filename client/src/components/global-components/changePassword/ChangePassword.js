@@ -92,27 +92,27 @@ const ChangePassword = () => {
               <>
                 <form onSubmit={updatePassword}>
                   <p>
-                    <label>{t("curPass")}:</label>
+                    <label>{t("chPassword.curPass")}:</label>
                     <PasswordInput
-                      placeholder="Old Password"
+                      placeholder={t("chPassword.curPass")}
                       name="oldPassword"
                       value={oldPassword}
                       onChange={handleInputChange}
                     />
                   </p>
                   <p>
-                    <label>{t("newPass")}:</label>
+                    <label>{t("chPassword.newPass")}:</label>
                     <PasswordInput
-                      placeholder="Password"
+                      placeholder={t("chPassword.newPass")}
                       name="password"
                       value={password}
                       onChange={handleInputChange}
                     />
                   </p>
                   <p>
-                    <label>{t("confirmPass")}:</label>
+                    <label>{t("chPassword.confirmPass")}:</label>
                     <PasswordInput
-                      placeholder="Confirm Password"
+                      placeholder={t("chPassword.confirmPass")}
                       name="password2"
                       value={password2}
                       onChange={handleInputChange}
