@@ -25,7 +25,7 @@ function Main() {
               <CTA />
             </Box>
             <Box id="greay-box-content" className="greay-box-content overlay flex justify-center flex-col items-center">
-              <Box class="overlay">
+              <Box className="overlay">
               </Box>
             </Box>         
           </Box>
