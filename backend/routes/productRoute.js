@@ -11,7 +11,7 @@ const {
   deleteProduct,
   updateProduct,
   likeProduct,
-  unLikeProduct,
+  unlikeProduct,
 } = require("../controllers/productController");
 const { upload } = require("../utils/fileUpload");
 
