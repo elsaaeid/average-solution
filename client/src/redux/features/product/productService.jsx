@@ -31,15 +31,15 @@ const updateProduct = async (id, formData) => {
 
 
 
-// Like product 
-const likeProduct = async (id) => {
-  const response = await axios.post(`${API_URL}${id}`);
+// LikeProduct
+const likeProduct = async ({ productId, userId }) => {
+  const response = await axios.post(`${API_URL}${productId}/like`, { userId });
   return response.data;
 };
 
-// unlike Product
-const unlikeProduct = async (id) => {
-  const response = await axios.post(`${API_URL}${id}`);
+// unlikeProduct
+const unlikeProduct = async ({ productId, userId }) => {
+  const response = await axios.post(`${API_URL}${productId}/unlike`, { userId });
   return response.data;
 };
 const productService = {
