@@ -12,8 +12,14 @@ const productSchema = mongoose.Schema(
       required: [true, "Please add a name"],
       trim: true,
     },
-    likes: { type: Number, default: 0 },
-    likedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    likeCount: {
+      type: Number,
+      default: 0,
+    },
+    likedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User' // Reference to the User model
+    }],
     sku: {
       type: String,
       required: true,
