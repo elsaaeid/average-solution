@@ -230,6 +230,6 @@ module.exports = {
   deleteProduct,
   updateProduct,
   likeProduct,
-  unLikeProduct,
+  unlikeProduct,
 };
 
