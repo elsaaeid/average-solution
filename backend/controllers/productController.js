@@ -157,56 +157,70 @@ const updateProduct = asyncHandler(async (req, res) => {
   res.status(200).json(updatedProduct);
 });
 
-// Like Product
- const likeProduct = asyncHandler(async (req, res) => {
-  const productId = req.params.productId;
-  const userId = req.user.id;
-  try {
-    const product = await Product.findById(productId);
-    if (product) {
-      if (!product.likedBy.includes(userId)) {
-        product.likes++;
-        product.likedBy.push(userId);
-        await product.save();
-        res.json({ message: 'Product liked successfully' });
-      } else {
-        res.status(400).json({ message: 'You already liked this product' });
-      }
-    } else {
-      res.status(404).json({ message: 'Product not found' });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
+// Function to like a product post
+const likeProduct = async (req, res) => {
+  const { productId } = req.params;
+  const userId = req.user._id; // Assuming req.user is set by the protect middleware
 
-// unLike Product
-const unLikeProduct =  asyncHandler(async (req, res) => {
-  const productId = req.params.productId;
-  const userId = req.user.id;
   try {
-    const product = await Product.findById(productId);
-    if (product) {
-      if (product.likedBy.includes(userId)) {
-        product.likes--;
-        const index = product.likedBy.indexOf(userId);
-        if (index !== -1) {
-          product.likedBy.splice(index, 1);
-        }
-        await product.save();
-        res.json({ message: 'Product unliked successfully' });
-      } else {
-        res.status(400).json({ message: 'You did not like this product' });
+      // Find the product post by ID
+      const product = await Product.findById(productId);
+      if (!product) {
+          return res.status(404).json({ message: 'Blog not found' });
       }
-    } else {
-      res.status(404).json({ message: 'Product not found' });
-    }
+
+      // Check if the user has already liked the product
+      if (product.likedBy.includes(userId)) {
+          return res.status(400).json({ message: 'You have already liked this blog' });
+      }
+
+      // Add the user to the likedBy array
+      product.likedBy.push(userId); // Add the user ID to the array
+      product.likeCount += 1; // Increment the like count
+      await product.save(); // Save the updated product post
+
+      return res.status(200).json({ message: 'Product liked successfully', likeCount: product.likeCount });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
+      console.error('Error liking product:', error);
+      return res.status(500).json({ message: 'Server error', error: error.message });
   }
-});
+};
+
+
+// Function to unlike a product post
+const unlikeProduct = async (req, res) => {
+  const { productId } = req.params;
+  const userId = req.user._id; // Assuming req.user is set by the protect middleware
+
+  try {
+      // Find the product post by ID
+      const product = await Product.findById(productId);
+      if (!product) {
+          return res.status(404).json({ message: 'Product not found' });
+      }
+
+      // Check if the user has already liked the product
+      const likedIndex = product.likedBy.indexOf(userId);
+      if (likedIndex === -1) {
+          return res.status(400).json({ message: 'You have not liked this product yet' });
+      }
+
+      // Remove the user from the likedBy array
+      product.likedBy.splice(likedIndex, 1); // Remove the user ID from the array
+
+      // Decrement the like count, ensuring it doesn't go below zero
+      if (product.likeCount > 0) {
+          product.likeCount -= 1; // Decrement the like count only if it's greater than zero
+      }
+
+      await product.save(); // Save the updated product post
+
+      return res.status(200).json({ message: 'Product unliked successfully', likeCount: product.likeCount });
+  } catch (error) {
+      console.error('Error unliking product:', error);
+      return res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
 
 
 module.exports = {
