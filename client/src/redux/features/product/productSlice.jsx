@@ -241,28 +241,62 @@ const productSlice = createSlice( {
         state.message = action.payload;
         toast.error(action.payload);
       })
+      // Handle likeProduct actions
       .addCase(likeProduct.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = true; // Set loading state
+        state.isError = false; // Clear previous errors
+        state.message = ""; // Clear previous messages
       })
       .addCase(likeProduct.fulfilled, (state, action) => {
-        const productIndex = state.products.findIndex((product) => product._id === action.meta.arg);
-        if (productIndex !== -1) {
-          state.products[productIndex].likes++;
+        state.isLoading = false; // Reset loading state
+        state.isSuccess = true; // Set success state
+    
+        const updatedProduct = action.payload; // Get the updated product from the action payload
+        const index = state.products.findIndex(product => product._id === updatedProduct._id); // Find the index of the product
+    
+        if (index !== -1) {
+            // Update the product with new like count and likedBy
+            state.products[index] = {
+                ...state.products[index], // Preserve existing product properties
+                ...updatedProduct // Merge with updated properties
+            };
         }
-      })
+    
+        state.message = "Product liked successfully"; // Set success message
+    })
       .addCase(likeProduct.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
-        toast.error(action.payload);
+          state.isLoading = false; // Reset loading state
+          state.isError = true; // Set error state
+          state.message = action.payload; // Set error message
+      })
+      // Handle unlikeProduct actions
+      .addCase(unlikeProduct.pending, (state) => {
+          state.isLoading = true; // Set loading state
+          state.isError = false; // Clear previous errors
+          state.message = ""; // Clear previous messages
       })
       .addCase(unlikeProduct.fulfilled, (state, action) => {
-        const productIndex = state.products.findIndex((product) => product._id === action.meta.arg);
-        if (productIndex !== -1 && state.products[productIndex].likes > 0) {
-          state.products[productIndex].likes--;
+        state.isLoading = false; // Reset loading state
+        state.isSuccess = true; // Set success state
+    
+        const updatedProduct = action.payload; // Get the updated product from the action payload
+        const index = state.products.findIndex(product => product._id === updatedProduct._id); // Find the index of the product
+    
+        if (index !== -1) {
+            // Update the product with new like count and likedBy
+            state.products[index] = {
+                ...state.products[index], // Preserve existing product properties
+                ...updatedProduct // Merge with updated properties
+            };
         }
-      });
-
+    
+        state.message = "Product unliked successfully"; // Set success message
+    })
+      .addCase(unlikeProduct.rejected, (state, action) => {
+          state.isLoading = false; // Reset loading state
+          state.isError = true; // Set error state
+          state.message = action.payload; // Set error message
+      })
   },
 });
 
