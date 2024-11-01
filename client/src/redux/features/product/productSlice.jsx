@@ -105,16 +105,12 @@ export const updateProduct = createAsyncThunk(
     }
   }
 );
-
-
-
 // likeProduct 
-
-export const likeProduct = createAsyncThunk(
+export const likeProduct  = createAsyncThunk(
   "products/likeProduct",
-  async (id, thunkAPI) => {
+  async ({ productId, userId }, thunkAPI) => {
     try {
-      return await productService.likeProduct(id);
+      return await productService.likeProduct({ productId, userId });
     } catch (error) {
       const message =
         (error.response &&
@@ -128,15 +124,12 @@ export const likeProduct = createAsyncThunk(
   }
 );
 
-
-
-// unlikeProduct 
-
+// unlikeProduct
 export const unlikeProduct = createAsyncThunk(
   "products/unlikeProduct",
-  async (id, thunkAPI) => {
+  async ({ productId, userId }, thunkAPI) => {
     try {
-      return await productService.unlikeProduct(id);
+      return await productService.unlikeProduct({ productId, userId });
     } catch (error) {
       const message =
         (error.response &&
